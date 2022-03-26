@@ -31,9 +31,9 @@ type AnchorButtonProps = BaseButtonProps &
   React.AnchorHTMLAttributes<HTMLElement>
 
 // 将所有属性设置为可选，因为button有些链接a不具备 反之亦然
-export type Button = Partial<NativeButtonProps & AnchorButtonProps>
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
-const Button: React.FC<Button> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const { btnType, disabled, size, children, href, className, ...restProps } =
     props
   // 默认添加btn类
