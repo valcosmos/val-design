@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "jest": "^27.5.1",
     "sass": "1.32"
   }
 }
