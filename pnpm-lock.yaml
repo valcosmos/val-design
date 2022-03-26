@@ -1,6 +1,9 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@fortawesome/fontawesome-svg-core': ^6.1.1
+  '@fortawesome/free-solid-svg-icons': ^6.1.1
+  '@fortawesome/react-fontawesome': ^0.1.18
   '@testing-library/jest-dom': ^5.16.3
   '@testing-library/react': ^12.1.4
   '@testing-library/user-event': ^13.5.0
@@ -9,15 +12,20 @@ specifiers:
   '@types/node': ^16.11.26
   '@types/react': ^17.0.43
   '@types/react-dom': ^17.0.14
+  '@types/react-transition-group': ^4.4.4
   classnames: ^2.3.1
   react: ^17.0.2
   react-dom: ^17.0.2
   react-scripts: 5.0.0
+  react-transition-group: ^4.4.2
   sass: '1.32'
   typescript: ^4.6.3
   web-vitals: ^2.1.4
 
 dependencies:
+  '@fortawesome/fontawesome-svg-core': registry.npmmirror.com/@fortawesome/fontawesome-svg-core/6.1.1
+  '@fortawesome/free-solid-svg-icons': registry.npmmirror.com/@fortawesome/free-solid-svg-icons/6.1.1
+  '@fortawesome/react-fontawesome': registry.npmmirror.com/@fortawesome/react-fontawesome/0.1.18_6909f5698ccb6b468185370814560628
   '@testing-library/jest-dom': registry.npmmirror.com/@testing-library/jest-dom/5.16.3
   '@testing-library/react': registry.npmmirror.com/@testing-library/react/12.1.4_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': registry.npmmirror.com/@testing-library/user-event/13.5.0
@@ -30,10 +38,12 @@ dependencies:
   react: registry.npmmirror.com/react/17.0.2
   react-dom: registry.npmmirror.com/react-dom/17.0.2_react@17.0.2
   react-scripts: registry.npmmirror.com/react-scripts/5.0.0_52ff7413bb5ec6346932d88488fd4025
+  react-transition-group: registry.npmmirror.com/react-transition-group/4.4.2_react-dom@17.0.2+react@17.0.2
   typescript: registry.npmmirror.com/typescript/4.6.3
   web-vitals: registry.npmmirror.com/web-vitals/2.1.4
 
 devDependencies:
+  '@types/react-transition-group': registry.npmmirror.com/@types/react-transition-group/4.4.4
   sass: registry.npmmirror.com/sass/1.32.13
 
 packages:
@@ -1872,6 +1882,48 @@ packages:
       - supports-color
     dev: false
 
+  registry.npmmirror.com/@fortawesome/fontawesome-common-types/6.1.1:
+    resolution: {integrity: sha512-wVn5WJPirFTnzN6tR95abCx+ocH+3IFLXAgyavnf9hUmN0CfWoDjPT/BAWsUVwSlYYVBeCLJxaqi7ZGe4uSjBA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.1.1.tgz}
+    name: '@fortawesome/fontawesome-common-types'
+    version: 6.1.1
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
+  registry.npmmirror.com/@fortawesome/fontawesome-svg-core/6.1.1:
+    resolution: {integrity: sha512-NCg0w2YIp81f4V6cMGD9iomfsIj7GWrqmsa0ZsPh59G7PKiGN1KymZNxmF00ssuAlo/VZmpK6xazsGOwzKYUMg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.1.1.tgz}
+    name: '@fortawesome/fontawesome-svg-core'
+    version: 6.1.1
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': registry.npmmirror.com/@fortawesome/fontawesome-common-types/6.1.1
+    dev: false
+
+  registry.npmmirror.com/@fortawesome/free-solid-svg-icons/6.1.1:
+    resolution: {integrity: sha512-0/5exxavOhI/D4Ovm2r3vxNojGZioPwmFrKg0ZUH69Q68uFhFPs6+dhAToh6VEQBntxPRYPuT5Cg1tpNa9JUPg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.1.1.tgz}
+    name: '@fortawesome/free-solid-svg-icons'
+    version: 6.1.1
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': registry.npmmirror.com/@fortawesome/fontawesome-common-types/6.1.1
+    dev: false
+
+  registry.npmmirror.com/@fortawesome/react-fontawesome/0.1.18_6909f5698ccb6b468185370814560628:
+    resolution: {integrity: sha512-RwLIB4TZw0M9gvy5u+TusAA0afbwM4JQIimNH/j3ygd6aIvYPQLqXMhC9ErY26J23rDPyDZldIfPq/HpTTJ/tQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.18.tgz}
+    id: registry.npmmirror.com/@fortawesome/react-fontawesome/0.1.18
+    name: '@fortawesome/react-fontawesome'
+    version: 0.1.18
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      react: '>=16.x'
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': registry.npmmirror.com/@fortawesome/fontawesome-svg-core/6.1.1
+      prop-types: registry.npmmirror.com/prop-types/15.8.1
+      react: registry.npmmirror.com/react/17.0.2
+    dev: false
+
   registry.npmmirror.com/@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz}
     name: '@humanwhocodes/config-array'
@@ -2766,7 +2818,6 @@ packages:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/prop-types/-/prop-types-15.7.4.tgz}
     name: '@types/prop-types'
     version: 15.7.4
-    dev: false
 
   registry.npmmirror.com/@types/q/1.5.5:
     resolution: {integrity: sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/q/-/q-1.5.5.tgz}
@@ -2794,6 +2845,14 @@ packages:
       '@types/react': registry.npmmirror.com/@types/react/17.0.43
     dev: false
 
+  registry.npmmirror.com/@types/react-transition-group/4.4.4:
+    resolution: {integrity: sha512-7gAPz7anVK5xzbeQW9wFBDg7G++aPLAFY0QaSMOou9rJZpbuI58WAuJrgu+qR92l61grlnCUe7AFX8KGahAgug==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/react-transition-group/-/react-transition-group-4.4.4.tgz}
+    name: '@types/react-transition-group'
+    version: 4.4.4
+    dependencies:
+      '@types/react': registry.npmmirror.com/@types/react/17.0.43
+    dev: true
+
   registry.npmmirror.com/@types/react/17.0.43:
     resolution: {integrity: sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/react/-/react-17.0.43.tgz}
     name: '@types/react'
@@ -2802,7 +2861,6 @@ packages:
       '@types/prop-types': registry.npmmirror.com/@types/prop-types/15.7.4
       '@types/scheduler': registry.npmmirror.com/@types/scheduler/0.16.2
       csstype: registry.npmmirror.com/csstype/3.0.11
-    dev: false
 
   registry.npmmirror.com/@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/resolve/-/resolve-1.17.1.tgz}
@@ -2822,7 +2880,6 @@ packages:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/scheduler/-/scheduler-0.16.2.tgz}
     name: '@types/scheduler'
     version: 0.16.2
-    dev: false
 
   registry.npmmirror.com/@types/serve-index/1.9.1:
     resolution: {integrity: sha512-d/Hs3nWDxNL2xAczmOVZNj92YZCS6RGxfBPjKzuu/XirCgXdpKEb88dYNbrYGint6IVWLNP+yonwVAuRC0T2Dg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/serve-index/-/serve-index-1.9.1.tgz}
@@ -4739,7 +4796,6 @@ packages:
     resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/csstype/-/csstype-3.0.11.tgz}
     name: csstype
     version: 3.0.11
-    dev: false
 
   registry.npmmirror.com/damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz}
@@ -5017,6 +5073,15 @@ packages:
     version: 0.2.0
     dependencies:
       utila: registry.npmmirror.com/utila/0.4.0
+    dev: false
+
+  registry.npmmirror.com/dom-helpers/5.2.1:
+    resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dom-helpers/-/dom-helpers-5.2.1.tgz}
+    name: dom-helpers
+    version: 5.2.1
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.17.8
+      csstype: registry.npmmirror.com/csstype/3.0.11
     dev: false
 
   registry.npmmirror.com/dom-serializer/0.2.2:
@@ -9934,6 +9999,23 @@ packages:
       - webpack-cli
       - webpack-hot-middleware
       - webpack-plugin-serve
+    dev: false
+
+  registry.npmmirror.com/react-transition-group/4.4.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-transition-group/-/react-transition-group-4.4.2.tgz}
+    id: registry.npmmirror.com/react-transition-group/4.4.2
+    name: react-transition-group
+    version: 4.4.2
+    peerDependencies:
+      react: '>=16.6.0'
+      react-dom: '>=16.6.0'
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.17.8
+      dom-helpers: registry.npmmirror.com/dom-helpers/5.2.1
+      loose-envify: registry.npmmirror.com/loose-envify/1.4.0
+      prop-types: registry.npmmirror.com/prop-types/15.8.1
+      react: registry.npmmirror.com/react/17.0.2
+      react-dom: registry.npmmirror.com/react-dom/17.0.2_react@17.0.2
     dev: false
 
   registry.npmmirror.com/react/17.0.2:

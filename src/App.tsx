@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button, { ButtonSize, ButtonType } from './components/Button/button'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu'
+import Icon from './components/Icon/icon'
+import Transition from './components/Transition/transition'
+library.add(fas)
+
 function App() {
+  const [show, setShow] = useState(false)
   return (
     <div>
       <header className="App-header">
-        <Menu defaultIndex={0} mode="vertical">
-          <MenuItem index={1}>cool link1</MenuItem>
-          <MenuItem index={2} disabled>
-            cool link2
-          </MenuItem>
-          <MenuItem index={3}>cool link3</MenuItem>
+        <Icon icon="coffee" theme="primary" size="10x"></Icon>
+        <Menu defaultIndex={'0'} defaultOpenSubMenus={['2']}>
+          <MenuItem>cool link1</MenuItem>
+          <MenuItem disabled>cool link2</MenuItem>
+          <SubMenu title="dropdown">
+            <MenuItem>dropdown1</MenuItem>
+            <MenuItem>dropdown2</MenuItem>
+            <MenuItem>dropdown3</MenuItem>
+          </SubMenu>
+          <MenuItem>cool link3</MenuItem>
         </Menu>
 
         <div className="btns">
@@ -41,6 +53,25 @@ function App() {
           </Button>
         </div>
       </header>
+      <Button
+        size={ButtonSize.Large}
+        onClick={() => {
+          setShow(!show)
+        }}
+      >
+        Toggle
+      </Button>
+      <Transition in={show} timeout={300} animation="zoom-in-left" wrapper>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaaaa</p>
+      </Transition>
     </div>
   )
 }
