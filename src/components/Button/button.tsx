@@ -57,11 +57,14 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 /**
  * 这是我们的第一个Button组件
- * ## 引用方法
  *
- * ~~~ js
+ * ### 引用方法
+ *
+ * ``` js
+ *
  * import {Button} from 'val-design'
- * ~~~
+ *
+ * ```
  */
 export const Button: React.FC<ButtonProps> = (props) => {
   const { btnType, disabled, size, children, href, className, ...restProps } =
