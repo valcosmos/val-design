@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button, { ButtonSize, ButtonType } from './components/Button/button'
+import { Button } from './components/Button/button'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Menu from './components/Menu/menu'
@@ -29,32 +29,27 @@ function App() {
         <div className="btns">
           <Button>Hello</Button>
           <Button disabled>disabled Button</Button>
-          <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
+          <Button btnType="primary" size="large">
             Hello
           </Button>
-          <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
+          <Button btnType="danger" size="small">
             Hello
           </Button>
           <Button
-            btnType={ButtonType.Link}
-            size={ButtonSize.Small}
+            btnType="link"
+            size="small"
             href="https://valzt.cn"
             target="_blank"
           >
             valzt.cn
           </Button>
-          <Button
-            btnType={ButtonType.Link}
-            disabled
-            size={ButtonSize.Small}
-            href="https://valzt.cn"
-          >
+          <Button btnType="link" disabled size="small" href="https://valzt.cn">
             valzt.cn
           </Button>
         </div>
       </header>
       <Button
-        size={ButtonSize.Large}
+        size="large"
         onClick={() => {
           setShow(!show)
         }}

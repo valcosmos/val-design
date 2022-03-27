@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import Button, { ButtonSize, ButtonType, ButtonProps } from './button'
+import { Button, ButtonProps } from './button'
 
 test('our first react test case', () => {
   // render 作用是 渲染到真实的dom上去
@@ -23,8 +23,8 @@ const defaultProps = {
 }
 
 const testProps: ButtonProps = {
-  btnType: ButtonType.Primary,
-  size: ButtonSize.Large,
+  btnType: 'primary',
+  size: 'large',
   className: 'klass'
 }
 
@@ -59,7 +59,7 @@ describe('test Button Component', () => {
   })
   it('should render a link when btnType equals link and href is provided', () => {
     render(
-      <Button btnType={ButtonType.Link} href="https:valzt.cn">
+      <Button btnType="link" href="https:valzt.cn">
         Link
       </Button>
     )
