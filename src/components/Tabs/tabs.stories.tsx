@@ -7,7 +7,7 @@ import TabItem from './tabItem'
 import Icon from '../Icon'
 
 export default {
-  title: 'val-design/Tabs',
+  title: 'val-design/Tabs 标签页',
   component: Tabs
 } as ComponentMeta<typeof Tabs>
 

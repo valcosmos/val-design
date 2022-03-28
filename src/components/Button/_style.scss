@@ -78,7 +78,7 @@
   text-decoration: $link-decoration;
   box-shadow: none;
   &:hover {
-    color: lighten($color: $btn-link-color, $amount: 10%);
+    color: lighten($color: $btn-link-color, $amount: 5%);
     text-decoration: $link-hover-decoration;
   }
   &:focus,

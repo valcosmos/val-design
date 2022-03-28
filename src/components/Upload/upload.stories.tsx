@@ -6,15 +6,19 @@ import { Upload } from './upload'
 import Icon from '../Icon/icon'
 
 export default {
-  title: 'val-design/Upload',
+  title: 'val-design/Upload 上传',
   component: Upload
 } as ComponentMeta<typeof Upload>
+
+const style: React.CSSProperties = {
+  marginTop: '15px'
+}
 
 const Template: ComponentStory<typeof Upload> = (props) => (
   <Upload {...props}>
     <Icon icon="upload" size="5x" theme="secondary" />
     <br />
-    <p>Drag file over to upload</p>
+    <p style={style}>Drag file over to upload</p>
   </Upload>
 )
 

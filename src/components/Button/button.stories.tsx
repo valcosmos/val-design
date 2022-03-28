@@ -9,9 +9,8 @@ export default {
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'val-design/Button',
-  component: Button,
-  parameters: {}
+  title: 'val-design/Button 按钮',
+  component: Button
 } as ComponentMeta<typeof Button>
 
 //👇 We create a “template” of how args map to rendering
@@ -56,42 +55,3 @@ Small.args = {
   size: 'large',
   children: 'Small Button'
 }
-
-// export const
-
-// export const Danger = Template.bind({})
-// Danger.args = {
-//   btnType: ButtonType.Danger
-// }
-
-// // export const defaultButton = () => <Button>Button</Button>
-
-// // export const buttonWithSize = () => (
-// //   <>
-// //     <Button size="lg">large button</Button>
-// //   </>
-// // )
-
-// export const defaultButton = () => <Button>default button</Button>
-
-// export const buttonWithSize = () => (
-//   <>
-//     <Button size={ButtonSize.Large}>large button</Button>
-//     <Button size={ButtonSize.Small}>small button</Button>
-//   </>
-// )
-
-// export const buttonWithType = () => (
-//   <>
-//     <Button btnType={ButtonType.Primary}>primary</Button>
-//     <Button btnType={ButtonType.Danger}>danger</Button>
-//     <Button btnType={ButtonType.Link} href="https://valzt.cn">
-//       link
-//     </Button>
-//   </>
-// )
-
-// storiesOf('按钮', module)
-//   .add('默认按钮', defaultButton)
-//   .add('不同尺寸', buttonWithSize)
-//   .add('不同类型', buttonWithType)

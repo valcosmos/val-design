@@ -3,31 +3,31 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Icon from './icon'
 
 export default {
-  title: 'val-design/Icon',
+  title: 'val-design/Icon 图标',
   component: Icon
 } as ComponentMeta<typeof Icon>
 
-const Template: ComponentStory<typeof Icon> = (props) => <Icon {...props} />
+const Template: ComponentStory<typeof Icon> = (props) => (
+  <Icon {...props} size="3x" />
+)
 
 export const checkIcon = Template.bind({})
 checkIcon.args = {
-  icon: 'check',
-  size: '3x'
+  icon: 'check'
 }
-export const timesIcon = Template.bind({})
-timesIcon.args = {
-  icon: 'times',
-  size: '3x'
+export const coffeeIcon = Template.bind({})
+coffeeIcon.args = {
+  icon: 'coffee'
 }
-export const anchorIcon = Template.bind({})
-anchorIcon.args = {
-  icon: 'anchor',
-  size: '3x'
+
+export const closeIcon = Template.bind({})
+closeIcon.args = {
+  icon: 'xmark'
 }
+
 export const trashIcon = Template.bind({})
 trashIcon.args = {
-  icon: 'trash',
-  size: '3x'
+  icon: 'trash'
 }
 
 export const successIcon = Template.bind({})
@@ -55,29 +55,13 @@ export const spin = Template.bind({})
 spin.args = {
   spin: true,
   icon: 'spinner',
-  size: '3x',
+
   theme: 'primary'
 }
-export const pause = Template.bind({})
-spin.args = {
+export const pulse = Template.bind({})
+pulse.args = {
   pulse: true,
   icon: 'spinner',
-  size: '3x',
+
   theme: 'success'
 }
-
-// const themeIcons = () => (
-//   <>
-//     <Icon icon="check" size="3x" theme="success" />
-//     <Icon icon="times" size="3x" theme="danger" />
-//     <Icon icon="anchor" size="3x" theme="primary" />
-//     <Icon icon="exclamation-circle" size="3x" theme="warning" />
-//   </>
-// )
-
-// const customIcons = () => (
-//   <>
-//     <Icon icon="spinner" size="3x" theme="primary" spin />
-//     <Icon icon="spinner" size="3x" theme="success" pulse />
-//   </>
-// )
