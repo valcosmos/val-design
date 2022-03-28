@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import Alert from './alert'
 
 export default {
-  title: 'Alert',
+  title: 'val-design/Alert',
   component: Alert
 } as ComponentMeta<typeof Alert>
 

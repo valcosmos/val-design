@@ -1,12 +1,12 @@
-import React, { FC } from 'react'
+import React from 'react'
 
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Menu from './menu'
-import MenuItem, { MenuItemProps } from './menuItem'
+import MenuItem from './menuItem'
 import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'Menu',
+  title: 'val-design/Menu',
   component: Menu
 } as ComponentMeta<typeof Menu>
 

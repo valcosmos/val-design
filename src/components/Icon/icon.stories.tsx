@@ -1,10 +1,9 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Icon from './icon'
-import Button from '../Button'
 
 export default {
-  title: 'Icon',
+  title: 'val-design/Icon',
   component: Icon
 } as ComponentMeta<typeof Icon>
 

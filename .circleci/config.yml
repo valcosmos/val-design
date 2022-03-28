@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:16
+    # 1、拉取main分支上的代码
+    branches:
+      only:
+        - main
+    steps:
+      # 3、配置拉取代码仓库的密钥 （用户私钥）
+      - add_ssh_keys:
+          fingerprints:
+            - ""
+      # 2、拉取代码
+      - checkout
+      # 7、恢复缓存
+      - restore_cache:
+          keys:
+            - val-design-cache
+      # 4、执行名称为install的任务 命令为 yarn
+      - run:
+          name: Install
+          command: yarn
+      # 6、设置缓存，缓存目录为 node_modules
+      - save_cache:
+          paths:
+            - node_modules
+          key: val-design-cache
+      # 5、执行名称为build的任务 命令为 yarn
+      - run:
+          name: Build
+          command: yarn build
+      # 8、给部署脚本赋予执行权限
+      - run:
+          name: Prepare shell command
+          command: chmod +x scripts/deploy.sh
+      - run:
+          name: Run deploy to github page
+          command: ./script/deploy.sh

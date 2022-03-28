@@ -1,6 +1,6 @@
 {
   "name": "val-design",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "description": "React component library",
   "author": "Cupid Valentine",
@@ -27,21 +27,21 @@
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
-    "@types/classnames": "^2.3.1",
-    "@types/jest": "^27.4.1",
-    "@types/react": "^17.0.43",
-    "@types/react-dom": "^17.0.14",
     "axios": "^0.26.1",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
     "react-transition-group": "^4.4.2",
-    "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
+    "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
+    "test:nowatch": "cross-env CI=true react-scripts test",
     "clean": "rimraf ./dist",
     "build": "yarn clean && yarn build-ts && yarn build-css",
     "test": "react-scripts test",
@@ -50,7 +50,7 @@
     "build-css": "sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn test:nowatch && yarn lint && yarn build"
   },
   "eslintConfig": {
     "extends": [
@@ -107,9 +107,16 @@
     "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
+    "@types/classnames": "^2.3.1",
+    "@types/jest": "^27.4.1",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
     "@types/react-transition-group": "^4.4.4",
+    "cross-env": "^7.0.3",
+    "react-scripts": "5.0.0",
     "rimraf": "^3.0.2",
     "sass": "1.32",
+    "typescript": "^4.6.3",
     "webpack": "^5.70.0"
   }
 }

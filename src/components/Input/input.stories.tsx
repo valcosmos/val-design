@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Input } from './input'
 
 export default {
-  title: 'Input',
+  title: 'val-design/Input',
   component: Input
 } as ComponentMeta<typeof Input>
 
@@ -12,26 +12,6 @@ const Template: ComponentStory<typeof Input> = (args) => (
   <Input {...args}></Input>
 )
 
-// export const ControlledInput = Template.bind({})
-// const [value, setValue] = useState()
-// ControlledInput.args = {
-//   value,
-//   defaultValue: value,
-//   onChange: (e) => setValue(e.target.value)
-// }
-
-// const ControlledInput = () => {
-//   const [value, setValue] = useState()
-//   return (
-//     <Input
-//       value={value}
-//       defaultValue={value}
-//       onChange={(e) => {
-//         setValue(e.target.value)
-//       }}
-//     />
-//   )
-// }
 export const defaultInput = Template.bind({})
 const style: React.CSSProperties = {
   width: '300px'

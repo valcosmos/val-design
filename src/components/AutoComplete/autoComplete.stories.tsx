@@ -17,7 +17,7 @@ const handleFetch = (query: string) => {
 }
 
 export default {
-  title: 'Auto Complete',
+  title: 'val-design/Auto Complete',
   component: AutoComplete
 } as ComponentMeta<typeof AutoComplete>
 
