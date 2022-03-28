@@ -1,7 +1,25 @@
 {
   "name": "val-design",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.2",
+  "private": false,
+  "description": "React component library",
+  "author": "Cupid Valentine",
+  "keywords": [
+    "React",
+    "Component",
+    "UI"
+  ],
+  "homepage": "https://github.com/valcosmos/val-design.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valcosmos/val-design.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -24,11 +42,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clean": "rimraf ./dist",
+    "build": "yarn clean && yarn build-ts && yarn build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepublishOnly": "yarn build"
   },
   "eslintConfig": {
     "extends": [
@@ -86,6 +108,7 @@
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
     "@types/react-transition-group": "^4.4.4",
+    "rimraf": "^3.0.2",
     "sass": "1.32",
     "webpack": "^5.70.0"
   }

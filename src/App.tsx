@@ -14,7 +14,9 @@ function App() {
   return (
     <div>
       <header className="App-header">
-        <Icon icon="coffee" theme="primary" size="10x"></Icon>
+        <div>
+          <Icon icon="check"></Icon>
+        </div>
         <Menu defaultIndex={'0'} defaultOpenSubMenus={['2']}>
           <MenuItem>cool link1</MenuItem>
           <MenuItem disabled>cool link2</MenuItem>
