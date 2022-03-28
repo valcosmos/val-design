@@ -34,7 +34,7 @@ jobs:
       # 8、给部署脚本赋予执行权限
       - run:
           name: Prepare shell command
-          command: chmod +x scripts/deploy.sh
+          command: chmod +x ./deploy.sh
       - run:
           name: Run deploy to github page
-          command: ./script/deploy.sh
+          command: ./deploy.sh

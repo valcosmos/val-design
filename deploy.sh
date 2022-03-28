@@ -8,7 +8,7 @@ pwd
 
 remote=$(git config remote.origin.url)
 
-echo 'remote is:' $remote
+echo "remote is:" $remote
 
 # 新建一个发布目录
 mkdir -pv val-design-doc
@@ -16,17 +16,17 @@ mkdir -pv val-design-doc
 cd val-design-doc
 
 # 设置一个新的仓库
-git config --global user.email '$V_EMAIL' >/dev/null 2>&1
+git config --global user.email "$V_EMAIL" >/dev/null 2>&1
 # 设置发布的用户名和邮箱
-git config --global user.name '$V_NAME' >/dev/null 2>&1
+git config --global user.name "$V_NAME" >/dev/null 2>&1
 
 git init
 
-git remote add --fetch origin '$remote'
+git remote add --fetch origin "$remote"
 
-echo 'email is: '$GH_EMAIL
-echo 'name is: '$GH_NAME
-echo 'sitesource is: '$siteSource
+echo "email is: "$V_EMAIL
+echo "name is: "$V_NAME
+echo "sitesource is: "$V_DIST
 
 # 切换gh-page分支
 if git rev-parse --verify origin/gh-pages >/dev/null 2>$1; then
@@ -38,7 +38,7 @@ else
 fi
 
 # 把构建好的文件目录拷贝进来
-cp -a "../${siteSource}/." .
+cp -a "../${V_DIST}/." .
 
 ls -la
 
