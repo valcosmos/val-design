@@ -1,6 +1,6 @@
 {
   "name": "val-design",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "license": "MIT",
   "description": "React component library",
@@ -52,7 +52,7 @@
     "build-css": "sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepublishOnly": "yarn test:nowatch && yarn lint && yarn build"
+    "prepublishOnly": "yarn build"
   },
   "eslintConfig": {
     "extends": [
