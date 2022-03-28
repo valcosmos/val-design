@@ -19,6 +19,7 @@ jobs:
           keys:
             - val-design-cache
       # 4、执行名称为install的任务 命令为 yarn
+      - run: yarn config set registry http://registry.npm.taobao.org/
       - run:
           name: Install
           command: yarn
@@ -30,7 +31,7 @@ jobs:
       # 5、执行名称为build的任务 命令为 yarn
       - run:
           name: Build
-          command: yarn build
+          command: yarn build-storybook
       # 8、给部署脚本赋予执行权限
       - run:
           name: Prepare shell command
