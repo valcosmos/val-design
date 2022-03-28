@@ -1,8 +1,8 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:16.14.2
     # 1、拉取main分支上的代码
     filters:
       branches:
