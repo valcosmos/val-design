@@ -11,7 +11,7 @@ jobs:
       # 3、配置拉取代码仓库的密钥 （用户私钥）
       - add_ssh_keys:
           fingerprints:
-            - ""
+            - $V_KEY
       # 2、拉取代码
       - checkout
       # 7、恢复缓存
