@@ -4,9 +4,9 @@ jobs:
     docker:
       - image: circleci/node:16
     # 1、拉取main分支上的代码
-    branches:
-      only:
-        - main
+    filters:
+      branches:
+        only: main
     steps:
       # 3、配置拉取代码仓库的密钥 （用户私钥）
       - add_ssh_keys:
