@@ -1,6 +1,6 @@
 <p align="center">
   <a href="javascript:;">
-    <img width="200" src="https://valzt.cn/media/avatar_me.png">
+    <img width="80px" src="https://valzt.cn/media/avatar_me.png">
   </a>
 </p>
 
