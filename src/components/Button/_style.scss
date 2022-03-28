@@ -9,6 +9,10 @@
   vertical-align: middle;
   background-image: none;
   border: $btn-border-width solid transparent;
+  outline: none;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+  transition: all ease-in-out 3s;
   @include button-size(
     $btn-padding-y,
     $btn-padding-x,
@@ -60,7 +64,7 @@
 .btn-default {
   @include button-style(
     $white,
-    $gray-400,
+    $grey-400,
     $border-color,
     $white,
     $primary,
@@ -74,7 +78,7 @@
   text-decoration: $link-decoration;
   box-shadow: none;
   &:hover {
-    color: $btn-link-hover-color;
+    color: lighten($color: $btn-link-color, $amount: 10%);
     text-decoration: $link-hover-decoration;
   }
   &:focus,

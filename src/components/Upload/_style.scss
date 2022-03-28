@@ -5,8 +5,8 @@
 }
 
 .v-uploader-dragger {
-  background: $gray-100;
-  border: 1px dashed $gray-300;
+  background: $grey-100;
+  border: 1px dashed $grey-300;
   border-radius: 4px;
   cursor: pointer;
   padding: 20px;
@@ -39,7 +39,7 @@
     margin-right: 40px;
     svg {
       margin-right: 5px;
-      color: $gray-500;
+      color: $grey-500;
     }
   }
   .file-name-error {
@@ -64,7 +64,7 @@
     cursor: pointer;
   }
   &:hover {
-    background-color: $gray-200;
+    background-color: $grey-200;
     .file-status {
       display: none;
     }

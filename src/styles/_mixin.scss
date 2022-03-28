@@ -17,14 +17,18 @@
   border-color: $border;
   &:hover {
     color: $hover-color;
-    background: $hover-background;
+    background: lighten($color: $hover-background, $amount: 5%);
     border-color: $hover-border;
   }
   &:focus,
   &.focus {
-    color: $hover-color;
-    background: $hover-background;
-    border-color: $hover-border;
+    outline: none;
+    // color: $hover-color;
+    // background: $hover-background;
+    // border-color: $hover-border;
+  }
+  &:active {
+    background: darken($color: $hover-background, $amount: 10%);
   }
   &:disabled,
   &.disabled {
@@ -83,3 +87,8 @@
   border-top-left-radius: $raduis;
   border-top-right-radius: $raduis;
 }
+
+// @mixin elevation($z, $important: false) {
+//   box-shadow: map-get($shadow-key-umbra, $z), map-get($shadow-key-penumbra, $z),
+//     map-get($shadow-key-ambient, $z) if($important, !important, null);
+// }
