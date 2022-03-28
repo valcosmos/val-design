@@ -1,11 +1,6 @@
 import React from 'react'
 import { config } from 'react-transition-group'
-import {
-  render,
-  RenderResult,
-  fireEvent,
-  waitFor
-} from '@testing-library/react'
+import { render, RenderResult, fireEvent } from '@testing-library/react'
 import { AutoComplete, AutoCompleteProps } from './autoComplete'
 
 config.disabled = true

@@ -24,9 +24,7 @@ const typeProps: AlertProps = {
 }
 describe('test Alert Component', () => {
   it('should render the correct default Alert', () => {
-    const { getByText, container, queryByText } = render(
-      <Alert {...testProps} />
-    )
+    const { getByText, queryByText } = render(<Alert {...testProps} />)
     const alert = screen.queryByText('title')
     expect(alert).toBeInTheDocument()
     // eslint-disable-next-line testing-library/no-container
@@ -38,7 +36,7 @@ describe('test Alert Component', () => {
     expect(queryByText('title')).not.toBeInTheDocument()
   })
   it('should render the correct Alert based on different type and description', () => {
-    const { container, queryByText } = render(<Alert {...typeProps} />)
+    const { queryByText } = render(<Alert {...typeProps} />)
     // eslint-disable-next-line testing-library/prefer-screen-queries
     expect(queryByText('title')).toHaveClass('bold-title')
     // eslint-disable-next-line testing-library/no-container

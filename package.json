@@ -2,6 +2,7 @@
   "name": "val-design",
   "version": "0.0.4",
   "private": false,
+  "license": "MIT",
   "description": "React component library",
   "author": "Cupid Valentine",
   "keywords": [
