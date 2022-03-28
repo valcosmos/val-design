@@ -34,7 +34,7 @@ export interface AlertProps {
  *
  * ```js
  *
- * import { Alert } from 'vikingship'
+ * import { Alert } from 'val-design'
  *
  * ```
  */
@@ -59,9 +59,9 @@ export const Alert: FC<AlertProps> = (props) => {
         <span className={titleClass}>{title}</span>
         {description && <p className="v-alert-desc">{description}</p>}
         {closable && (
-          <span className="v-alert-close" onClick={handleClose}>
+          <div className="v-alert-close" onClick={handleClose}>
             <Icon icon="times" />
-          </span>
+          </div>
         )}
       </div>
     </Transition>

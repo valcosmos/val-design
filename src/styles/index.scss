@@ -9,15 +9,17 @@
 // animation
 @import './animation';
 
+// Icon
+@import '../components/Icon/style';
+
 // Button
 @import '../components/Button/style';
 
+// Alert
+@import '../components/Alert/style';
+
 // Menu
 @import '../components/Menu/style';
-
-// Icon
-
-@import '../components/Icon/style';
 
 // input
 @import '../components/Input/style';
@@ -27,3 +29,9 @@
 
 // upload
 @import '../components/Upload/style';
+
+// auto complete
+@import '../components/AutoComplete/style';
+
+// tabs
+@import '../components/Tabs/style';

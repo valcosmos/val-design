@@ -34,6 +34,12 @@
   }
 }
 
+@mixin alert-style($background, $border, $color) {
+  color: $color;
+  background: $background;
+  border-color: $border;
+}
+
 @mixin zoom-animation(
   $direction: 'top',
   $scaleStart: scaleY(0),
@@ -71,4 +77,9 @@
 @mixin border-left-radius($raduis) {
   border-top-left-radius: $raduis;
   border-bottom-left-radius: $raduis;
+}
+
+@mixin border-top-radius($raduis) {
+  border-top-left-radius: $raduis;
+  border-top-right-radius: $raduis;
 }

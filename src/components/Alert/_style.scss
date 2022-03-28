@@ -1,3 +1,11 @@
+$alert-padding-y: 0.75rem !default;
+$alert-padding-x: 1.25rem !default;
+$alert-margin-bottom: 1rem !default;
+$alert-border-width: 1px !default;
+$alert-border-radius: 0.25rem !default;
+$alert-description-font-size: 1rem !default;
+$alert-description-top-margin: 0.3rem !default;
+
 $alert-colors: (
   'default': $primary,
   'success': $success,
