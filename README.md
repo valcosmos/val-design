@@ -1,10 +1,12 @@
 <p align="center">
   <a href="javascript:;">
-    <img width="200" src="https://valzt.cn/media/avatar_me.png">
+    <img width="80px" src="https://valzt.cn/media/avatar_me.png">
   </a>
 </p>
 
 <h1 align="center">Val Design</h1>
+
+一个轻量级 React 组件库
 
 ## 📦 安装
 
