@@ -1,38 +1,45 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import Menu from './menu'
-import MenuItem from './menuItem'
+import Menu from './index'
 import { action } from '@storybook/addon-actions'
+import { MenuProps } from './menu'
 
 export default {
   title: 'val-design/Menu 导航菜单',
   component: Menu
 } as ComponentMeta<typeof Menu>
 
-const Template: ComponentStory<typeof Menu> = (args) => (
-  <Menu {...args}>
-    <MenuItem>cool link</MenuItem>
-    <MenuItem disabled>disabled</MenuItem>
-    <MenuItem>cool link 2</MenuItem>
+export const HorizontalMenu: ComponentStory<typeof Menu> = (args) => (
+  <Menu
+    {...args}
+    defaultIndex={'0'}
+    onSelect={(index) => action(`clicked ${index} item`)}
+  >
+    <Menu.Item>menu 1</Menu.Item>
+    <Menu.Item disabled>disabled</Menu.Item>
+    <Menu.SubMenu title="sub menu">
+      <Menu.Item>submenu 1</Menu.Item>
+      <Menu.Item>submenu 1</Menu.Item>
+      <Menu.Item>submenu 1</Menu.Item>
+    </Menu.SubMenu>
+    <Menu.Item>menu2</Menu.Item>
   </Menu>
 )
-
-export const defaultMenu = Template.bind({})
-defaultMenu.args = {
-  defaultIndex: '0',
-  onSelect: (index) => action(`clicked ${index} item`)
-}
-
-// export const defaultMenu = () => (
-//   <Menu
-//     defaultIndex="0"
-//     onSelect={(index) => {
-//       action(`clicked ${index} item`)
-//     }}
-//   >
-//     <MenuItem>cool link</MenuItem>
-//     <MenuItem disabled>disabled</MenuItem>
-//     <MenuItem>cool link 2</MenuItem>
-//   </Menu>
-// )
+export const VerticalMenu: ComponentStory<typeof Menu> = (args) => (
+  <Menu
+    {...args}
+    defaultIndex={'0'}
+    mode="vertical"
+    onSelect={(index) => action(`clicked ${index} item`)}
+  >
+    <Menu.Item>cool link</Menu.Item>
+    <Menu.Item disabled>disabled</Menu.Item>
+    <Menu.SubMenu title="sub menu">
+      <Menu.Item>submenu 1</Menu.Item>
+      <Menu.Item>submenu 1</Menu.Item>
+      <Menu.Item>submenu 1</Menu.Item>
+    </Menu.SubMenu>
+    <Menu.Item>cool link 2</Menu.Item>
+  </Menu>
+)

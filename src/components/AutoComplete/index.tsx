@@ -1,2 +1,2 @@
-import AutoComplete from './autoComplete'
+import { AutoComplete } from './autoComplete'
 export default AutoComplete

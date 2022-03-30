@@ -11,12 +11,12 @@ export default {
 } as ComponentMeta<typeof Upload>
 
 const style: React.CSSProperties = {
-  marginTop: '15px'
+  marginTop: '40px'
 }
 
 const Template: ComponentStory<typeof Upload> = (props) => (
   <Upload {...props}>
-    <Icon icon="upload" size="5x" theme="secondary" />
+    <Icon icon="cloud-arrow-up" size="3x" theme="secondary" />
     <br />
     <p style={style}>Drag file over to upload</p>
   </Upload>

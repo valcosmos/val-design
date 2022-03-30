@@ -12,6 +12,9 @@ import classNames from 'classnames'
 //   Danger = 'danger',
 //   Link = 'link'
 // }
+// export const tuple = <T extends string[]>(...args: T) => args
+// const ButtonHTMLTypes = tuple('submit', 'button', 'reset')
+// export type ButtonHTMLType = typeof ButtonHTMLTypes[number]
 
 interface BaseButtonProps {
   /**
@@ -25,11 +28,15 @@ interface BaseButtonProps {
   /**
    * 按钮大小
    */
-  size?: 'large' | 'small'
+  size?: 'lg' | 'sm'
   /**
    * 按钮类型
    */
-  btnType?: 'primary' | 'default' | 'danger' | 'link'
+  type?: 'default' | 'primary' | 'success' | 'danger' | 'warning' | 'link'
+  /**
+   * 按钮原生类型
+   */
+  htmlType?: 'submit' | 'button' | 'reset'
   /**
    * 按钮内容
    */
@@ -45,8 +52,8 @@ interface BaseButtonProps {
 }
 
 // 按钮原生属性类型
-type NativeButtonProps = BaseButtonProps &
-  React.ButtonHTMLAttributes<HTMLElement>
+type NativeButtonProps = {} & BaseButtonProps &
+  Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type'>
 
 // 链接原生属性类型
 type AnchorButtonProps = BaseButtonProps &
@@ -56,26 +63,26 @@ type AnchorButtonProps = BaseButtonProps &
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 /**
- * 这是我们的第一个Button组件
+ * > 一个简单的Button组件，可通过不同的type，选择不同的颜色风格。
  *
  * ### 引用方法
  *
  * ``` js
  *
- * import {Button} from 'val-design'
+ * import { Button } from 'val-design'
  *
  * ```
  */
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { btnType, disabled, size, children, href, className, ...restProps } =
+  const { type, disabled, size, children, href, className, ...restProps } =
     props
   // 默认添加btn类
   const classes = classNames('btn val-btn-shadow', className, {
-    [`btn-${btnType}`]: btnType,
+    [`btn-${type}`]: type,
     [`btn-${size}`]: size,
-    [`disabled`]: btnType === 'link' && disabled
+    [`disabled`]: type === 'link' && disabled
   })
-  if (btnType === 'link' && href) {
+  if (type === 'link' && href) {
     return (
       <a className={classes} href={href} {...restProps}>
         {children}
@@ -92,7 +99,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   disabled: false,
-  btnType: 'default'
+  type: 'default'
 }
 
 export default Button

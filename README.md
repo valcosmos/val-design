@@ -20,6 +20,14 @@ yarn add val-design
 
 ## 🔨 示例
 
+引入样式：
+
+```jsx
+import 'val-design/dist/index.css'
+```
+
+导入组件：
+
 ```jsx
 import { Button } from 'val-design'
 
@@ -32,17 +40,15 @@ const App = () => (
 )
 ```
 
-引入样式：
+在线 demo：
 
-```jsx
-import 'val-design/dist/index.css'
-```
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm?file=src%2FApp.jsx)
 
-### 🌈 定制主题
+## 🌈 定制主题
 
 todo...
 
-### 🛡 TypeScript
+## 🛡 TypeScript
 
 todo...
 

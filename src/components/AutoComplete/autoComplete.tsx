@@ -1,84 +1,130 @@
 import React, {
-  FC,
-  useState,
   ChangeEvent,
-  KeyboardEvent,
+  FC,
   ReactElement,
   useEffect,
+  useState,
+  KeyboardEvent,
   useRef
 } from 'react'
+
+import Icon from '../Icon'
+
+import Transition from '../Transition'
+
+import Input, { InputProps } from '../Input'
+
+import { useDebounce } from '../../hooks/useDebounce'
+
+import { useClickOutside } from '../../hooks/useClickOutside'
+
 import classNames from 'classnames'
-import Input, { InputProps } from '../Input/input'
-import Icon from '../Icon/icon'
-import Transition from '../Transition/transition'
-import useDebounce from '../../hooks/useDebounce'
-import useClickOutside from '../../hooks/useClickOutside'
+
+/**
+ * 用于处理复杂数据结构 eg:{value:'11', key:'22'}
+ * 用户可自定义
+ */
 interface DataSourceObject {
   value: string
 }
+
+/**
+ * 传递一个范型 T, 默认为{}, 返回 传入的T & DataSourceObject
+ */
 export type DataSourceType<T = {}> = T & DataSourceObject
+
 export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
   /**
-   * request
+   *
    */
   fetchSuggestions: (
     str: string
   ) => DataSourceType[] | Promise<DataSourceType[]>
   /**
-   * on select callback
+   * 点击选择项的回调
    */
   onSelect?: (item: DataSourceType) => void
   /**
-   * render options
+   * 自定义模板
    */
-  renderOption?: (item: DataSourceType) => ReactElement
+  renderOptions?: (item: DataSourceType) => ReactElement
 }
 
 /**
- * ## auto compelete component
+ * > AutoComplete 输入框自动完成功能，需要输入建议/辅助提示。
  *
- * @param props
- * @returns
+ * ### 引入方法
+ *
+ * ```js
+ *
+ * import { AutoComplete } from 'val-design'
+ *
+ * ```
  */
 export const AutoComplete: FC<AutoCompleteProps> = (props) => {
-  const { fetchSuggestions, onSelect, value, renderOption, ...restProps } =
+  const { fetchSuggestions, onSelect, value, renderOptions, ...restProps } =
     props
-  const [inputValue, setInputValue] = useState(value as string)
-  const [suggestions, setSugestions] = useState<DataSourceType[]>([])
-  const [loading, setLoading] = useState(false)
-  const [showDropdown, setShowDropdown] = useState(false)
+  // 输入的搜索关键字
+  const [inputValue, setInputValue] = useState((value as string) || '')
+  // 过滤之后的数据
+  const [suggestions, setSuggestions] = useState<DataSourceType[]>([])
+  // 发起异步请求之后的loading
+  const [loading, setLoading] = useState<boolean>(false)
+  // 控制高亮
   const [highlightIndex, setHighlightIndex] = useState(-1)
+  // 操作键盘事件的时候，阻止列表再次请求
   const triggerSearch = useRef(false)
+  // 点击其它区域，关闭列表
   const componentRef = useRef<HTMLDivElement>(null)
-  const debouncedValue = useDebounce(inputValue, 300)
+  // 防抖
+  const debouncedValue = useDebounce(inputValue, 500)
+
+  // 是否显示dropdown
+  const [showDropdown, setShowDropdown] = useState(false)
+
   useClickOutside(componentRef, () => {
-    setSugestions([])
+    setSuggestions([])
   })
   useEffect(() => {
+    // 当value存在，更新value 和 suggestions list
     if (debouncedValue && triggerSearch.current) {
-      setSugestions([])
       const results = fetchSuggestions(debouncedValue)
       if (results instanceof Promise) {
         setLoading(true)
         results.then((data) => {
+          setSuggestions(data)
           setLoading(false)
-          setSugestions(data)
           if (data.length > 0) {
             setShowDropdown(true)
           }
         })
       } else {
-        setSugestions(results)
+        setSuggestions(results)
         setShowDropdown(true)
-        if (results.length > 0) {
-          setShowDropdown(true)
-        }
       }
     } else {
+      setSuggestions([])
       setShowDropdown(false)
     }
+
+    // 加载成功后取消高亮
     setHighlightIndex(-1)
-  }, [debouncedValue, fetchSuggestions])
+  }, [debouncedValue])
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.trim()
+    setInputValue(value)
+    triggerSearch.current = true
+  }
+
+  const handleSelect = (item: DataSourceType) => {
+    setInputValue(item.value)
+    setSuggestions([])
+    if (onSelect) {
+      onSelect(item)
+    }
+    triggerSearch.current = false
+  }
   const highlight = (index: number) => {
     if (index < 0) index = 0
     if (index >= suggestions.length) {
@@ -87,41 +133,31 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     setHighlightIndex(index)
   }
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    switch (e.keyCode) {
-      case 13:
-        if (suggestions[highlightIndex]) {
-          handleSelect(suggestions[highlightIndex])
-        }
+    console.log(e.key)
+    switch (e.key) {
+      case 'Enter':
+        suggestions[highlightIndex] && handleSelect(suggestions[highlightIndex])
         break
-      case 38:
+      case 'ArrowUp':
         highlight(highlightIndex - 1)
         break
-      case 40:
+      case 'ArrowDown':
         highlight(highlightIndex + 1)
         break
-      case 27:
-        setShowDropdown(false)
+      case 'Escape':
+        setSuggestions([])
         break
       default:
         break
     }
   }
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.trim()
-    setInputValue(value)
-    triggerSearch.current = true
-  }
-  const handleSelect = (item: DataSourceType) => {
-    setInputValue(item.value)
-    setShowDropdown(false)
-    if (onSelect) {
-      onSelect(item)
-    }
-    triggerSearch.current = false
-  }
+
+  // render template
   const renderTemplate = (item: DataSourceType) => {
-    return renderOption ? renderOption(item) : item.value
+    return renderOptions ? renderOptions(item) : item.value
   }
+
+  // dropdown
   const generateDropdown = () => {
     return (
       <Transition
@@ -129,10 +165,14 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
         animation="zoom-in-top"
         timeout={300}
         onExited={() => {
-          setSugestions([])
+          setSuggestions([])
         }}
       >
-        <ul className="v-suggestion-list">
+        <ul
+          className={classNames({
+            'v-suggestion-list': suggestions.length > 0 || loading
+          })}
+        >
           {loading && (
             <div className="suggstions-loading-icon">
               <Icon icon="spinner" spin />
@@ -156,14 +196,20 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
       </Transition>
     )
   }
+
   return (
     <div className="v-auto-complete" ref={componentRef}>
       <Input
-        value={inputValue}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
         {...restProps}
-      />
+        value={inputValue}
+        onKeyDown={handleKeyDown}
+        onChange={handleChange}
+      ></Input>
+      {/* {loading && (
+        <ul>
+          <Icon icon={'spinner'} spin></Icon>
+        </ul>
+      )} */}
       {generateDropdown()}
     </div>
   )

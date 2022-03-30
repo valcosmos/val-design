@@ -32,27 +32,22 @@ function App() {
         <div className="btns">
           <Button>Hello</Button>
           <Button disabled>disabled Button</Button>
-          <Button btnType="primary" size="large">
+          <Button type="primary" size="lg">
             Hello
           </Button>
-          <Button btnType="danger" size="small">
+          <Button type="danger" size="sm">
             Hello
           </Button>
-          <Button
-            btnType="link"
-            size="small"
-            href="https://valzt.cn"
-            target="_blank"
-          >
+          <Button type="link" size="sm" href="https://valzt.cn" target="_blank">
             valzt.cn
           </Button>
-          <Button btnType="link" disabled size="small" href="https://valzt.cn">
+          <Button type="link" disabled size="sm" href="https://valzt.cn">
             valzt.cn
           </Button>
         </div>
       </header>
       <Button
-        size="large"
+        size="lg"
         onClick={() => {
           setShow(!show)
         }}

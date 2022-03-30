@@ -36,15 +36,21 @@
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   border-radius: $input-border-radius;
 
-  box-shadow: $input-box-shadow;
+  // box-shadow: $input-box-shadow;
   transition: $input-transition;
+
+  &:hover {
+    border-color: $primary;
+  }
 
   &:focus {
     color: $input-focus-color;
     background-color: $input-focus-bg;
-    border-color: $input-focus-border-color;
+    // border-color: $input-focus-border-color;
+    border-color: #40a9ff;
     outline: 0;
-    box-shadow: $input-focus-box-shadow;
+    // box-shadow: $input-focus-box-shadow;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     // Avoid using mixin so we can pass custom focus shadow properly
   }
   &::placeholder {
@@ -56,8 +62,9 @@
   &[readonly] {
     background-color: $input-disabled-bg;
     border-color: $input-disabled-border-color;
-    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
 .v-input-group-prepend,
@@ -75,6 +82,14 @@
   background-color: $input-group-addon-bg;
   border: $input-border-width solid $input-group-addon-border-color;
   border-radius: $input-border-radius;
+}
+
+.v-input-group-prepend {
+  border-right: none;
+}
+
+.v-input-group-append {
+  border-left: none;
 }
 .v-input-group-append + .btn {
   padding: 0;

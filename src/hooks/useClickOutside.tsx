@@ -1,6 +1,11 @@
+// 点击其它区域，关闭下拉菜单
+
 import { RefObject, useEffect } from 'react'
 
-function useClickOutside(ref: RefObject<HTMLElement>, handler: Function) {
+export const useClickOutside = (
+  ref: RefObject<HTMLElement>,
+  handler: Function
+) => {
   useEffect(() => {
     const listener = (event: MouseEvent) => {
       if (!ref.current || ref.current.contains(event.target as HTMLElement)) {
@@ -14,5 +19,3 @@ function useClickOutside(ref: RefObject<HTMLElement>, handler: Function) {
     }
   }, [ref, handler])
 }
-
-export default useClickOutside

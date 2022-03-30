@@ -31,7 +31,7 @@ const Template: ComponentStory<typeof Tabs> = (props) => (
 )
 
 export const defaultTab = Template.bind({})
-export const cardtTab = Template.bind({})
-cardtTab.args = {
+export const cardTab = Template.bind({})
+cardTab.args = {
   type: 'card'
 }

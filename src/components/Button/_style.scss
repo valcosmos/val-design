@@ -53,23 +53,35 @@
   );
 }
 
+.btn-default {
+  @include button-style(
+    $white,
+    $grey-400,
+    $grey-900,
+    $white,
+    $primary,
+    $primary,
+    $white
+  );
+}
+
 .btn-primary {
   @include button-style($primary, $primary, $white);
+}
+.btn-success {
+  @include button-style($success, $success, $white);
 }
 
 .btn-danger {
   @include button-style($danger, $danger, $white);
 }
 
-.btn-default {
-  @include button-style(
-    $white,
-    $grey-400,
-    $border-color,
-    $white,
-    $primary,
-    $primary
-  );
+.btn-warning {
+  @include button-style($warning, $warning, $white);
+}
+
+.btn-info {
+  @include button-style($info, $info, $white);
 }
 
 .btn-link {

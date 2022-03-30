@@ -2,7 +2,6 @@ import React, { FC, useState } from 'react'
 import classNames from 'classnames'
 import Icon from '../Icon'
 import Transition from '../Transition'
-export type AlertType = 'success' | 'default' | 'danger' | 'warning'
 
 export interface AlertProps {
   /**
@@ -16,7 +15,7 @@ export interface AlertProps {
   /**
    * 类型 四种可选 针对四种不同的场景
    */
-  type?: AlertType
+  type?: 'success' | 'default' | 'danger' | 'warning'
   /**
    * 关闭alert时触发的事件
    */
@@ -28,7 +27,7 @@ export interface AlertProps {
 }
 
 /**
- * 用于页面中展示重要的提示信息。 点击右侧的叉提示自动消失
+ * > 用于页面中展示重要的提示信息, 点击右侧的叉提示自动消失。
  *
  * ### 引用方法
  *

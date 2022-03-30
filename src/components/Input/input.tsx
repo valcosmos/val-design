@@ -35,13 +35,15 @@ export interface InputProps
 }
 
 /**
- * Input 输入框 通过鼠标或键盘输入内容，是最基础的表单域的包装。
+ * > 一个基础的Input组件封装，可添加图标，前缀或者后缀组合。
+ *
+ * ### 引用方法
  *
  * ```js
- * // 这样引用
+ *
  * import { Input } from 'val-design'
+ *
  * ```
- * 支持 HTMLInput 的所有基本属性
  */
 export const Input: FC<InputProps> = (props) => {
   const { disabled, size, icon, prepend, append, style, ...restProps } = props
@@ -52,16 +54,7 @@ export const Input: FC<InputProps> = (props) => {
     'input-group-append': !!append,
     'input-group-prepend': !!prepend
   })
-  const fixControlledValue = (value: any) => {
-    if (typeof value === 'undefined' || value === null) {
-      return ''
-    }
-    return value
-  }
-  if ('value' in props) {
-    delete restProps.defaultValue
-    restProps.value = fixControlledValue(props.value)
-  }
+
   return (
     <div className={cnames} style={style}>
       {prepend && <div className="v-input-group-prepend">{prepend}</div>}

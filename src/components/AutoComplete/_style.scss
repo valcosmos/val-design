@@ -24,6 +24,7 @@
     cursor: pointer;
     transition: $menu-transition;
     color: $body-color;
+    overflow: auto;
     &.is-active {
       background: $menu-item-active-color !important;
       color: $white !important;
