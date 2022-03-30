@@ -1,11 +1,12 @@
 {
   "name": "val-design",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "license": "MIT",
-  "description": "React component library",
+  "description": "val-design React component library",
   "author": "Cupid Valentine",
   "keywords": [
+    "val-design",
     "React",
     "Component",
     "UI"
