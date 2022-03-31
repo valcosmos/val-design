@@ -77,7 +77,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const { type, disabled, size, children, href, className, ...restProps } =
     props
   // 默认添加btn类
-  const classes = classNames('btn val-btn-shadow', className, {
+  const classes = classNames('btn', className, {
     [`btn-${type}`]: type,
     [`btn-${size}`]: size,
     [`disabled`]: type === 'link' && disabled

@@ -6,7 +6,12 @@
 
 <h1 align="center">Val Design</h1>
 
-一个轻量级 React 组件库
+一个轻量的 React 组件库
+
+
+👉 👉 👉 👉  [文档地址](https://valcosmos.github.io/val-design/?path=/docs/val-design-introduction--page)
+
+👉 👉 👉 👉 在线 demo：[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm?file=src%2FApp.jsx)
 
 ## 📦 安装
 
@@ -33,16 +38,14 @@ import { Button } from 'val-design'
 
 const App = () => (
   <>
-    <Button btnType="primary" size="large">
+    <Button type="primary" size="large">
       val design
     </Button>
   </>
 )
 ```
 
-在线 demo：
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm?file=src%2FApp.jsx)
 
 ## 🌈 定制主题
 
