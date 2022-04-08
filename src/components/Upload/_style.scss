@@ -5,13 +5,17 @@
 }
 
 .v-uploader-dragger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   background: $grey-100;
   border: 1px dashed $grey-300;
   border-radius: 4px;
   cursor: pointer;
   padding: 20px;
-  width: 360px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   text-align: center;
   &:hover {
     border: 1px dashed $primary;
