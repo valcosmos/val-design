@@ -1,4 +1,10 @@
-import React, { FC, useState, createContext, CSSProperties } from 'react'
+import React, {
+  FC,
+  useState,
+  createContext,
+  CSSProperties,
+  ReactNode
+} from 'react'
 import classNames from 'classnames'
 import { MenuItemProps } from './menuItem'
 
@@ -13,6 +19,9 @@ export interface MenuProps {
    * 菜单类型 横向或者纵向
    */
   mode?: MenuMode
+  /**
+   * 菜单样式
+   */
   style?: CSSProperties
   /**
    * 点击菜单项触发的回掉函数
@@ -22,6 +31,11 @@ export interface MenuProps {
    * 设置子菜单的默认打开 只在纵向模式下生效
    */
   defaultOpenSubMenus?: string[]
+
+  /**
+   * 子元素
+   */
+  children: ReactNode | string
 }
 interface IMenuContext {
   index: string
