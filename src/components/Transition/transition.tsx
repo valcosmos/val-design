@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { CSSTransitionProps } from 'react-transition-group/CSSTransition'
 
@@ -15,6 +15,7 @@ type AnimationName =
 type TransitionProps = CSSTransitionProps & {
   animation?: AnimationName
   wrapper?: boolean
+  children?: ReactNode | string
 }
 
 const Transition: React.FC<TransitionProps> = (props) => {
