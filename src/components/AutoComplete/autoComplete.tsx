@@ -133,7 +133,6 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     setHighlightIndex(index)
   }
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    console.log(e.key)
     switch (e.key) {
       case 'Enter':
         suggestions[highlightIndex] && handleSelect(suggestions[highlightIndex])
