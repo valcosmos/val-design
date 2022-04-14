@@ -38,7 +38,7 @@ import { Button } from 'val-design'
 
 const App = () => (
   <>
-    <Button type="primary" size="large">
+    <Button type="primary" size="lg">
       val design
     </Button>
   </>
