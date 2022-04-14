@@ -35,7 +35,7 @@ export interface MenuProps {
   /**
    * 子元素
    */
-  children: ReactNode | string
+  children?: ReactNode | string
 }
 interface IMenuContext {
   index: string

@@ -11,7 +11,6 @@ const handleFetch = (query: string) => {
     .get(`https://api.github.com/search/users?q=${query}`)
     .then((res) => res)
     .then(({ data }) => {
-      console.log(data)
       return data.items
         .slice(0, 10)
         .map((item: any) => ({ value: item.login, ...item }))
@@ -40,7 +39,7 @@ const renderOption = (i: DataSourceType) => {
     <>
       <h2>login:{item.login}</h2>
       <p>url:{item.url}</p>
-      <p>url:{item.avatar_url}</p>
+      <p>avatar:{item.avatar_url}</p>
     </>
   )
 }

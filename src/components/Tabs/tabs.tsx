@@ -1,4 +1,4 @@
-import React, { FC, useState, FunctionComponentElement } from 'react'
+import React, { FC, useState, FunctionComponentElement, ReactNode } from 'react'
 import classNames from 'classnames'
 import { TabItemProps } from './tabItem'
 export interface TabsProps {
@@ -16,6 +16,8 @@ export interface TabsProps {
    * Tabs的样式，两种可选，默认为 line
    */
   type?: 'line' | 'card'
+
+  children?: ReactNode | string
 }
 
 /**
@@ -77,7 +79,7 @@ export const Tabs: FC<TabsProps> = (props) => {
     })
   }
   return (
-    <div className={`v-tabs ${className}`}>
+    <div className={`v-tabs ${className || ''}`}>
       <ul className={navClass}>{renderNavLinks()}</ul>
       <div className="v-tabs-content">{renderContent()}</div>
     </div>

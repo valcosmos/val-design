@@ -1,3 +1,13 @@
-import Tab from './tabs'
+import Tab, { TabsProps } from './tabs'
+import TabItem, { TabItemProps } from './tabItem'
+import { FC } from 'react'
 
-export default Tab
+export type ITabComponent = FC<TabsProps> & {
+  Item: FC<TabItemProps>
+}
+
+const TransTab = Tab as ITabComponent
+
+TransTab.Item = TabItem
+
+export default TransTab

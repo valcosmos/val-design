@@ -20,10 +20,37 @@ const Template: ComponentStory<typeof Upload> = (props) => (
 
 export const SimpleUpload = Template.bind({})
 SimpleUpload.args = {
-  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+  action: 'https://run.mocky.io/v3/f58d4544-a9d0-44ad-b9f8-ce2ddf48a1ba',
   onChange: action('changed'),
   onRemove: action('removed'),
-  name: 'fileName',
+  name: 'file',
   multiple: true,
-  drag: true
+  drag: true,
+  defaultFileList: [
+    {
+      uid: 'aaaa',
+      name: 'image.png',
+      status: 'success',
+      size: 1024
+    },
+    {
+      uid: 'bbbb',
+      name: 'image1.png',
+      status: 'ready',
+      size: 1024
+    },
+    {
+      uid: 'cccc',
+      name: 'image2.png',
+      status: 'uploading',
+      size: 1024,
+      percent: 80
+    },
+    {
+      uid: 'ffff',
+      name: 'image3.png',
+      status: 'error',
+      size: 1024
+    }
+  ]
 }

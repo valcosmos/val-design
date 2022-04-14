@@ -1,4 +1,4 @@
-import React, { FC, useRef, ChangeEvent, useState } from 'react'
+import React, { FC, useRef, ChangeEvent, useState, ReactNode } from 'react'
 import axios from 'axios'
 import UploadList from './uploadList'
 import Dragger from './dragger'
@@ -15,7 +15,7 @@ export interface UploadFile {
 }
 export interface UploadProps {
   /**
-   * 请求类型
+   * 接口地址
    */
   action: string
   /**
@@ -59,11 +59,11 @@ export interface UploadProps {
    */
   data?: { [key: string]: any }
   /**
-   *
+   * 跨域请求时是否需要使用凭证
    */
   withCredentials?: boolean
   /**
-   *
+   * 返回数据的类型
    */
   accept?: string
   /**
@@ -74,6 +74,11 @@ export interface UploadProps {
    * 是否开启拖拽
    */
   drag?: boolean
+  /**
+   * children
+   *
+   */
+  children?: ReactNode | string
 }
 
 export const Upload: FC<UploadProps> = (props) => {

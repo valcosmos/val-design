@@ -34,24 +34,22 @@ $light: $grey-100 !default;
 $dark: $grey-800 !default;
 
 $theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'success': $success,
-  'info': $info,
-  'warning': $warning,
-  'danger': $danger,
-  'light': $light,
-  'dark': $dark
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
 );
 
 // 字体系统
 // 主要字体（无衬线字体）
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-  'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 // 备用字体（等宽字体，对代码友好）
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-  'Liberation Mono', 'Courier New', monospace !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // 无衬线字体3作为默认字体
 $font-family-base: $font-family-sans-serif !default;
 
@@ -101,7 +99,7 @@ $spacer: 1rem !default;
 $paragraph-margin-bottom: 1rem !default;
 
 // 字体其他部分 heading list hr 等等
-$headings-margin-bottom: $spacer / 2 !default;
+$headings-margin-bottom: calc($spacer / 2) !default;
 $headings-font-family: null !default;
 $headings-font-style: null !default;
 $headings-font-weight: 500 !default;
@@ -202,8 +200,7 @@ $btn-border-width: $border-width !default;
 
 // 按钮其他
 // $btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
-$btn-box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
-  0 1px 5px 0 rgb(0 0 0 / 12%) !default;
+$btn-box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%) !default;
 
 $btn-disabled-opacity: 0.65 !default;
 
@@ -217,14 +214,13 @@ $btn-border-radius: $border-radius !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 $btn-border-radius-sm: $border-radius-sm !default;
 
-$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
 
 // menu
 $menu-border-width: $border-width !default;
 $menu-border-color: $border-color !default;
-$menu-box-shadow: inset 0 1px 0 rgba($white, 0.15),
-  0 1px 1px rgba($black, 0.075) !default;
+$menu-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
 $menu-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
 
 // menu-item
@@ -236,8 +232,7 @@ $menu-item-disabled-color: $grey-600 !default;
 
 //sub-menu
 //submenu
-$submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12),
-  0 0 6px 0 rgba(0, 0, 0, 0.04);
+$submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
 
 //input
 $input-padding-y: $btn-padding-y !default;

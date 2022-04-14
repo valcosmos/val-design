@@ -3,7 +3,7 @@ $nav-tabs-border-color: #dee2e6 !default;
 $nav-link-padding-y: 0.5rem !default;
 $nav-link-padding-x: 1rem !default;
 $nav-tabs-link-hover-color: $blue !default;
-$nav-link-disabled-color: $blue !default;
+$nav-link-disabled-color: $secondary !default;
 $nav-tabs-link-active-color: $blue !default;
 $nav-tabs-border-radius: 0.25rem !default;
 $nav-tabs-link-active-bg: #fff !default;
@@ -29,8 +29,9 @@ $nav-tabs-content-margin: 1rem !default;
   // Disabled state lightens text
   &.disabled {
     color: $nav-link-disabled-color;
-    pointer-events: none;
-    cursor: default;
+    cursor: not-allowed;
+    // pointer-events: none;
+    opacity: .5;
     background-color: transparent;
     border-color: transparent;
   }
@@ -41,8 +42,7 @@ $nav-tabs-content-margin: 1rem !default;
 .nav-line {
   .v-tabs-nav-item {
     &.is-active {
-      border-bottom: $nav-tabs-border-width * 2 solid
-        $nav-tabs-link-active-color;
+      border-bottom: $nav-tabs-border-width * 2 solid $nav-tabs-link-active-color;
     }
   }
 }
