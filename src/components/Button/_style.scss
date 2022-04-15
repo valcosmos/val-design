@@ -10,15 +10,9 @@
   background-image: none;
   border: $btn-border-width solid transparent;
   outline: none;
-  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
-    0 1px 5px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
   transition: all ease-in-out 3s;
-  @include button-size(
-    $btn-padding-y,
-    $btn-padding-x,
-    $btn-font-size,
-    $border-radius
-  );
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
   // padding: $btn-padding-y $btn-padding-x;
   // font-size: $btn-font-size;
   // border-radius: $border-radius;
@@ -37,32 +31,14 @@
 }
 
 .btn-lg {
-  @include button-size(
-    $btn-padding-y-lg,
-    $btn-padding-x-lg,
-    $btn-font-size-lg,
-    $border-radius-lg
-  );
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $border-radius-lg);
 }
 .btn-sm {
-  @include button-size(
-    $btn-padding-y-sm,
-    $btn-padding-x-sm,
-    $btn-font-size-sm,
-    $border-radius-sm
-  );
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $border-radius-sm);
 }
 
 .btn-default {
-  @include button-style(
-    $white,
-    $grey-400,
-    $grey-900,
-    $white,
-    $primary,
-    $primary,
-    $white
-  );
+  @include button-style($white, $grey-400, $grey-900, $white, $primary, $primary, $white);
 }
 
 .btn-primary {
@@ -89,6 +65,7 @@
   color: $btn-link-color;
   text-decoration: $link-decoration;
   box-shadow: none;
+  background-color: transparent;
   &:hover {
     color: lighten($color: $btn-link-color, $amount: 5%);
     text-decoration: $link-hover-decoration;
@@ -97,6 +74,7 @@
   &.focus {
     text-decoration: $link-hover-decoration;
     box-shadow: none;
+    outline: none;
   }
   &:disabled,
   &.disabled {

@@ -16,6 +16,8 @@ import classNames from 'classnames'
 // const ButtonHTMLTypes = tuple('submit', 'button', 'reset')
 // export type ButtonHTMLType = typeof ButtonHTMLTypes[number]
 
+export type ButtonTypes = 'default' | 'primary' | 'success' | 'danger' | 'warning' | 'link'
+
 interface BaseButtonProps {
   /**
    * 按钮类名
@@ -32,7 +34,7 @@ interface BaseButtonProps {
   /**
    * 按钮类型
    */
-  type?: 'default' | 'primary' | 'success' | 'danger' | 'warning' | 'link'
+  type?: ButtonTypes
   /**
    * 按钮原生类型
    */
