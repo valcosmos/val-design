@@ -13,12 +13,29 @@ type AnimationName =
 // }
 
 type TransitionProps = CSSTransitionProps & {
-  animation?: AnimationName
+  /**
+   * 控制是否显示
+   */
+  in: boolean
+  /**
+   * 动画名称
+   */
+  animation: AnimationName
+  /**
+   * 动画结束后，元素保留的时间
+   */
+  timeout: number
+  /**
+   * 元素是否需要包裹
+   */
   wrapper?: boolean
+  /**
+   * 子元素
+   */
   children?: ReactNode | string
 }
 
-const Transition: React.FC<TransitionProps> = (props) => {
+export const Transition: React.FC<TransitionProps> = (props) => {
   const { children, classNames, animation, wrapper, ...restProps } = props
   return (
     <CSSTransition
