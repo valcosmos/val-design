@@ -34,6 +34,7 @@ export interface AlertProps {
  * ```js
  *
  * import { Alert } from 'val-design'
+ * 
  *
  * ```
  */

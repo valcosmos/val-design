@@ -6,12 +6,19 @@
 
 <h1 align="center">Val Design</h1>
 
-一个轻量的 React 组件库
+## 简介
 
+- 一个个人制作的 React 组件库，欢迎各位提交 issues
+- 使用 `TypeScript` 和 `React Hook` 构建
+- 使用`react-testing-library`完成部分组件的单元测试
+- 使用`storybook`进行本地调试，并自动生成组件库文档
+- 使用`react-doc-gen`通过注释自动生成文档内容
+- 部分组件库通过对第三方库进行二次封装完成，`Icon`组件使用`react-fontawesome`进行二次封装
+- 集成 `CI/CD`, 使用 `CircleCI` + `Github Page`, 进行文档部署
 
-👉 👉 👉 👉  [文档地址](https://valcosmos.github.io/val-design/?path=/docs/val-design-introduction--page)
+👉 👉 👉 👉 [Document](https://valcosmos.github.io/val-design/?path=/docs/val-design-introduction--page)
 
-👉 👉 👉 👉 在线 demo：[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm?file=src%2FApp.jsx)
+👉 👉 👉 👉 Example [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm)
 
 ## 📦 安装
 
@@ -44,8 +51,6 @@ const App = () => (
   </>
 )
 ```
-
-
 
 ## 🌈 定制主题
 
