@@ -19,7 +19,7 @@ jobs:
           keys:
             - val-design-cache
       # 4、执行名称为install的任务 命令为 yarn
-      - run: yarn config set registry http://registry.npm.taobao.org/
+      - run: yarn config set registry https://registry.npmmirror.com/
       - run:
           name: Install
           command: yarn
