@@ -14,10 +14,6 @@ type AnimationName =
 
 type TransitionProps = CSSTransitionProps & {
   /**
-   * 控制是否显示
-   */
-  in: boolean
-  /**
    * 动画名称
    */
   animation: AnimationName
