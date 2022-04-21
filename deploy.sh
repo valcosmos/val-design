@@ -40,6 +40,10 @@ fi
 # 把构建好的文件目录拷贝进来
 cp -a "../${V_DIST}/." .
 
+rm -rf favicon.ico
+
+cp "../favicon.ico" . 
+
 ls -la
 
 # 把所有文件添加到git

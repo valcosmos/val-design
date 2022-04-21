@@ -1,6 +1,6 @@
+import React from 'react'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import React from 'react'
 
 import '../src/styles/index.scss'
 
@@ -13,7 +13,13 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/
     }
-  }
+  },
+  // options: {
+    // theme: {
+    //   brandTitle: 'val-design',
+    //   brandUrl: 'https://github.com/valcosmos/val-design'
+    // }
+  // }
 }
 
 const styles: React.CSSProperties = {
