@@ -1,6 +1,4 @@
-import type { StorybookConfig } from '@storybook/core-common'
-
-const config: StorybookConfig = {
+const config = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -20,6 +18,13 @@ const config: StorybookConfig = {
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-vite'
+  },
+  async viteFinal(config, { configType }) {
+    // customize the Vite config here
+    if (configType === 'PRODUCTION') {
+      return { ...config, base: './' }
+    }
+    return config
   }
 }
 
