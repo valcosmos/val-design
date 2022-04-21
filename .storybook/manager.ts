@@ -13,7 +13,7 @@ addons.setConfig({
   // theme: themes.dark
   theme: create({
     base: 'light',
-    brandTitle: '✨ ==> val-design',
+    brandTitle: '✨ val-design',
     brandUrl: 'https://github.com/valcosmos/val-design'
     // brandImage: 'https://valzt.cn/media/avatar_me.png'
   })

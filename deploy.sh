@@ -42,7 +42,7 @@ cp -a "../${V_DIST}/." .
 
 rm -rf favicon.ico
 
-cp "../favicon.ico" . 
+cp ../favicon.ico . 
 
 ls -la
 
