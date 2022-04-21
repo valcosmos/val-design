@@ -1,6 +1,6 @@
 {
   "name": "val-design",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "private": false,
   "license": "MIT",
   "description": "val-design React component library",
@@ -11,7 +11,7 @@
     "Component",
     "UI"
   ],
-  "homepage": "https://valcosmos.github.io/val-design/",
+  "homepage": "https://valcosmos.github.io/val-design",
   "repository": {
     "type": "git",
     "url": "https://github.com/valcosmos/val-design.git"

@@ -3,7 +3,7 @@
 </div>  
  
 <h1 align="center">Welcome to val-design</h1>  
- 
+
 
 ## Introduction
 
@@ -62,10 +62,6 @@ const App = () => (
 ```
 
 ## 🌈 定制主题
-
-todo...
-
-## 🛡 TypeScript
 
 todo...
 
