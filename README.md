@@ -25,7 +25,7 @@
 
 ## Tutorial
 
-👉 👉 👉 👉 [文档｜ Document](https://valcosmos.github.io/val-design/?path=/docs/val-design-introduction--page)
+👉 👉 👉 👉 [文档｜ Document](https://valcosmos.github.io/val-design)
 
 👉 👉 👉 👉 示例｜ Example [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm)
 
