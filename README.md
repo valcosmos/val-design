@@ -8,8 +8,7 @@
 ## Introduction
 
 - ✨ A personal `React component library`, welcome to submit questions.
-- 🔭 Built with `TypeScript` and `React Hooks`.
-- 🌱 Use `react-testing-library` to complete unit testing of components.
+- 🔭 Built with `Vite` `TypeScript` and `React Hooks`.
 - 😄 Use `storybook` for local debugging and auto-generate component library documentation.
 - 😉 Automatically generate documentation content from comments using `react-doc-gen`.
 - ⭐️ Some components are completed by Other component libraries, and `Icon` con components are secondary encapsulated using `react-fontawesome`.
@@ -18,9 +17,8 @@
 ## 简介
 
 - ✨ 一个个人制作的 `React 组件库`，欢迎各位提交 issues
-- 🔭 使用 `TypeScript` 和 `React Hook` 构建
-- 🌱 使用`react-testing-library`完成部分组件的单元测试
-- 😄 使用`storybook`进行本地调试，并自动生成组件库文档
+- 🔭 使用 `Vite` `TypeScript` 和 `React Hook` 构建
+- 🌱 使用`storybook`进行本地调试，并自动生成组件库文档
 - 😉 使用`react-doc-gen`通过注释自动生成文档内容
 - ⭐️ 部分组件库通过对第三方库进行二次封装完成，`Icon`组件使用`react-fontawesome`进行二次封装
 - 🌔 集成 `CI/CD`, 使用 `CircleCI` + `Github Page`, 进行文档部署
