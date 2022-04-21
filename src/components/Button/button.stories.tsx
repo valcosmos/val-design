@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Button } from './button'
 
-//👇 This default export determines where your story goes in the story list
+// 👇 This default export determines where your story goes in the story list
 export default {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
@@ -13,7 +13,7 @@ export default {
   component: Button
 } as ComponentMeta<typeof Button>
 
-//👇 We create a “template” of how args map to rendering
+// 👇 We create a “template” of how args map to rendering
 const Template: ComponentStory<typeof Button> = (args) => (
   <Button type="primary" onClick={action('clicked')} {...args}></Button>
 )

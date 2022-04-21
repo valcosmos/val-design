@@ -5,8 +5,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/preset-create-react-app'
+    '@storybook/addon-interactions'
   ],
   typescript: {
     check: false,
@@ -20,7 +19,7 @@ const config: StorybookConfig = {
   },
   framework: '@storybook/react',
   core: {
-    builder: 'webpack5'
+    builder: '@storybook/builder-vite'
   }
 }
 

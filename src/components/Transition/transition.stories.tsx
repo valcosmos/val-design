@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { FC, ReactNode, useState } from 'react'
+import React, { useState } from 'react'
+import { TransitionProps } from 'react-transition-group/Transition'
 import Button from '../Button'
 
 import { Transition } from './transition'
@@ -11,7 +12,7 @@ export default {
 const Template: ComponentStory<typeof Transition> = ({
   animation,
   timeout
-}) => {
+}: TransitionProps) => {
   const [show, setShow] = useState<boolean>(false)
 
   return (
@@ -32,7 +33,7 @@ const Template: ComponentStory<typeof Transition> = ({
       >
         Click to show the transition animation box
       </Button>
-      <Transition in={show} animation={animation} timeout={timeout}>
+      <Transition in={show} animation={animation} timeout={300}>
         <div
           style={{
             width: '200px',
@@ -48,6 +49,5 @@ const Template: ComponentStory<typeof Transition> = ({
 
 export const Default = Template.bind({})
 Default.args = {
-  animation: 'zoom-in-top',
-  timeout: 300
+  animation: 'zoom-in-top'
 }

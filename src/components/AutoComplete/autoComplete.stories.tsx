@@ -1,10 +1,9 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { AutoComplete, DataSourceType } from './autoComplete'
+import { AutoComplete } from './autoComplete'
 import axios from 'axios'
 
-const arr = ['1', '2', '4', '5']
 const handleFetch = (query: string) => {
   // return arr.filter((item) => parseInt(item) > parseInt(query))
   return axios
@@ -28,21 +27,22 @@ const Template: ComponentStory<typeof AutoComplete> = (props) => (
 
 export const autoComplete = Template.bind({})
 
-interface GithunUserProps {
-  login: string
-  url: string
-  avatar_url: string
-}
-const renderOption = (i: DataSourceType) => {
-  const item = i as DataSourceType<GithunUserProps>
-  return (
-    <>
-      <h2>login:{item.login}</h2>
-      <p>url:{item.url}</p>
-      <p>avatar:{item.avatar_url}</p>
-    </>
-  )
-}
+// interface GithunUserProps {
+//   login: string
+//   url: string
+//   avatar_url: string
+// }
+// const renderOption = (i: DataSourceType) => {
+//   const item = i as DataSourceType<GithunUserProps>
+//   return (
+//     <>
+//       <h2>login:{item.login}</h2>
+//       <p>url:{item.url}</p>
+//       <p>avatar:{item.avatar_url}</p>
+//     </>
+//   )
+// }
+
 autoComplete.args = {
   fetchSuggestions: handleFetch,
   onSelect: action('selected')

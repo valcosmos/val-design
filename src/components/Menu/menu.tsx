@@ -78,7 +78,7 @@ export const Menu: FC<MenuProps> = (props) => {
     }
   }
   const passedContext: IMenuContext = {
-    index: currentActive ? currentActive : '0',
+    index: currentActive || '0',
     onSelect: handleClick,
     mode,
     defaultOpenSubMenus

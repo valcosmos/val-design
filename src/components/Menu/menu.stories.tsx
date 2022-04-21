@@ -1,9 +1,8 @@
-import React, { FC } from 'react'
+import React from 'react'
 
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Menu from './index'
 import { action } from '@storybook/addon-actions'
-import { MenuProps } from './menu'
 
 export default {
   title: 'val-design/Menu 导航菜单',

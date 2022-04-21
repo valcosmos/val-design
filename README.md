@@ -1,10 +1,9 @@
-<div align="center" style="margin-bottom: 40px; text-align: center">
-  <a href="javascript:;">
-    <img width="80px" src="https://valzt.cn/media/avatar_me.png">
-  </a>
-</div>
-
-<h1 align="center" style="margin-bottom: 40px; text-align: center">Welcome to val-design</h1>
+<div align="center">
+    <img width="80px" src="https://valzt.cn/media/avatar_me.png" />
+</div>  
+ 
+<h1 align="center">Welcome to val-design</h1>  
+ 
 
 ## Introduction
 

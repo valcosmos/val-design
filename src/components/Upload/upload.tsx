@@ -140,7 +140,7 @@ export const Upload: FC<UploadProps> = (props) => {
     }
   }
   const uploadFiles = (files: FileList) => {
-    let postFiles = Array.from(files)
+    const postFiles = Array.from(files)
     postFiles.forEach((file) => {
       if (!beforeUpload) {
         post(file)
@@ -157,7 +157,7 @@ export const Upload: FC<UploadProps> = (props) => {
     })
   }
   const post = (file: File) => {
-    let _file: UploadFile = {
+    const _file: UploadFile = {
       uid: Date.now() + 'upload-file',
       status: 'ready',
       name: file.name,
@@ -165,7 +165,7 @@ export const Upload: FC<UploadProps> = (props) => {
       percent: 0,
       raw: file
     }
-    //setFileList([_file, ...fileList])
+    // setFileList([_file, ...fileList])
     setFileList((prevList) => {
       return [_file, ...prevList]
     })
@@ -184,7 +184,7 @@ export const Upload: FC<UploadProps> = (props) => {
         },
         withCredentials,
         onUploadProgress: (e) => {
-          let percentage = Math.round((e.loaded * 100) / e.total) || 0
+          const percentage = Math.round((e.loaded * 100) / e.total) || 0
           if (percentage < 100) {
             updateFileList(_file, { percent: percentage, status: 'uploading' })
             if (onProgress) {
@@ -220,7 +220,8 @@ export const Upload: FC<UploadProps> = (props) => {
         style={{ display: 'inline-block' }}
         onClick={handleClick}
       >
-        {drag ? (
+        {drag
+          ? (
           <Dragger
             onFile={(files) => {
               uploadFiles(files)
@@ -228,9 +229,10 @@ export const Upload: FC<UploadProps> = (props) => {
           >
             {children}
           </Dragger>
-        ) : (
-          children
-        )}
+            )
+          : (
+              children
+            )}
         <input
           className="v-file-input"
           style={{ display: 'none' }}

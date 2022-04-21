@@ -19,108 +19,59 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-regular-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.26.1",
-    "classnames": "^2.3.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-transition-group": "^4.4.2",
-    "web-vitals": "^2.1.4"
-  },
-  "peerDependencies": {
-    "react": ">=17.0.2",
-    "react-dom": ">=17.0.2"
-  },
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "types": "dist/main.d.ts",
   "scripts": {
-    "start": "react-scripts start",
-    "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
-    "test:nowatch": "cross-env CI=true react-scripts test",
-    "clean": "rimraf ./dist",
-    "build": "yarn clean && yarn build-ts && yarn build-css",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "preview": "vite preview",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "lint": "eslint --fix --ext js,ts,tsx src --max-warnings 5",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "sass ./src/styles/index.scss ./dist/index.css",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "prepublishOnly": "yarn build"
+    "clean": "rimraf ./dist",
+    "build": "yarn clean && yarn lint && yarn build-ts && yarn build-css",
+    "prepublishOnly": "yarn build",
+    "prepare": "husky install"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      },
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      },
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "axios": "^0.26.1",
+    "classnames": "^2.3.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.4.22",
     "@storybook/addon-links": "^6.4.22",
-    "@storybook/builder-webpack5": "^6.4.22",
-    "@storybook/manager-webpack5": "^6.4.22",
-    "@storybook/node-logger": "^6.4.22",
-    "@storybook/preset-create-react-app": "^4.1.0",
+    "@storybook/builder-vite": "^0.1.29",
     "@storybook/react": "^6.4.22",
-    "@storybook/testing-library": "^0.0.9",
-    "@types/jest": "^27.4.1",
-    "@types/mockjs": "^1.0.6",
-    "@types/react": "^18.0.5",
-    "@types/react-dom": "^18.0.0",
+    "@storybook/testing-library": "^0.0.10",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2",
     "@types/react-transition-group": "^4.4.4",
-    "cross-env": "^7.0.3",
-    "mini-css-extract-plugin": "^2.6.0",
-    "react-scripts": "5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.13.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
     "rimraf": "^3.0.2",
-    "sass": "^1.50.0",
+    "sass": "^1.50.1",
     "typescript": "^4.6.3",
-    "vite": "^2.9.5"
+    "vite": "^2.9.5",
+    "husky": "^7.0.4"
   }
 }

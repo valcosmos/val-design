@@ -109,6 +109,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
 
     // 加载成功后取消高亮
     setHighlightIndex(-1)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedValue])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

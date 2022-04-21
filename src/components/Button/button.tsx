@@ -82,7 +82,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const classes = classNames('btn', className, {
     [`btn-${type}`]: type,
     [`btn-${size}`]: size,
-    [`disabled`]: type === 'link' && disabled
+    disabled: type === 'link' && disabled
   })
   if (type === 'link' && href) {
     return (

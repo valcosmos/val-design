@@ -27,25 +27,25 @@ export interface IconProps extends FontAwesomeIconProps {
  * ### 引用方法
  *
  * ```js
- * 
+ *
  * // 按需倒入
- * 
+ *
  * import { Icon } from 'val-design'
- * 
+ *
  * import { faCoffee } from '@fortawesome/free-solid-svg-icons'
- * 
+ *
  * <Icon icon="faCoffee" size="3x" />
- * 
+ *
  * // 全局倒入
  * // index.tsx 中导入
  * import { library } from '@fortawesome/fontawesome-svg-core'
  * import { fas } from '@fortawesome/free-solid-svg-icons'
- * 
+ *
  * library.add(fas)
- * 
+ *
  * // 组件中使用（直接导入即可）
  * <Icon icon="faCoffee" size="3x" />
- * 
+ *
  *
  * ```
  */

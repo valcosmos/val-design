@@ -10,7 +10,7 @@ export interface TabsProps {
    * 可以扩展的 className
    */
   className?: string
-  /**点击 Tab 触发的回调函数 */
+  /** 点击 Tab 触发的回调函数 */
   onSelect?: (selectedIndex: number) => void
   /**
    * Tabs的样式，两种可选，默认为 line
@@ -56,7 +56,7 @@ export const Tabs: FC<TabsProps> = (props) => {
       const { label, disabled } = childElement.props
       const classes = classNames('v-tabs-nav-item', {
         'is-active': activeIndex === index,
-        disabled: disabled
+        disabled
       })
       return (
         <li
