@@ -2,8 +2,7 @@
     <img width="80px" src="https://valzt.cn/media/avatar_me.png" />
 </div>  
  
-<h1 align="center">Welcome to val-design</h1>  
-
+<h1 align="center">Welcome to val-design</h1>
 
 ## Introduction
 
@@ -61,6 +60,22 @@ const App = () => (
 )
 ```
 
+## ⌨️ 本地开发
+
+克隆到本地开发:
+
+```bash
+
+git clone git@github.com:valcosmos/val-design.git
+
+cd val-design
+
+yarn
+
+yarn storybook
+
+```
+
 ## 🌈 定制主题
 
 todo...
@@ -68,14 +83,3 @@ todo...
 ## 🌍 国际化
 
 todo...
-
-## ⌨️ 本地开发
-
-克隆到本地开发:
-
-```bash
-$ git clone git@github.com:valcosmos/val-design.git
-$ cd val-design
-$ yarn
-$ yarn start
-```
