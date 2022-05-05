@@ -4,6 +4,16 @@
  
 <h1 align="center">Welcome to val-design</h1>
 
+<div align="center">
+<img src="https://img.shields.io/badge/build-passing-informational?style=flat&logo=GitHub&color=181717" />
+
+<img src="https://img.shields.io/badge/node-v16.15.0-informational?style=flat&logo=Node.js&color=339933" />
+
+<img src="https://img.shields.io/badge/npm-v8.5.5-informational?style=flat&logo=npm&color=CB3837" />
+
+<img src="https://img.shields.io/badge/License-MIT-green.svg" />
+</div>
+
 ## Introduction
 
 - ✨ A personal `React component library`, welcome to submit questions.
@@ -28,7 +38,7 @@
 
 👉 👉 👉 👉 示例｜ Example [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm)
 
-## 📦 安装
+## 📦 Install
 
 ```bash
 npm i val-design
@@ -38,15 +48,15 @@ npm i val-design
 yarn add val-design
 ```
 
-## 🔨 示例
+## 🔨 Usage
 
-引入样式：
+And import style manually：
 
 ```jsx
 import 'val-design/dist/index.css'
 ```
 
-导入组件：
+And import button：
 
 ```jsx
 import { Button } from 'val-design'
@@ -60,9 +70,9 @@ const App = () => (
 )
 ```
 
-## ⌨️ 本地开发
+## ⌨️ Development
 
-克隆到本地开发:
+clone locally:
 
 ```bash
 
@@ -76,10 +86,12 @@ yarn storybook
 
 ```
 
-## 🌈 定制主题
+Open your browser and visit http://localhost:6006
+
+## 🌈 Theme
 
 todo...
 
-## 🌍 国际化
+## 🌍 Internationalization
 
 todo...
