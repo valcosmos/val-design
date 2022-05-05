@@ -4,6 +4,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 
 import '../src/styles/index.scss'
 
+import '../src/styles/storyfixed.scss'
+
 library.add(fas)
 
 export const parameters = {
@@ -13,12 +15,12 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/
     }
-  },
+  }
   // options: {
-    // theme: {
-    //   brandTitle: 'val-design',
-    //   brandUrl: 'https://github.com/valcosmos/val-design'
-    // }
+  // theme: {
+  //   brandTitle: 'val-design',
+  //   brandUrl: 'https://github.com/valcosmos/val-design'
+  // }
   // }
 }
 

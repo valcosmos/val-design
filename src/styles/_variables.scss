@@ -289,3 +289,12 @@ $progress-bg: $grey-200 !default;
 $progress-border-radius: $border-radius !default;
 $progress-bar-color: $white !default;
 $progress-bar-transition: width 0.6s ease !default;
+
+// message
+
+$message-margin-y: 0.75rem !default;
+
+$message-padding-x: 1.5rem !default;
+$message-padding-y: 0.75rem !default;
+
+$message-icon-margin-x: calc($spacer / 2) !default;

@@ -7,6 +7,7 @@ type AnimationName =
   | 'zoom-in-left'
   | 'zoom-in-bottom'
   | 'zoom-in-right'
+  | 'slide-in-top'
 
 // interface TransitionProps extends CSSTransitionProps {
 //   animation?: AnimationName

@@ -30,8 +30,8 @@ Primary.args = {
   children: 'Primary Button'
 }
 
-export const Succcess = Template.bind({})
-Succcess.args = {
+export const Success = Template.bind({})
+Success.args = {
   type: 'success',
   children: 'Success Button'
 }
