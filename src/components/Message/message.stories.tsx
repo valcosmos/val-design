@@ -9,8 +9,8 @@ export default {
   component: Message
 } as ComponentMeta<typeof Message>
 
-export const Example: ComponentStory<typeof Button> = (args) => (
-  <>
+export const Example: ComponentStory<typeof Message> = (args) => (
+  <code>
     <Button
       type="default"
       onClick={() => {
@@ -46,7 +46,7 @@ export const Example: ComponentStory<typeof Button> = (args) => (
     >
       Error Message
     </Button>
-  </>
+  </code>
 )
 
 // export const Info = Template.bind({})

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { TransitionGroup } from 'react-transition-group'
 import Transition from '../Transition/transition'
 import Message, { MessageType } from './message'
+import { v4 as uuidV4 } from 'uuid'
 
 export interface MessageApi {
   info: (text: string) => void
@@ -17,13 +18,7 @@ export interface Notice {
   type: MessageType
 }
 
-let seed = 0
-const now = Date.now()
-const getUuid = (): string => {
-  const id = seed
-  seed += 1
-  return `MESSAGE_${now}_${id}`
-}
+const getUUID = (): string => uuidV4()
 
 let add: (notice: Notice) => void
 
@@ -34,7 +29,6 @@ export const MessageContainer = () => {
 
   const remove = (notice: Notice) => {
     const { key } = notice
-
     setNotices((prevNotices) => prevNotices.filter((item) => key !== item.key))
   }
 
@@ -70,7 +64,6 @@ if (!el) {
   el = document.createElement('div')
   el.className = 'message-wrapper'
   el.id = 'message-wrapper'
-
   document.body.append(el)
 }
 
@@ -80,28 +73,28 @@ export const message: MessageApi = {
   info: (text) => {
     add({
       text,
-      key: getUuid(),
+      key: getUUID(),
       type: 'info'
     })
   },
   success: (text) => {
     add({
       text,
-      key: getUuid(),
+      key: getUUID(),
       type: 'success'
     })
   },
   warning: (text) => {
     add({
       text,
-      key: getUuid(),
+      key: getUUID(),
       type: 'warning'
     })
   },
   error: (text) => {
     add({
       text,
-      key: getUuid(),
+      key: getUUID(),
       type: 'danger'
     })
   }

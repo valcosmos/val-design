@@ -3,34 +3,47 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import Icon from '../Icon/icon'
 export type MessageType = 'info' | 'success' | 'danger' | 'warning'
 
-export interface MessageProps {
+interface MessageProps {
+  /**
+   * 提示文字
+   */
   text: string
+  /**
+   * 提示类型
+   */
   type: MessageType
 }
 
+/**
+ * > message组件，
+ *
+ * ### 引用方法
+ *
+ * ``` js
+ *
+ * import { Button } from 'val-design'
+ *
+ * ```
+ */
 const Message: FC<MessageProps> = (props: MessageProps) => {
   const { text, type } = props
 
-  const renderIcon = (messageType: MessageType): ReactElement => {
-    let messageIcon: IconProp
+  const renderIcon = (msgType: MessageType): ReactElement => {
+    let msgIcon: IconProp = 'check-circle'
 
-    switch (messageType) {
-      case 'success':
-        messageIcon = 'check-circle'
-        break
-      case 'danger':
-        messageIcon = 'times-circle'
-        break
-      case 'warning':
-        messageIcon = 'exclamation-circle'
-        break
-      case 'info':
-      default:
-        messageIcon = 'info-circle'
-        break
+    if (msgType === 'success') {
+      msgIcon = 'check-circle'
     }
-
-    return <Icon icon={messageIcon} theme={messageType} />
+    if (msgType === 'danger') {
+      msgIcon = 'times-circle'
+    }
+    if (msgType === 'warning') {
+      msgIcon = 'exclamation-circle'
+    }
+    if (msgType === 'info') {
+      msgIcon = 'info-circle'
+    }
+    return <Icon icon={msgIcon} theme={msgType} />
   }
 
   return (
