@@ -1,15 +1,20 @@
 {
   "name": "val-design",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "private": false,
   "license": "MIT",
-  "description": "val-design React component library",
+  "description": "React UI component library",
   "author": "Cupid Valentine",
   "keywords": [
     "val-design",
+    "front-end",
+    "CSS",
+    "Sass",
     "React",
     "Component",
-    "UI"
+    "UI",
+    "TypeScript",
+    "React Hooks"
   ],
   "homepage": "https://valcosmos.github.io/val-design",
   "repository": {
