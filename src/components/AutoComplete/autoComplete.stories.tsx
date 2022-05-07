@@ -25,7 +25,7 @@ const Template: ComponentStory<typeof AutoComplete> = (props) => (
   <AutoComplete {...props} />
 )
 
-export const autoComplete = Template.bind({})
+export const DefaultAutoComplete = Template.bind({})
 
 // interface GithunUserProps {
 //   login: string
@@ -43,7 +43,7 @@ export const autoComplete = Template.bind({})
 //   )
 // }
 
-autoComplete.args = {
+DefaultAutoComplete.args = {
   fetchSuggestions: handleFetch,
   onSelect: action('selected')
   // renderOptions: renderOption

@@ -16,9 +16,9 @@ const Template: ComponentStory<typeof Progress> = (args) => (
   <Progress {...args} />
 )
 
-export const defaultProgress = Template.bind({})
+export const DefaultProgress = Template.bind({})
 
-defaultProgress.args = {
+DefaultProgress.args = {
   percent: 80,
   theme: 'primary'
 }

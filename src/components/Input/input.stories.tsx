@@ -12,54 +12,53 @@ const Template: ComponentStory<typeof Input> = (args) => (
   <Input {...args}></Input>
 )
 
-export const defaultInput = Template.bind({})
+export const DefaultInput = Template.bind({})
 const style: React.CSSProperties = {
   width: '300px'
 }
-defaultInput.args = {
+DefaultInput.args = {
   style,
   placeholder: 'please input',
   onChange: action('change')
 }
 
-export const disabledInput = Template.bind({})
-disabledInput.args = {
+export const DisabledInput = Template.bind({})
+DisabledInput.args = {
   style,
   placeholder: 'disabled input',
   disabled: true
 }
 
-export const iconInput = Template.bind({})
-iconInput.args = {
+export const IconInput = Template.bind({})
+IconInput.args = {
   style,
   placeholder: 'input with icon',
   icon: 'search'
 }
 
-export const largeInput = Template.bind({})
-largeInput.args = {
+export const LargeInput = Template.bind({})
+LargeInput.args = {
   style,
   placeholder: 'large size',
   size: 'lg'
 }
 
-export const smallInput = Template.bind({})
-smallInput.args = {
+export const SmallInput = Template.bind({})
+SmallInput.args = {
   style,
   placeholder: 'small size',
   size: 'sm'
 }
 
-export const prepandInput = Template.bind({})
-prepandInput.args = {
+export const PrependInput = Template.bind({})
+PrependInput.args = {
   style,
   defaultValue: 'prepend text',
   prepend: 'https://'
 }
 
-export const appendInput = Template.bind({})
-
-appendInput.args = {
+export const AppendInput = Template.bind({})
+AppendInput.args = {
   style,
   defaultValue: 'google',
   append: '.com'

@@ -11,57 +11,56 @@ const Template: ComponentStory<typeof Icon> = (props) => (
   <Icon {...props} size="3x" />
 )
 
-export const checkIcon = Template.bind({})
-checkIcon.args = {
+export const CheckIcon = Template.bind({})
+CheckIcon.args = {
   icon: 'check'
 }
-export const coffeeIcon = Template.bind({})
-coffeeIcon.args = {
+export const CoffeeIcon = Template.bind({})
+CoffeeIcon.args = {
   icon: 'coffee'
 }
 
-export const closeIcon = Template.bind({})
-closeIcon.args = {
+export const CloseIcon = Template.bind({})
+CloseIcon.args = {
   icon: 'xmark'
 }
 
-export const trashIcon = Template.bind({})
-trashIcon.args = {
+export const TrashIcon = Template.bind({})
+TrashIcon.args = {
   icon: 'trash'
 }
 
-export const successIcon = Template.bind({})
-successIcon.args = {
+export const SuccessIcon = Template.bind({})
+SuccessIcon.args = {
   icon: 'check',
   theme: 'success'
 }
-export const dangerIcon = Template.bind({})
-dangerIcon.args = {
+export const DangerIcon = Template.bind({})
+DangerIcon.args = {
   icon: 'times',
   theme: 'danger'
 }
-export const primaryIcon = Template.bind({})
-primaryIcon.args = {
+export const PrimaryIcon = Template.bind({})
+PrimaryIcon.args = {
   icon: 'anchor',
   theme: 'primary'
 }
-export const warningIcon = Template.bind({})
-warningIcon.args = {
+export const WarningIcon = Template.bind({})
+WarningIcon.args = {
   icon: 'exclamation-circle',
   theme: 'warning'
 }
 
-export const spin = Template.bind({})
-spin.args = {
+export const Spin = Template.bind({})
+Spin.args = {
   spin: true,
   icon: 'spinner',
 
   theme: 'primary'
 }
-export const pulse = Template.bind({})
-pulse.args = {
+export const Pulse = Template.bind({})
+Pulse.args = {
   pulse: true,
   icon: 'spinner',
-
   theme: 'success'
 }

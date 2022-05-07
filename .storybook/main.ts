@@ -1,4 +1,6 @@
-const config = {
+import type { StorybookConfig } from '@storybook/react/types'
+
+const config: StorybookConfig = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -17,7 +19,8 @@ const config = {
   },
   framework: '@storybook/react',
   core: {
-    builder: '@storybook/builder-vite'
+    builder: '@storybook/builder-vite',
+    // builder: 'webpack5',
   },
   async viteFinal(config, { configType }) {
     // customize the Vite config here
