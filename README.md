@@ -5,13 +5,15 @@
 <h1 align="center">Welcome to val-design</h1>
 
 <div align="center">
-<img src="https://img.shields.io/badge/build-passing-informational?style=flat&logo=GitHub&color=181717" />
 
-<img src="https://img.shields.io/badge/node-v16.15.0-informational?style=flat&logo=Node.js&color=339933" />
+  <img src="https://img.shields.io/badge/build-passing-informational?style=flat&logo=GitHub&color=181717" />
 
-<img src="https://img.shields.io/badge/npm-v8.5.5-informational?style=flat&logo=npm&color=CB3837" />
+  <img src="https://img.shields.io/badge/node-v16.15.0-informational?style=flat&logo=Node.js&color=339933" />
 
-<img src="https://img.shields.io/badge/License-MIT-green.svg" />
+  <img src="https://img.shields.io/badge/npm-v8.5.5-informational?style=flat&logo=npm&color=CB3837" />
+
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" />
+  
 </div>
 
 ## Introduction
