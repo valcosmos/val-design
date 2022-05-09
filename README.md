@@ -38,11 +38,11 @@
 
 Documents:
 
-👉 👉 👉 👉 [文档｜ Document](https://valcosmos.github.io/val-design)
+[https://valcosmos.github.io/val-design](https://valcosmos.github.io/val-design)
 
-示例｜ Example:
+Example:
 
-👉 👉 👉 👉 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm)
 
 ## 📦 Install
 
