@@ -3,7 +3,6 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import sass from 'rollup-plugin-sass'
-import excludeDependenciesFromBundle from 'rollup-plugin-exclude-dependencies-from-bundle'
 
 const overrides = {
   compilerOptions: {
@@ -25,7 +24,7 @@ const config = {
     nodeResolve(),
     commonjs(),
     json(),
-    excludeDependenciesFromBundle(),
+
     typescript({
       tsconfigOverride: overrides
     }),
