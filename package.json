@@ -31,8 +31,6 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "lint": "eslint --fix --ext js,ts,tsx src --max-warnings 5",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "sass --embed-sources ./src/styles/index.scss ./dist/index.css && sass --embed-sources --style compressed ./src/styles/index.scss ./dist/index.min.css",
@@ -41,7 +39,9 @@
     "prepublishOnly": "yarn build",
     "prepare": "husky install",
     "build-es": "rollup --config rollup.esm.config.js",
-    "build-umd": "rollup --config rollup.umd.config.js"
+    "build-umd": "rollup --config rollup.umd.config.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -49,13 +49,12 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-transition-group": "^4.4.2",
     "uuid": "^8.3.2"
   },
-  "peerDependencies": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@babel/preset-typescript": "^7.17.12",
