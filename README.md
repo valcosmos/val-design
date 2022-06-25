@@ -6,17 +6,17 @@
 
 <div align="center">
 
-  <img src="https://img.shields.io/badge/build-passing-informational?style=flat&logo=GitHub&color=181717" />
+  <img src="https://img.shields.io/badge/build-passing-informational?style=for-the-badge&logo=GitHub&color=181717" />
 
-  <img src="https://img.shields.io/badge/Node.js-v16.15.0-informational?style=flat&logo=Node.js&color=339933" />
+  <img src="https://img.shields.io/badge/Node.js-v16.15.0-informational?style=for-the-badge&logo=Node.js&color=339933" />
 
-  <img src="https://img.shields.io/badge/React-v17.0.2-informational?style=flat&logo=React&color=61DAFB" />
+  <img src="https://img.shields.io/badge/React-v17.0.2-informational?style=for-the-badge&logo=React&color=61DAFB" />
 
-  <img src="https://img.shields.io/badge/TypeScript-v4.6.4-informational?style=flat&logo=TypeScript&color=3178C6" />
+  <img src="https://img.shields.io/badge/TypeScript-v4.6.4-informational?style=for-the-badge&logo=TypeScript&color=3178C6" />
 
-  <img src="https://img.shields.io/badge/npm-v8.5.5-informational?style=flat&logo=npm&color=CB3837" />
+  <img src="https://img.shields.io/badge/npm-v8.5.5-informational?style=for-the-badge&logo=npm&color=CB3837" />
 
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
   
 </div>
 
