@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="80px" src="https://valzt.cn/media/avatar_me.png" />
+    <img width="80px" src="https://api.valzt.cn/media/avatar_me.png" />
 </div>  
  
 <h1 align="center">Welcome to val-design</h1>
