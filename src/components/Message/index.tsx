@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { TransitionGroup } from 'react-transition-group'
 import Transition from '../Transition/transition'
 import Message, { MessageType } from './message'
@@ -67,7 +67,9 @@ if (!el) {
   document.body.append(el)
 }
 
-ReactDOM.render(<MessageContainer />, el)
+// ReactDOM.render(<MessageContainer />, el)
+
+createRoot(el).render(<MessageContainer />)
 
 export const message: MessageApi = {
   info: (text) => {
