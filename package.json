@@ -1,6 +1,6 @@
 {
   "name": "val-design",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "private": false,
   "license": "MIT",
   "description": "React UI component library",
@@ -56,7 +56,7 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.18.6",
+    "@babel/core": "^7.18.9",
     "@babel/preset-typescript": "^7.18.6",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",
@@ -72,8 +72,8 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-transition-group": "^4.4.5",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
     "@vitejs/plugin-react": "^2.0.0",
     "babel-loader": "^8.2.5",
     "eslint": "^8.20.0",
@@ -93,6 +93,6 @@
     "rollup-plugin-typescript2": "^0.32.1",
     "sass": "^1.53.0",
     "typescript": "^4.7.4",
-    "vite": "^3.0.0"
+    "vite": "^3.0.2"
   }
 }

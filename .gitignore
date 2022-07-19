@@ -27,3 +27,5 @@ storybook-static/
 dist/
 
 yarn.lock
+
+package-lock.json

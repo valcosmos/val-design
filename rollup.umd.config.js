@@ -36,6 +36,7 @@ const config = {
   ],
   plugins: [
     replace({
+      preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     ...baseConfig.plugins
