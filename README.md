@@ -8,13 +8,13 @@
 
   <img src="https://img.shields.io/badge/build-passing-informational?style=for-the-badge&logo=GitHub&color=181717" />
 
-  <img src="https://img.shields.io/badge/Node.js-v16.15.0-informational?style=for-the-badge&logo=Node.js&color=339933" />
+  <img src="https://img.shields.io/badge/Node.js-v16.16.0-informational?style=for-the-badge&logo=Node.js&color=339933" />
 
-  <img src="https://img.shields.io/badge/React-v17.0.2-informational?style=for-the-badge&logo=React&color=61DAFB" />
+  <img src="https://img.shields.io/badge/React-v18.2.0-informational?style=for-the-badge&logo=React&color=61DAFB" />
 
-  <img src="https://img.shields.io/badge/TypeScript-v4.6.4-informational?style=for-the-badge&logo=TypeScript&color=3178C6" />
+  <img src="https://img.shields.io/badge/TypeScript-v4.7.4-informational?style=for-the-badge&logo=TypeScript&color=3178C6" />
 
-  <img src="https://img.shields.io/badge/npm-v8.5.5-informational?style=for-the-badge&logo=npm&color=CB3837" />
+  <img src="https://img.shields.io/badge/npm-v8.11.0-informational?style=for-the-badge&logo=npm&color=CB3837" />
 
   <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
   
@@ -28,15 +28,17 @@
 - 😉 Automatically generate documentation content from comments using `react-doc-gen`.
 - ⭐️ Some components are completed by Other component libraries, and `Icon` con components are secondary encapsulated using `react-fontawesome`.
 - 🌔 Integrate CI/CD, use CircleCI + Github Page, and deploy documents.
+- 🌱 Added support for React18.
 
 ## 简介
 
-- ✨ 一个个人制作的 `React 组件库`，欢迎各位提交 issues
-- 🔭 使用 `Vite` `TypeScript` 和 `React Hook` 构建
-- 🌱 使用`storybook`进行本地调试，并自动生成组件库文档
-- 😉 使用`react-doc-gen`通过注释自动生成文档内容
-- ⭐️ 部分组件库通过对第三方库进行二次封装完成，`Icon`组件使用`react-fontawesome`进行二次封装
-- 🌔 集成 `CI/CD`, 使用 `CircleCI` + `Github Page`, 进行文档部署
+- ✨ 一个个人制作的 `React 组件库`，欢迎各位提交 `issues`。
+- 🔭 使用 `Vite` `TypeScript` 和 `React Hook` 构建。
+- 🌱 使用`storybook`进行本地调试，并自动生成组件库文档。
+- 😉 使用`react-doc-gen`通过注释自动生成文档内容。
+- ⭐️ 部分组件库通过对第三方库进行二次封装完成，`Icon`组件使用`react-fontawesome`进行二次封装。
+- 🌔 集成 `CI/CD`, 使用 `CircleCI` + `Github Page`, 进行文档部署。
+- 🌱 新增对`React18`的支持。
 
 ## Tutorial
 
