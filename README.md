@@ -2,7 +2,9 @@
     <img width="80px" src="https://api.valzt.cn/media/avatar_me.png" />
 </div>  
  
-<h1 align="center">Welcome to val-design</h1>
+<h3 align="center">Welcome to val-design</h3>
+
+<p align="center">val-design is a simple, lightweight <a href="https://reactjs.org/" target="_blank">React</a> UI component library.</p>
 
 <div align="center">
 
@@ -20,7 +22,12 @@
   
 </div>
 
-## Introduction
+
+## Description
+
+val-design is a simple component library, built with [React.js](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/), mainly for learning, or you can optimize or encapsulate it for production use. If you have any issues, or better suggestions, welcome to put them in the [issues](https://github.com/valcosmos/val-design/issues) or [discussion](https://github.com/valcosmos/val-design/discussions), and I will be very grateful.
+
+## Features
 
 - ✨ A personal `React component library`, welcome to submit questions.
 - 🔭 Built with `Vite` `TypeScript` and `React Hooks`.
@@ -28,9 +35,9 @@
 - 😉 Automatically generate documentation content from comments using `react-doc-gen`.
 - ⭐️ Some components are completed by Other component libraries, and `Icon` con components are secondary encapsulated using `react-fontawesome`.
 - 🌔 Integrate CI/CD, use CircleCI + Github Page, and deploy documents.
-- 🌱 Added support for React18.
+- 🌱 Added support for `React v18`.
 
-## 简介
+<!-- ## 简介
 
 - ✨ 一个个人制作的 `React 组件库`，欢迎各位提交 `issues`。
 - 🔭 使用 `Vite` `TypeScript` 和 `React Hook` 构建。
@@ -38,29 +45,30 @@
 - 😉 使用`react-doc-gen`通过注释自动生成文档内容。
 - ⭐️ 部分组件库通过对第三方库进行二次封装完成，`Icon`组件使用`react-fontawesome`进行二次封装。
 - 🌔 集成 `CI/CD`, 使用 `CircleCI` + `Github Page`, 进行文档部署。
-- 🌱 新增对`React18`的支持。
+- 🌱 新增对`React18`的支持。 -->
 
-## Tutorial
+## Getting started
 
-Documents:
+* To check out the [guide](https://valcosmos.github.io/val-design), visit [https://valcosmos.github.io/val-design](https://valcosmos.github.io/val-design). :books:
 
-[https://valcosmos.github.io/val-design](https://valcosmos.github.io/val-design)
+* To check out the [example](https://stackblitz.com/edit/vitejs-vite-jvn7fm), visit [https://stackblitz.com/edit/vitejs-vite-jvn7fm](https://stackblitz.com/edit/vitejs-vite-jvn7fm). :books:
 
-Example:
+<!-- Example:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm) -->
 
-## 📦 Install
+## Install
 
 ```bash
 npm i val-design
 ```
 
+
 ```bash
 yarn add val-design
 ```
 
-## 🔨 Usage
+## Usage
 
 And import style manually：
 
@@ -82,11 +90,11 @@ const App = () => (
 )
 ```
 
-## ⌨️ Development
+## Development
 
-Use Gitpod
+<!-- Use Gitpod
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://valcosmos-valdesign-jeyace35t07.ws-us47.gitpod.io/)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://valcosmos-valdesign-jeyace35t07.ws-us47.gitpod.io/) -->
 
 clone locally:
 
@@ -104,10 +112,11 @@ yarn storybook
 
 Open your browser and visit http://localhost:6006
 
-## 🌈 Theme
 
-todo...
+## Issues
 
-## 🌍 Internationalization
+You can write down any issues you have under this [link](https://github.com/valcosmos/val-design/issues).
 
-todo...
+## License
+
+val-design is [MIT licensed](LICENSE).
