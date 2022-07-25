@@ -49,9 +49,9 @@ val-design is a simple component library, built with [React.js](https://reactjs.
 
 ## Getting started
 
-* To check out the [guide](https://valcosmos.github.io/val-design), visit [https://valcosmos.github.io/val-design](https://valcosmos.github.io/val-design). :books:
+* To check out the [guide](https://valcosmos.github.io/val-design), visit [https://valcosmos.github.io/val-design](https://valcosmos.github.io/val-design). 📚
 
-* To check out the [example](https://stackblitz.com/edit/vitejs-vite-jvn7fm), visit [https://stackblitz.com/edit/vitejs-vite-jvn7fm](https://stackblitz.com/edit/vitejs-vite-jvn7fm). :books:
+* To check out the [example](https://stackblitz.com/edit/vitejs-vite-jvn7fm), visit [https://stackblitz.com/edit/vitejs-vite-jvn7fm](https://stackblitz.com/edit/vitejs-vite-jvn7fm). 📚
 
 <!-- Example:
 
