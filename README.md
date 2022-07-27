@@ -90,6 +90,10 @@ const App = () => (
 )
 ```
 
+## Project Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/598e41bfc615ece01d4f2e4c881fe52c54e6d8a9.svg "Repobeats analytics image")
+
 ## Development
 
 <!-- Use Gitpod
