@@ -29,12 +29,12 @@ val-design is a simple component library, built with [React.js](https://reactjs.
 
 ## Features
 
-- ✨ A personal `React component library`, welcome to submit questions.
+- ✨ A personal `React component library`, welcome to submit [issues](https://github.com/valcosmos/val-design/issues) or [ideas](https://github.com/valcosmos/val-design/discussions).
 - 🔭 Built with `Vite` `TypeScript` and `React Hooks`.
 - 😄 Use `storybook` for local debugging and auto-generate component library documentation.
 - 😉 Automatically generate documentation content from comments using `react-doc-gen`.
-- ⭐️ Some components are completed by Other component libraries, and `Icon` con components are secondary encapsulated using `react-fontawesome`.
-- 🌔 Integrate CI/CD, use CircleCI + Github Page, and deploy documents.
+- ⭐️ Some components are completed by Other component libraries, and `Icon` components are secondary encapsulated using `react-fontawesome`.
+- 🌔 Integrate CI/CD, use CircleCI + Github Page to deploy documents.
 - 🌱 Added support for `React v18`.
 
 <!-- ## 简介
