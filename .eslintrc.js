@@ -1,13 +1,13 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node: true
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
-    'standard',
-    'plugin:storybook/recommended',
-    'plugin:storybook/recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:storybook/recommended'
   ],
   parser: '@typescript-eslint/parser',
@@ -18,14 +18,8 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
-  },
-  settings: {
-    react: {
-      version: 'detect'
-    }
+    '@typescript-eslint/no-explicit-any': 'off'
   }
 }

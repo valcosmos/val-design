@@ -16,7 +16,13 @@ import classNames from 'classnames'
 // const ButtonHTMLTypes = tuple('submit', 'button', 'reset')
 // export type ButtonHTMLType = typeof ButtonHTMLTypes[number]
 
-export type ButtonTypes = 'default' | 'primary' | 'success' | 'danger' | 'warning' | 'link'
+export type ButtonTypes =
+  | 'default'
+  | 'primary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'link'
 
 interface BaseButtonProps {
   /**
@@ -54,7 +60,8 @@ interface BaseButtonProps {
 }
 
 // 按钮原生属性类型
-type NativeButtonProps = {} & BaseButtonProps &
+type NativeButtonProps = Record<string, unknown> &
+  BaseButtonProps &
   Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type'>
 
 // 链接原生属性类型

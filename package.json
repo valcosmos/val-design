@@ -55,7 +55,6 @@
     "react-transition-group": "^4.4.5",
     "uuid": "^8.3.2"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/preset-typescript": "^7.18.6",

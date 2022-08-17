@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-export const useDebounce = (value: any, delay = 300) => {
+export const useDebounce = (value: string, delay = 300) => {
   const [debouncedValue, setDebouncedValue] = useState(value)
   useEffect(() => {
     const handler = window.setTimeout(() => {
