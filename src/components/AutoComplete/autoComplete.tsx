@@ -31,7 +31,7 @@ interface DataSourceObject {
 /**
  * 传递一个范型 T, 默认为{}, 返回 传入的T & DataSourceObject
  */
-export type DataSourceType<T = {}> = T & DataSourceObject
+export type DataSourceType<T = Record<string, unknown>> = T & DataSourceObject
 
 export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
   /**
@@ -109,7 +109,6 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
 
     // 加载成功后取消高亮
     setHighlightIndex(-1)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedValue])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
