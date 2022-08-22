@@ -80,7 +80,7 @@
     "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -88,14 +88,14 @@
     "happy-dom": "^6.0.4",
     "husky": "^8.0.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.78.0",
+    "rollup": "^2.78.1",
     "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.22",
     "rollup-plugin-sass": "^1.2.13",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.32.1",
-    "sass": "^1.54.4",
+    "rollup-plugin-typescript2": "^0.33.0",
+    "sass": "^1.54.5",
     "typescript": "^4.7.4",
-    "vite": "^3.0.8",
+    "vite": "^3.0.9",
     "vitest": "^0.22.1"
   }
 }
