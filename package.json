@@ -45,8 +45,8 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.2",
-    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
@@ -73,8 +73,8 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-transition-group": "^4.4.5",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.35.1",
-    "@typescript-eslint/parser": "^5.35.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "@vitejs/plugin-react": "^2.0.1",
     "babel-loader": "^8.2.5",
     "eslint": "^8.23.0",
@@ -88,13 +88,13 @@
     "happy-dom": "^6.0.4",
     "husky": "^8.0.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.78.1",
+    "rollup": "^2.79.0",
     "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.22",
     "rollup-plugin-sass": "^1.2.13",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.33.0",
-    "sass": "^1.54.5",
-    "typescript": "^4.7.4",
+    "sass": "^1.54.8",
+    "typescript": "^4.8.2",
     "vite": "^3.0.9",
     "vitest": "^0.22.1"
   }
