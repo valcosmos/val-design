@@ -16,6 +16,7 @@ export const FormItem: FC<FormItemProps> = (props) => {
           <label title={label}>{label}</label>
         </div>
       )}
+      <div className="v-form-item">{children}</div>
     </div>
   )
 }
