@@ -33,6 +33,7 @@ function fieldsReducer(state: FieldsState, action: FieldsAction): FieldsState {
         [action.name]: { ...state[action.name], value: action.value }
       }
     case 'updateValidateResult':
+      // eslint-disable-next-line no-case-declarations
       const { isValid, errors } = action.value
       return {
         ...state,
