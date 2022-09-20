@@ -44,6 +44,16 @@ export const FormItem: FC<FormItemProps> = (props) => {
   // 获取对应store中的value
   const fieldState = fields[name]
   const value = fieldState && fieldState.value
+  const errors = fieldState && fieldState.errors
+  const isRequired = rules?.some((rule) => rule.required)
+  const hasError = errors && errors.length > 0
+
+  const labelClass = classNames({ 'v-form-item-required': isRequired })
+
+  const itemClass = classNames('v-form-item-control', {
+    'v-form-item-has-error': hasError
+  })
+
   const onValueUpdate = (e: any) => {
     const value = getValueFormEvent(e)
     dispatch({ type: 'updateValue', name, value })
@@ -90,10 +100,19 @@ export const FormItem: FC<FormItemProps> = (props) => {
     <div className={rowClass}>
       {label && (
         <div className="v-form-item-label">
-          <label title={label}>{label}</label>
+          <label title={label} className={labelClass}>
+            {label}
+          </label>
         </div>
       )}
-      <div className="v-form-item">{returnChildNode}</div>
+      <div className="v-form-item">
+        <div className={itemClass}>{returnChildNode}</div>
+        {hasError && (
+          <div className="v-form-item-explain">
+            <span>{errors[0].message}</span>
+          </div>
+        )}
+      </div>
     </div>
   )
 }

@@ -59,8 +59,8 @@ function useStore() {
       [name]: value
     }
     const validator = new Schema(descriptor)
-    const isValid = true
-    const errors: ValidateError[] = []
+    let isValid = true
+    let errors: ValidateError[] = []
 
     try {
       await validator.validate(valueMap)
