@@ -24,14 +24,11 @@ export default Meta
 
 export const BasicForm = () => (
   <Form>
-    <FormItem label="用户名">
+    <FormItem name={'username'} label="用户名" rules={[{ required: true }]}>
       <Input />
     </FormItem>
-    <FormItem label="密码">
+    <FormItem name={'password'} label="密码" rules={[{ required: true }]}>
       <Input type={'password'} />
-    </FormItem>
-    <FormItem>
-      <Input placeholder="NO LABEL" />
     </FormItem>
     <div className="v-form-submit-area">
       <Button htmlType={'submit'} type={'primary'}>
