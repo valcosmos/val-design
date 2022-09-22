@@ -1,10 +1,17 @@
-import React, { createContext, FC, ReactNode } from 'react'
+import React, { createContext, FC, FormEvent, ReactNode } from 'react'
+
 import useStore from './useStore'
+import { ValidateError } from 'async-validator'
 
 export interface FormProps {
   name?: string
   initialValues?: Record<string, any>
   children?: ReactNode
+  onFinish?: (value: Record<string, any>) => void
+  onFinishFailed: (
+    value: Record<string, any>,
+    errors: Record<string, ValidateError[]>
+  ) => void
 }
 
 export type IFromContext = Pick<
@@ -16,9 +23,10 @@ export type IFromContext = Pick<
 export const FormContext = createContext<IFromContext>({} as IFromContext)
 
 export const Form: FC<FormProps> = (props) => {
-  const { name, children, initialValues } = props
+  const { name, children, initialValues, onFinish, onFinishFailed } = props
 
-  const { form, fields, dispatch, validateField } = useStore()
+  const { form, fields, dispatch, validateField, validateAllFields } =
+    useStore()
 
   const passedContext: IFromContext = {
     dispatch,
@@ -27,9 +35,20 @@ export const Form: FC<FormProps> = (props) => {
     validateField
   }
 
+  const submitForm = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const { isValid, errors, values } = await validateAllFields()
+    if (isValid && onFinish) {
+      onFinish(values)
+    } else if (!isValid && onFinishFailed) {
+      onFinishFailed(values, errors)
+    }
+  }
+
   return (
     <>
-      <form name={name} className="v-form">
+      <form name={name} className="v-form" onSubmit={submitForm}>
         <FormContext.Provider value={passedContext}>
           {children}
         </FormContext.Provider>

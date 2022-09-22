@@ -1,4 +1,3 @@
-
 import classNames from 'classnames'
 import React, { FC, ReactNode, useContext, useEffect } from 'react'
 import { FormContext } from './form'
@@ -40,7 +39,18 @@ export const FormItem: FC<FormItemProps> = (props) => {
 
   useEffect(() => {
     const value = (initialValues && initialValues[name]) || ''
-    dispatch({ type: 'addField', name, value: { label, name, value, rules } })
+    dispatch({
+      type: 'addField',
+      name,
+      value: {
+        label,
+        name,
+        value,
+        rules: rules || [],
+        errors: [],
+        isValid: true
+      }
+    })
   }, [])
 
   // 获取对应store中的value
