@@ -1,5 +1,6 @@
 import { useReducer, useState } from 'react'
 import Schema, { RuleItem, ValidateError } from 'async-validator'
+import { mapValues, each } from 'lodash-es'
 
 export type CustomRuleFunc = ({
   getFieldValue
@@ -15,6 +16,10 @@ export interface FieldDetail {
   isValid: boolean
   errors: ValidateError[]
 }
+export interface ValidateErrorType extends Error {
+  errors: ValidateError[]
+  fields: Record<string, ValidateError[]>
+}
 
 export interface FieldsState {
   [key: string]: FieldDetail
@@ -22,6 +27,8 @@ export interface FieldsState {
 
 export interface FormState {
   isValid: boolean
+  isSubmitting: boolean
+  errors: Record<string, ValidateError[]>
 }
 
 export interface FieldsAction {
@@ -53,7 +60,11 @@ function fieldsReducer(state: FieldsState, action: FieldsAction): FieldsState {
 
 function useStore() {
   // form state
-  const [form, setForm] = useState<FormState>({ isValid: true })
+  const [form, setForm] = useState<FormState>({
+    isValid: true,
+    isSubmitting: false,
+    errors: {}
+  })
 
   const [fields, dispatch] = useReducer(fieldsReducer, {})
 
@@ -104,12 +115,52 @@ function useStore() {
     }
   }
 
+  const validateAllFields = async () => {
+    let isValid = true
+    let errors: Record<string, ValidateError[]> = {}
+    const valueMap = mapValues(fields, (item) => item.value)
+    const descriptor = mapValues(fields, (item) => transformRules(item.rules))
+    const validator = new Schema(descriptor)
+    setForm({ ...form, isSubmitting: true })
+    try {
+      await validator.validate(valueMap)
+    } catch (e) {
+      isValid = false
+      const err = e as ValidateErrorType
+      errors = err.fields
+      each(fields, (value, name) => {
+        // errors 中有对应的key
+        if (errors[name]) {
+          const itemErrors = errors[name]
+          dispatch({
+            type: 'updateValidateResult',
+            name,
+            value: { isValid: false, errors: itemErrors }
+          })
+        } else if (value.rules.length > 0 && !errors[name]) {
+          // 有对应的rules 并且没有errors
+
+          dispatch({
+            type: 'updateValidateResult',
+            name,
+            value: { isValid: true, errors: [] }
+          })
+        }
+      })
+    } finally {
+      setForm({ ...form, isSubmitting: false, isValid, errors })
+      // eslint-disable-next-line no-unsafe-finally
+      return { isValid, errors, values: valueMap }
+    }
+  }
+
   return {
     fields,
     dispatch,
     form,
     validateField,
-    getFieldValue
+    getFieldValue,
+    validateAllFields
   }
 }
 

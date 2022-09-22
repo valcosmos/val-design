@@ -40,8 +40,8 @@ const ConfirmRules: CustomRule[] = [
   })
 ]
 
-export const BasicForm = () => (
-  <Form>
+export const BasicForm = (args: any) => (
+  <Form initialValues={{ username: 'Cupid' }} {...args}>
     <FormItem name={'username'} label="用户名" rules={[{ required: true }]}>
       <Input />
     </FormItem>
@@ -51,6 +51,15 @@ export const BasicForm = () => (
     <FormItem name={'confirmPwd'} label="重复" rules={ConfirmRules}>
       <Input type={'password'} />
     </FormItem>
+    <FormItem
+      name={'agreement'}
+      valuePropName="checked"
+      getValueFormEvent={(e) => e.target.checked}
+      rules={[{ type: 'enum', enum: [true], message: '请同意协议' }]}
+    >
+      <Input type={'checkbox'} />
+    </FormItem>
+    <span>注册即代表你同意</span>
     <div className="v-form-submit-area">
       <Button htmlType={'submit'} type={'primary'}>
         登录
