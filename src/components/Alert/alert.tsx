@@ -48,6 +48,8 @@ export const Alert: FC<AlertProps> = (props) => {
     'bold-title': description
   })
   const handleClose = (e: React.MouseEvent) => {
+    console.log(e)
+
     if (onClose) {
       onClose()
     }
