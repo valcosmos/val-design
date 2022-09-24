@@ -68,40 +68,26 @@ function useStore(initialValues?: Record<string, any>) {
 
   const [fields, dispatch] = useReducer(fieldsReducer, {})
 
-  const getFieldValue = (key: string) => {
-    return fields[key] && fields[key].value
-  }
+  const getFieldValue = (key: string) => fields[key] && fields[key].value
 
-  const getFieldsValue = () => {
-    return mapValues(fields, (item) => item.value)
-  }
+  const getFieldsValue = () => mapValues(fields, (item) => item.value)
 
-  const setFieldValue = (name: string, value: any) => {
-    if (fields[name]) {
-      dispatch({ type: 'updateValue', name, value })
-    }
-  }
+  const setFieldValue = (name: string, value: any) =>
+    fields[name] && dispatch({ type: 'updateValue', name, value })
 
-  const resetFields = () => {
-    if (initialValues) {
-      each(initialValues, (value, name) => {
-        if (fields[name]) {
-          dispatch({ type: 'updateValue', name, value })
-        }
-      })
-    }
-  }
-
-  const transformRules = (rules: CustomRule[]) => {
-    return rules.map((rule) => {
-      if (typeof rule === 'function') {
-        const calledRule = rule({ getFieldValue })
-        return calledRule
-      } else {
-        return rule
+  const resetFields = () =>
+    initialValues &&
+    each(initialValues, (value, name) => {
+      if (fields[name]) {
+        dispatch({ type: 'updateValue', name, value })
       }
     })
-  }
+
+  const transformRules = (rules: CustomRule[]) =>
+    rules.map((rule) => {
+      if (typeof rule === 'function') return rule({ getFieldValue })
+      return rule
+    })
 
   const validateField = async (name: string) => {
     const { value, rules } = fields[name]

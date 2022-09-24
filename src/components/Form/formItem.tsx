@@ -15,7 +15,7 @@ export interface FormItemProps {
   trigger?: string
   // rules?: RuleItem[]
   rules?: CustomRule[]
-  getValueFormEvent?: (event: any) => any
+  getValueFromEvent?: (event: any) => any
   validateTrigger?: string
 }
 
@@ -26,12 +26,12 @@ export const FormItem: FC<FormItemProps> = (props) => {
     name,
     valuePropName,
     trigger,
-    getValueFormEvent,
+    getValueFromEvent,
     rules,
     validateTrigger
   } = props as SomeRequired<
     FormItemProps,
-    'getValueFormEvent' | 'trigger' | 'valuePropName' | 'validateTrigger'
+    'getValueFromEvent' | 'trigger' | 'valuePropName' | 'validateTrigger'
   >
   const { dispatch, fields, initialValues, validateField } =
     useContext(FormContext)
@@ -69,7 +69,7 @@ export const FormItem: FC<FormItemProps> = (props) => {
   })
 
   const onValueUpdate = (e: any) => {
-    const value = getValueFormEvent(e)
+    const value = getValueFromEvent(e)
     dispatch({ type: 'updateValue', name, value })
   }
 
@@ -135,6 +135,6 @@ FormItem.defaultProps = {
   valuePropName: 'value',
   trigger: 'onChange',
   validateTrigger: 'onBlur',
-  getValueFormEvent: (e) => e.target.value
+  getValueFromEvent: (e) => e.target.value
 }
 export default FormItem
