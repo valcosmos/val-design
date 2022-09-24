@@ -1,6 +1,5 @@
 import React, {
   createContext,
-  FC,
   FormEvent,
   ReactNode,
   forwardRef,
@@ -33,7 +32,7 @@ export const FormContext = createContext<IFromContext>({} as IFromContext)
 
 export type IFormRef = Omit<
   ReturnType<typeof useStore>,
-  'fields' | 'dispatch' | 'validateFields'
+  'fields' | 'dispatch' | 'form'
 >
 
 export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
@@ -43,7 +42,7 @@ export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
 
   const { validateField, validateAllFields } = restProps
 
-  useImperativeHandle(ref, () => ({ ...restProps, form }))
+  useImperativeHandle(ref, () => ({ ...restProps }))
 
   const passedContext: IFromContext = {
     dispatch,
@@ -77,15 +76,16 @@ export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
           {childrenNode}
         </FormContext.Provider>
       </form>
-      <div>
+      {/* for test */}
+      {/* <div>
         <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(fields)}</pre>
         <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(form)}</pre>
-      </div>
+      </div> */}
     </>
   )
 })
 
-Form.displayName = 'v-form'
+Form.displayName = 'v_form'
 Form.defaultProps = {
   name: 'v_form'
 }
