@@ -58,7 +58,7 @@ function fieldsReducer(state: FieldsState, action: FieldsAction): FieldsState {
   }
 }
 
-function useStore() {
+function useStore(initialValues?: Record<string, any>) {
   // form state
   const [form, setForm] = useState<FormState>({
     isValid: true,
@@ -70,6 +70,26 @@ function useStore() {
 
   const getFieldValue = (key: string) => {
     return fields[key] && fields[key].value
+  }
+
+  const getFieldsValue = () => {
+    return mapValues(fields, (item) => item.value)
+  }
+
+  const setFieldValue = (name: string, value: any) => {
+    if (fields[name]) {
+      dispatch({ type: 'updateValue', name, value })
+    }
+  }
+
+  const resetFields = () => {
+    if (initialValues) {
+      each(initialValues, (value, name) => {
+        if (fields[name]) {
+          dispatch({ type: 'updateValue', name, value })
+        }
+      })
+    }
   }
 
   const transformRules = (rules: CustomRule[]) => {
@@ -160,7 +180,10 @@ function useStore() {
     form,
     validateField,
     getFieldValue,
-    validateAllFields
+    validateAllFields,
+    getFieldsValue,
+    setFieldValue,
+    resetFields
   }
 }
 

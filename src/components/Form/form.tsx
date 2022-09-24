@@ -1,12 +1,21 @@
-import React, { createContext, FC, FormEvent, ReactNode } from 'react'
+import React, {
+  createContext,
+  FC,
+  FormEvent,
+  ReactNode,
+  forwardRef,
+  useImperativeHandle
+} from 'react'
 
-import useStore from './useStore'
+import useStore, { FormState } from './useStore'
 import { ValidateError } from 'async-validator'
+
+export type RenderProps = (form: FormState) => ReactNode
 
 export interface FormProps {
   name?: string
   initialValues?: Record<string, any>
-  children?: ReactNode
+  children?: ReactNode | RenderProps
   onFinish?: (value: Record<string, any>) => void
   onFinishFailed: (
     value: Record<string, any>,
@@ -22,11 +31,19 @@ export type IFromContext = Pick<
 
 export const FormContext = createContext<IFromContext>({} as IFromContext)
 
-export const Form: FC<FormProps> = (props) => {
+export type IFormRef = Omit<
+  ReturnType<typeof useStore>,
+  'fields' | 'dispatch' | 'validateFields'
+>
+
+export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
   const { name, children, initialValues, onFinish, onFinishFailed } = props
 
-  const { form, fields, dispatch, validateField, validateAllFields } =
-    useStore()
+  const { form, fields, dispatch, ...restProps } = useStore(initialValues)
+
+  const { validateField, validateAllFields } = restProps
+
+  useImperativeHandle(ref, () => ({ ...restProps, form }))
 
   const passedContext: IFromContext = {
     dispatch,
@@ -46,11 +63,18 @@ export const Form: FC<FormProps> = (props) => {
     }
   }
 
+  let childrenNode: ReactNode
+  if (typeof children === 'function') {
+    childrenNode = children(form)
+  } else {
+    childrenNode = children
+  }
+
   return (
     <>
       <form name={name} className="v-form" onSubmit={submitForm}>
         <FormContext.Provider value={passedContext}>
-          {children}
+          {childrenNode}
         </FormContext.Provider>
       </form>
       <div>
@@ -59,8 +83,9 @@ export const Form: FC<FormProps> = (props) => {
       </div>
     </>
   )
-}
+})
 
+Form.displayName = 'v-form'
 Form.defaultProps = {
   name: 'v_form'
 }
