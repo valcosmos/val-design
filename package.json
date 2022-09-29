@@ -42,7 +42,7 @@
     "build-es": "rollup --config rollup.esm.config.js",
     "build-umd": "rollup --config rollup.umd.config.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build -s ./stories/assets"
+    "build-storybook": "build-storybook -o docs-build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
