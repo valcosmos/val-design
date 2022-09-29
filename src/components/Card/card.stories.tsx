@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Card from './card'
 
 const Meta: ComponentMeta<typeof Card> = {
-  title: 'val-design/Card 组件',
+  title: 'Data Display/Card 组件',
   id: 'card',
   component: Card,
   decorators: [

@@ -17,7 +17,7 @@ const handleFetch = (query: string) => {
 }
 
 export default {
-  title: 'val-design/Auto Complete 自动完成',
+  title: 'Data Entry/Auto Complete 自动完成',
   component: AutoComplete
 } as ComponentMeta<typeof AutoComplete>
 

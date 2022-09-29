@@ -5,7 +5,7 @@ import Menu from './index'
 import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'val-design/Menu 导航菜单',
+  title: 'Data Entry/Menu 导航菜单',
   component: Menu
 } as ComponentMeta<typeof Menu>
 

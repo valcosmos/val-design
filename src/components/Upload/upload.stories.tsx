@@ -6,7 +6,7 @@ import { Upload } from './upload'
 import Icon from '../Icon/icon'
 
 export default {
-  title: 'val-design/Upload 上传',
+  title: 'Data Entry/Upload 上传',
   component: Upload
 } as ComponentMeta<typeof Upload>
 

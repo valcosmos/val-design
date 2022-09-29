@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { Input } from './input'
 
 export default {
-  title: 'val-design/Input 输入框',
+  title: 'Data Entry/Input 输入框',
   component: Input
 } as ComponentMeta<typeof Input>
 

@@ -8,7 +8,7 @@ import Button from '../Button'
 import { CustomRule } from './useStore'
 
 const Meta: ComponentMeta<typeof Form> = {
-  title: 'val-design/Form 组件',
+  title: 'Data Entry/Form 组件',
   id: 'Form',
   component: Form,
   subcomponents: { Item: Item },

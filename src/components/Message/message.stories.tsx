@@ -5,7 +5,7 @@ import Button from '../Button'
 import Message from './message'
 
 export default {
-  title: 'val-design/Message 全局提示',
+  title: 'Feedback/Message 全局提示',
   component: Message
 } as ComponentMeta<typeof Message>
 

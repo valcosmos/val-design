@@ -9,7 +9,7 @@ export default {
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'val-design/Button 按钮',
+  title: 'General/Button 按钮',
   component: Button
 } as ComponentMeta<typeof Button>
 
