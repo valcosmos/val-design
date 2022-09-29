@@ -8,7 +8,7 @@ export default {
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'val-design/Progress 进度条',
+  title: 'Feedback/Progress 进度条',
   component: Progress
 } as ComponentMeta<typeof Progress>
 

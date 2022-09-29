@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Icon from './icon'
 
 export default {
-  title: 'val-design/Icon 图标',
+  title: 'General/Icon 图标',
   component: Icon
 } as ComponentMeta<typeof Icon>
 

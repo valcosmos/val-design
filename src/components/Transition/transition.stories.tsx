@@ -5,7 +5,7 @@ import Button from '../Button'
 
 import { Transition } from './transition'
 export default {
-  title: 'val-design/Transition 过渡',
+  title: 'Others/Transition 过渡',
   component: Transition
 } as ComponentMeta<typeof Transition>
 
