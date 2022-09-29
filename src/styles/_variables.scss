@@ -318,3 +318,13 @@ $--color-text-primary: $--color-text-primary !default;
 $--box-shadow-light: $--box-shadow-light !default;
 $--card-padding: 20px !default;
 $--card-border-color: $--border-color-lighter !default;
+
+// tag
+$--tag-primary-color: $blue !default;
+$--tag-success-color: $green !default;
+$--tag-warning-color: $orange !default;
+$--tag-danger-color: $red !default;
+$--tag-info-color: $cyan !default;
+$--tag-font-size: 12px !default;
+$--tag-border-radius: 4px !default;
+$--tag-padding: 0 10px !default;
