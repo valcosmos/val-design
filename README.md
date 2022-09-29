@@ -57,6 +57,7 @@ val-design is a simple component library, built with [React.js](https://reactjs.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm) -->
 
+
 ## Install
 
 ```bash
@@ -100,6 +101,11 @@ const App = () => (
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://valcosmos-valdesign-jeyace35t07.ws-us47.gitpod.io/) -->
 
+Use StackBlitz
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/valcosmos/val-design)
+
+
 clone locally:
 
 ```bash
@@ -108,9 +114,9 @@ git clone git@github.com:valcosmos/val-design.git
 
 cd val-design
 
-yarn
+pnpm install --shamefully-hoist
 
-yarn storybook
+pnpm storybook
 
 ```
 
