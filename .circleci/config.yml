@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/node:16.14.2
+      - image: cimg/node:16.17.1
     # 1、拉取main分支上的代码
     filters:
       branches:
@@ -18,20 +18,20 @@ jobs:
       - restore_cache:
           keys:
             - val-design-cache
-      # 4、执行名称为install的任务 命令为 yarn
-      - run: yarn config set registry https://registry.npmmirror.com/
+      # 4、执行名称为install的任务 命令为 pnpm
+      - run: pnpm config set registry https://registry.npmmirror.com/
       - run:
           name: Install
-          command: yarn
+          command: pnpm install --shamefully-hoist
       # 6、设置缓存，缓存目录为 node_modules
       - save_cache:
           paths:
             - node_modules
           key: val-design-cache
-      # 5、执行名称为build的任务 命令为 yarn
+      # 5、执行名称为build的任务 命令为 pnpm
       - run:
           name: Build
-          command: yarn build-storybook
+          command: pnpm build-storybook
       # 8、给部署脚本赋予执行权限
       - run:
           name: Prepare shell command
