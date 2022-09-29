@@ -24,7 +24,6 @@ ActiveSkeleton.args = { active: true }
 export const SkeletonAsBackground = Template.bind({})
 
 SkeletonAsBackground.args = {
-  bg: true,
   active: true,
   children: (
     <p style={{ padding: '20px' }}>

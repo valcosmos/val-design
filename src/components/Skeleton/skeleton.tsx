@@ -3,20 +3,19 @@ import React, { FC, ReactNode } from 'react'
 
 interface SkeletonProps {
   active?: boolean
-  bg?: boolean
   row?: number
   children: ReactNode
 }
 
-export const Skeleton: FC<SkeletonProps> = ({ active, bg, row, children }) => {
+export const Skeleton: FC<SkeletonProps> = ({ active, row, children }) => {
   let rows = [0]
-  if (!bg) {
+  if (!children) {
     rows = Array.from({ length: row! }, () => 1).map((item, index) => index)
   }
   const classes = classNames('v-skeleton', {
     'v-skeleton__active': active,
     'v-skeleton__row': rows.length > 0,
-    'v-skeleton__bg': !!children || bg
+    'v-skeleton__bg': !!children
   })
   return (
     <>
@@ -30,8 +29,7 @@ export const Skeleton: FC<SkeletonProps> = ({ active, bg, row, children }) => {
 }
 
 Skeleton.defaultProps = {
-  row: 4,
-  bg: false
+  row: 4
 }
 
 export default Skeleton
