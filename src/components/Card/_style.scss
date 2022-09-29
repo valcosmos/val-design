@@ -1,0 +1,31 @@
+.v-card {
+    /* your component style */
+    border-radius: $--card-border-radius;
+    border: 1px solid $--card-border-color;
+    background-color: $--color-white;
+    overflow: hidden;
+    color: $--color-text-primary;
+    transition: 0.3s;
+    &-always-shadow {
+      border-color: transparent;
+      box-shadow: $--box-shadow-light;
+    }
+  
+    &-hover-shadow {
+      &:hover,
+      &:focus {
+        border-color: transparent;
+        box-shadow: $--box-shadow-light;
+      }
+    }
+  
+    &__header {
+      padding: #{$--card-padding - 2 $--card-padding};
+      border-bottom: 1px solid $--card-border-color;
+      box-sizing: border-box;
+    }
+    &__body {
+      padding: $--card-padding;
+    }
+  }
+  
