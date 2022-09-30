@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="80px" src="logo.png" />
+    <img width="80px" src="https://raw.githubusercontent.com/valcosmos/val-design/main/logo.png" />
 </div>  
  
 <h3 align="center">Welcome to val-design</h3>
