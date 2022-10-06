@@ -3,6 +3,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Button } from './button'
 
+import mdx from './button.mdx'
+
 // 👇 This default export determines where your story goes in the story list
 export default {
   /* 👇 The title prop is optional.
@@ -10,7 +12,12 @@ export default {
    * to learn how to generate automatic titles
    */
   title: 'General/Button 按钮',
-  component: Button
+  component: Button,
+  parameters: {
+    docs: {
+      page: mdx
+    }
+  }
 } as ComponentMeta<typeof Button>
 
 // 👇 We create a “template” of how args map to rendering

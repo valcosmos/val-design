@@ -31,7 +31,7 @@ const styles: React.CSSProperties = {
 export const decorators = [
   (Story) => (
     <div style={styles}>
-      <h3 style={{ marginBottom: '20px' }}>组件演示</h3>
+      {/* <h3 style={{ marginBottom: '20px' }}>组件演示</h3> */}
       <Story />
     </div>
   )
