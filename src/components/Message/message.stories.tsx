@@ -9,7 +9,7 @@ export default {
   component: Message
 } as ComponentMeta<typeof Message>
 
-export const AllMessage: ComponentStory<typeof Message> = (args) => (
+export const AllMessage: ComponentStory<typeof Message> = () => (
   <code>
     <Button
       type="default"

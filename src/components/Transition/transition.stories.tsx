@@ -10,8 +10,7 @@ export default {
 } as ComponentMeta<typeof Transition>
 
 const Template: ComponentStory<typeof Transition> = ({
-  animation,
-  timeout
+  animation
 }: TransitionProps) => {
   const [show, setShow] = useState<boolean>(false)
 
