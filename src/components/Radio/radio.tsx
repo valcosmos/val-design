@@ -10,7 +10,7 @@ import React, {
   useState
 } from 'react'
 
-interface RadioProps extends HTMLAttributes<HTMLInputElement> {
+export interface RadioProps extends HTMLAttributes<HTMLInputElement> {
   value?: string
   checked?: boolean
   defaultChecked?: boolean
