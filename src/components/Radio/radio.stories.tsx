@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Radio from './radio'
 
 const RadioMeta: ComponentMeta<typeof Radio> = {
-  title: 'Radio 单选',
+  title: 'Data Entry/Radio 单选框',
   component: Radio
 }
 

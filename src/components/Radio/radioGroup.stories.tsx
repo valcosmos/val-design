@@ -5,7 +5,7 @@ import RadioGroup from './radioGroup'
 import Radio from './radio'
 
 const RadioMeta: ComponentMeta<typeof RadioGroup> = {
-  title: 'RadioGroup 单选',
+  title: 'Data Entry/RadioGroup 单选框组',
   component: RadioGroup
 }
 
