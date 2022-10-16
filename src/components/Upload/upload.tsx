@@ -183,8 +183,8 @@ export const Upload: FC<UploadProps> = (props) => {
           'Content-Type': 'multipart/form-data'
         },
         withCredentials,
-        onUploadProgress: (e) => {
-          const percentage = Math.round((e.loaded * 100) / e.total!) || 0
+        onUploadProgress: (e: any) => {
+          const percentage = Math.round((e.loaded * 100) / e.total) || 0
           if (percentage < 100) {
             updateFileList(_file, { percent: percentage, status: 'uploading' })
             if (onProgress) {
@@ -220,8 +220,7 @@ export const Upload: FC<UploadProps> = (props) => {
         style={{ display: 'inline-block' }}
         onClick={handleClick}
       >
-        {drag
-          ? (
+        {drag ? (
           <Dragger
             onFile={(files) => {
               uploadFiles(files)
@@ -229,10 +228,9 @@ export const Upload: FC<UploadProps> = (props) => {
           >
             {children}
           </Dragger>
-            )
-          : (
-              children
-            )}
+        ) : (
+          children
+        )}
         <input
           className="v-file-input"
           style={{ display: 'none' }}
