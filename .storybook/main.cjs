@@ -1,6 +1,7 @@
-import type { StorybookViteConfig } from '@storybook/builder-vite'
+// import type { StorybookViteConfig } from '@storybook/builder-vite'
 
-const config: StorybookViteConfig = {
+// const config: StorybookViteConfig = {
+const config = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -24,5 +25,7 @@ const config: StorybookViteConfig = {
     return config
   }
 }
+
+// export default config
 
 module.exports = config
