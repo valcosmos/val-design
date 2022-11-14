@@ -78,17 +78,17 @@
   
     // effect
     &--dark {
-      @include generateTheme(100%, 100%, 0, 80%);
+      @include generateTheme(100%, 100%, 0%, 80%);
     }
   
     &--plain {
-      @include generateTheme(0, 40%, 100%, 100%);
+      @include generateTheme(0%, 40%, 100%, 100%);
     }
   }
   
   .v-zoom-in-center-enter-active,
   .v-zoom-in-center-leave-active {
-    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.3s cubic-bezier(0.55, 0%, 0.1, 1);
   }
   .v-zoom-in-center-enter-from,
   .v-zoom-in-center-leave-to {
