@@ -6,7 +6,7 @@
 // // import excludeDependenciesFromBundle from 'rollup-plugin-exclude-dependencies-from-bundle'
 import baseConfig from './rollup.config'
 import replace from '@rollup/plugin-replace'
-import { terser } from 'rollup-plugin-terser'
+import { terser } from '@rollup/plugin-terser'
 
 // const overrides = {
 //   compilerOptions: {
