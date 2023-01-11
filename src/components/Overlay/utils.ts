@@ -1,10 +1,16 @@
-import { useEffect } from 'react'
-export function useListener(node, eventName: string, callback, condition) {
+import {  useEffect } from 'react'
+
+export function useListener(
+  node: (Window & typeof globalThis) | HTMLElement,
+  eventName: string,
+  callback: EventListenerOrEventListenerObject,
+  condition: boolean
+) {
   useEffect(() => {
     if (condition) {
-      window.addEventListener(eventName, callback, false)
+      node.addEventListener(eventName, callback, false)
       return () => {
-        window.removeEventListener(eventName, callback, false)
+        node.removeEventListener(eventName, callback, false)
       }
     }
   }, [condition])
