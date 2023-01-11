@@ -1,6 +1,5 @@
 import React, { CSSProperties, FC, ReactNode } from 'react'
-import classNames from 'classnames'
-import { animated, useSpring, useTransition } from '@react-spring/web'
+import { animated, useTransition } from '@react-spring/web'
 
 interface ModalProps {
   open: boolean

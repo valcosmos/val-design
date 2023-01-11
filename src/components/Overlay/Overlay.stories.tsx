@@ -15,18 +15,12 @@ const Template: ComponentStory<typeof Overlay> = (args) => <Overlay {...args} />
 export const Primary = Template.bind({})
 
 Primary.args = {
-  children: (
-    <div style={{ border: '1px solid black', width: 300, height: 300 }}>
-      content
-    </div>
-  )
+  children: <div style={{ border: '1px solid black', width: 300, height: 300 }}>content</div>
 }
 
 export const Basic = () => (
   <Overlay>
-    <div style={{ border: '1px solid black', width: 300, height: 300 }}>
-      Overlay
-    </div>
+    <div style={{ border: '1px solid black', width: 300, height: 300 }}>Overlay</div>
   </Overlay>
 )
 
@@ -38,7 +32,12 @@ export const UnderControl = () => {
       <Button type={'primary'} onClick={() => setVisible(true)}>
         Click
       </Button>
-      <Overlay visible={visible} onVisibleChange={(v) => setVisible(v)}>
+      <button id="position">定位元素</button>
+      <Overlay
+        target={document.getElementById('position') as HTMLElement}
+        visible={visible}
+        onVisibleChange={(v) => setVisible(v)}
+      >
         <div
           style={{
             border: '1px solid black',
