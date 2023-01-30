@@ -3,8 +3,11 @@ import React from 'react'
 import Button from './index'
 
 test('Button component should work', () => {
-  const { getByRole } = render(<Button />)
-  getByRole('button')
+  const { getByText } = render(<Button>button</Button>)
+  const element = getByText('button')
+  expect(element).toBeTruthy()
+  expect(element.tagName).toEqual('BUTTON')
+  expect(element.className).toEqual('btn btn-default')
 })
 
 test('Button type should work', () => {
