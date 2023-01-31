@@ -47,8 +47,7 @@ export const Radio: FC<RadioProps> = (props) => {
   })
 
   useEffect(() => {
-    if ('checked' in props && props.checked !== checked)
-      setChecked(props.checked!)
+    if ('checked' in props && props.checked !== checked) setChecked(props.checked as boolean)
   }, [props.checked])
 
   const handleClick = (event: any) => {
@@ -69,12 +68,7 @@ export const Radio: FC<RadioProps> = (props) => {
   return (
     <span className={wrapperCls} onClick={handleClick}>
       <span className={cls}>
-        <input
-          type="radio"
-          className="v-radio-input"
-          value={value}
-          ref={inputEl}
-        />
+        <input type="radio" className="v-radio-input" value={value} ref={inputEl} />
         <span className="v-radio-inner" />
       </span>
       <span>{children}</span>

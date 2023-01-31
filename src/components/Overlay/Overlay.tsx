@@ -33,7 +33,7 @@ export const Overlay: FC<OverlayProps> = (props) => {
 
   useEffect(() => {
     if ('visible' in props) {
-      setVisible(prevVisible!)
+      setVisible(prevVisible as boolean)
     }
   }, [prevVisible])
 
@@ -79,7 +79,7 @@ export const Overlay: FC<OverlayProps> = (props) => {
   //   }
   // }, [visible && overlayRef.current])
 
-  const handleMouseDown = (e: MouseEvent) => {
+  const handleMouseDown: EventListener = (e) => {
     const safeNodeList: any[] = []
     // 弹窗默认为安全节点
     if (overlayRef.current) {
@@ -97,10 +97,10 @@ export const Overlay: FC<OverlayProps> = (props) => {
 
     onVisibleChange?.(false)
   }
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown: EventListener = (e) => {
     if (!visible || !overlayRef.current) return
 
-    if (e.key === 'Escape') {
+    if ((e as KeyboardEvent).key === 'Escape') {
       onVisibleChange?.(false)
     }
   }

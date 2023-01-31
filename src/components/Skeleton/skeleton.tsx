@@ -10,7 +10,7 @@ interface SkeletonProps {
 export const Skeleton: FC<SkeletonProps> = ({ active, row, children }) => {
   let rows = [0]
   if (!children) {
-    rows = Array.from({ length: row! }, () => 1).map((item, index) => index)
+    rows = Array.from({ length: row as number }, () => 1).map((item, index) => index)
   }
   const classes = classNames('v-skeleton', {
     'v-skeleton__active': active,
