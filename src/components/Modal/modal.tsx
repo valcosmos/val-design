@@ -2,11 +2,11 @@ import React, { CSSProperties, FC, ReactNode } from 'react'
 import { animated, useTransition } from '@react-spring/web'
 
 interface ModalProps {
-  open: boolean
-  centered: boolean
-  title: string | ReactNode
-  children: ReactNode
-  onCancel: (isOpen: boolean) => void
+  open?: boolean
+  centered?: boolean
+  title?: string | ReactNode
+  children?: ReactNode
+  onCancel?: (isOpen: boolean) => void
 }
 
 export const Modal: FC<ModalProps> = ({ open, onCancel, centered, children, title }) => {
@@ -43,7 +43,7 @@ export const Modal: FC<ModalProps> = ({ open, onCancel, centered, children, titl
   }
 
   const onMaskClick = () => {
-    onCancel(false)
+    onCancel?.(false)
   }
 
   return (
