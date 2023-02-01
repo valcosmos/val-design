@@ -6,10 +6,10 @@ import Button from '../Button'
 
 export default {
   title: 'Feedback/Modal 对话框',
-  component: Modal
+  component: Modal,
 } as ComponentMeta<typeof Modal>
 
-const Template: ComponentStory<typeof Modal> = (args) => {
+const Template: ComponentStory<typeof Modal> = args => {
   const [open, setOpen] = useState<boolean>(false)
   const onButtonClick = () => {
     setOpen(true)
@@ -35,5 +35,5 @@ export const Primary = Template.bind({})
 Primary.args = {
   open: true,
   title: 'Modal Title',
-  centered: false
+  centered: false,
 }

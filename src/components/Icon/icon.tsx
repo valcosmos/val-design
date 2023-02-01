@@ -1,9 +1,6 @@
 import React, { FC } from 'react'
 import classNames from 'classnames'
-import {
-  FontAwesomeIcon,
-  FontAwesomeIconProps
-} from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 
 export type ThemeProps =
   | 'primary'
@@ -49,11 +46,11 @@ export interface IconProps extends FontAwesomeIconProps {
  *
  * ```
  */
-export const Icon: FC<IconProps> = (props) => {
+export const Icon: FC<IconProps> = props => {
   // icon-primary
   const { className, theme, ...restProps } = props
   const classes = classNames('v-icon', className, {
-    [`icon-${theme}`]: theme
+    [`icon-${theme}`]: theme,
   })
   return <FontAwesomeIcon className={classes} {...restProps} />
 }

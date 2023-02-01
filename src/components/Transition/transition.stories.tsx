@@ -6,12 +6,10 @@ import Button from '../Button'
 import { Transition } from './transition'
 export default {
   title: 'Others/Transition 过渡',
-  component: Transition
+  component: Transition,
 } as ComponentMeta<typeof Transition>
 
-const Template: ComponentStory<typeof Transition> = ({
-  animation
-}: TransitionProps) => {
+const Template: ComponentStory<typeof Transition> = ({ animation }: TransitionProps) => {
   const [show, setShow] = useState<boolean>(false)
 
   return (
@@ -20,7 +18,7 @@ const Template: ComponentStory<typeof Transition> = ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       }}
     >
       <Button
@@ -38,7 +36,7 @@ const Template: ComponentStory<typeof Transition> = ({
             width: '200px',
             height: '150px',
             borderRadius: '20px',
-            backgroundImage: 'linear-gradient(#7028e4, #e5b2ca)'
+            backgroundImage: 'linear-gradient(#7028e4, #e5b2ca)',
           }}
         ></div>
       </Transition>
@@ -48,5 +46,5 @@ const Template: ComponentStory<typeof Transition> = ({
 
 export const Default = Template.bind({})
 Default.args = {
-  animation: 'zoom-in-top'
+  animation: 'zoom-in-top',
 }

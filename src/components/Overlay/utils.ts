@@ -1,4 +1,4 @@
-import {  useEffect } from 'react'
+import { useEffect } from 'react'
 
 export function useListener(
   node: (Window & typeof globalThis) | HTMLElement,

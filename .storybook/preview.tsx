@@ -13,9 +13,9 @@ export const parameters = {
   controls: {
     matchers: {
       color: /(background|color)$/i,
-      date: /Date$/
-    }
-  }
+      date: /Date$/,
+    },
+  },
   // options: {
   // theme: {
   //   brandTitle: 'val-design',
@@ -26,13 +26,13 @@ export const parameters = {
 
 const styles: React.CSSProperties = {
   // textAlign: 'center',
-  padding: '20px'
+  padding: '20px',
 }
 export const decorators = [
-  (Story) => (
+  Story => (
     <div style={styles}>
       {/* <h3 style={{ marginBottom: '20px' }}>组件演示</h3> */}
       <Story />
     </div>
-  )
+  ),
 ]

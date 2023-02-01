@@ -6,16 +6,16 @@ const config = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
   ],
 
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-vite',
-    disableTelemetry: true
+    disableTelemetry: true,
   },
   features: {
-    storyStoreV7: true
+    storyStoreV7: true,
   },
   async viteFinal(config, { configType }) {
     // customize the Vite config here
@@ -23,7 +23,7 @@ const config = {
       return { ...config, base: './' }
     }
     return config
-  }
+  },
 }
 
 // export default config

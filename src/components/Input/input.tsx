@@ -1,16 +1,10 @@
-import React, {
-  FC,
-  ReactElement,
-  InputHTMLAttributes,
-  ChangeEvent
-} from 'react'
+import React, { FC, ReactElement, InputHTMLAttributes, ChangeEvent } from 'react'
 import classNames from 'classnames'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import Icon from '../Icon/icon'
 
 type InputSize = 'lg' | 'sm'
-export interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
   /**
    * 是否禁用 Input
    */
@@ -45,14 +39,14 @@ export interface InputProps
  *
  * ```
  */
-export const Input: FC<InputProps> = (props) => {
+export const Input: FC<InputProps> = props => {
   const { disabled, size, icon, prepend, append, style, ...restProps } = props
   const cnames = classNames('v-input-wrapper', {
     [`input-size-${size}`]: size,
     'is-disabled': disabled,
     'input-group': prepend || append,
     'input-group-append': !!append,
-    'input-group-prepend': !!prepend
+    'input-group-prepend': !!prepend,
   })
 
   return (

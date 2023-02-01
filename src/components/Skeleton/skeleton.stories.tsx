@@ -4,14 +4,12 @@ import Skeleton from './skeleton'
 
 const Meta: ComponentMeta<typeof Skeleton> = {
   title: 'Feedback/Skeleton 骨架屏',
-  component: Skeleton
+  component: Skeleton,
 }
 
 export default Meta
 
-const Template: ComponentStory<typeof Skeleton> = (args) => (
-  <Skeleton {...args} />
-)
+const Template: ComponentStory<typeof Skeleton> = args => <Skeleton {...args} />
 
 export const BasicSkeleton = Template.bind({})
 
@@ -25,11 +23,7 @@ export const SkeletonAsBackground = Template.bind({})
 
 SkeletonAsBackground.args = {
   active: true,
-  children: (
-    <p style={{ padding: '20px' }}>
-      Content here(it could be images or others)
-    </p>
-  )
+  children: <p style={{ padding: '20px' }}>Content here(it could be images or others)</p>,
 }
 
 export const MultiRow = Template.bind({})

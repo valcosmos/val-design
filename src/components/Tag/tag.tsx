@@ -14,19 +14,12 @@ interface TagProps {
   children: ReactNode
 }
 
-export const Tag: FC<TagProps> = ({
-  type,
-  size,
-  theme,
-  color,
-  hit,
-  children
-}) => {
+export const Tag: FC<TagProps> = ({ type, size, theme, color, hit, children }) => {
   const classes = classNames('v-tag', [
     type && `v-tag--${type}`,
     size && `v-tag--${size}`,
     theme && `v-tag--${theme}`,
-    hit && 'is-hit'
+    hit && 'is-hit',
   ])
   return (
     <span className={classes} style={{ color: color }}>
@@ -38,7 +31,7 @@ export const Tag: FC<TagProps> = ({
 Tag.defaultProps = {
   type: 'success',
   theme: 'light',
-  size: 'medium'
+  size: 'medium',
 }
 
 export default Tag

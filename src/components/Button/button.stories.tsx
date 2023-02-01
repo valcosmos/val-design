@@ -15,44 +15,44 @@ export default {
   component: Button,
   parameters: {
     docs: {
-      page: mdx
-    }
-  }
+      page: mdx,
+    },
+  },
 } as ComponentMeta<typeof Button>
 
 // 👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof Button> = (args) => (
+const Template: ComponentStory<typeof Button> = args => (
   <Button type="primary" onClick={action('clicked')} {...args}></Button>
 )
 
 export const Default = Template.bind({})
 Default.args = {
   type: 'default',
-  children: 'Default Button'
+  children: 'Default Button',
 }
 
 export const Primary = Template.bind({})
 Primary.args = {
   type: 'primary',
-  children: 'Primary Button'
+  children: 'Primary Button',
 }
 
 export const Success = Template.bind({})
 Success.args = {
   type: 'success',
-  children: 'Success Button'
+  children: 'Success Button',
 }
 
 export const Warning = Template.bind({})
 Warning.args = {
   type: 'warning',
-  children: 'Success Button'
+  children: 'Success Button',
 }
 
 export const Danger = Template.bind({})
 Danger.args = {
   type: 'danger',
-  children: 'Danger Button'
+  children: 'Danger Button',
 }
 
 export const Link = Template.bind({})
@@ -60,17 +60,17 @@ Link.args = {
   type: 'link',
   href: 'https://valzt.cn',
   target: '_blank',
-  children: 'Link Button'
+  children: 'Link Button',
 }
 
 export const LargeButton = Template.bind({})
 LargeButton.args = {
   size: 'lg',
-  children: 'Large Button'
+  children: 'Large Button',
 }
 
 export const SmallButton = Template.bind({})
 SmallButton.args = {
   size: 'sm',
-  children: 'Small Button'
+  children: 'Small Button',
 }

@@ -22,8 +22,7 @@
     &.is-active,
     &:hover {
       color: $menu-item-active-color;
-      border-bottom: $menu-item-active-border-width solid
-        $menu-item-active-color;
+      border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
     }
   }
   .submenu-item {

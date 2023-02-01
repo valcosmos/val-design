@@ -13,19 +13,19 @@ const Meta: ComponentMeta<typeof Form> = {
   component: Form,
   subcomponents: { Item: Item },
   decorators: [
-    (Story) => (
+    Story => (
       <div style={{ width: '550px' }}>
         <Story />
       </div>
-    )
+    ),
   ],
   parameters: {
     docs: {
       source: {
-        type: 'code'
-      }
-    }
-  }
+        type: 'code',
+      },
+    },
+  },
 }
 export default Meta
 
@@ -43,17 +43,13 @@ const confirmRules: CustomRule[] = [
           resolve()
         }, 1000)
       })
-    }
-  })
+    },
+  }),
 ]
 export const ABasicForm = (args: FormProps) => {
   return (
     <Form {...args}>
-      <Item
-        label="用户名"
-        name="name"
-        rules={[{ type: 'string', required: true, min: 3 }]}
-      >
+      <Item label="用户名" name="name" rules={[{ type: 'string', required: true, min: 3 }]}>
         <Input />
       </Item>
       <Item
@@ -75,15 +71,11 @@ ABasicForm.storyName = 'Basic form'
 
 export const BRegForm = (args: FormProps) => {
   const initialValues = {
-    agreement: false
+    agreement: false,
   }
   return (
     <Form {...args} initialValues={initialValues}>
-      <Item
-        label="邮件"
-        name="email"
-        rules={[{ type: 'email', required: true }]}
-      >
+      <Item label="邮件" name="email" rules={[{ type: 'email', required: true }]}>
         <Input />
       </Item>
       <Item
@@ -94,14 +86,11 @@ export const BRegForm = (args: FormProps) => {
         <Input type="password" />
       </Item>
 
-      <div
-        className="agreement-section"
-        style={{ display: 'flex', justifyContent: 'center' }}
-      >
+      <div className="agreement-section" style={{ display: 'flex', justifyContent: 'center' }}>
         <Item
           name="agreement"
           rules={[{ type: 'enum', enum: [true], message: '请同意协议' }]}
-          getValueFromEvent={(e) => e.target.checked}
+          getValueFromEvent={e => e.target.checked}
           valuePropName="checked"
         >
           <input type="checkbox" />
@@ -137,17 +126,13 @@ export const CFullForm = (args: any) => {
     username: 'Cupid Valentine',
     password: '123',
     confirmPwd: '123',
-    agreement: false
+    agreement: false,
   })
   return (
     <Form initialValues={initialValue} {...args} ref={ref}>
       {({ isValid, isSubmitting }) => (
         <>
-          <Item
-            label="用户名"
-            name="username"
-            rules={[{ type: 'email', required: true }]}
-          >
+          <Item label="用户名" name="username" rules={[{ type: 'email', required: true }]}>
             <Input />
           </Item>
           <Item
@@ -160,14 +145,11 @@ export const CFullForm = (args: any) => {
           <Item label="重复密码" name="confirmPwd" rules={confirmRules}>
             <Input type="password" />
           </Item>
-          <div
-            className="agreement-section"
-            style={{ display: 'flex', justifyContent: 'center' }}
-          >
+          <div className="agreement-section" style={{ display: 'flex', justifyContent: 'center' }}>
             <Item
               name="agreement"
               valuePropName="checked"
-              getValueFromEvent={(e) => e.target.checked}
+              getValueFromEvent={e => e.target.checked}
               rules={[{ type: 'enum', enum: [true], message: '请同意协议' }]}
             >
               <input type="checkbox" />
@@ -178,8 +160,7 @@ export const CFullForm = (args: any) => {
           </div>
           <div className="v-form-submit-area">
             <Button htmlType="submit" btnType="primary">
-              登陆 {isSubmitting ? '验证中' : '验证完毕'}{' '}
-              {isValid ? '通过😄' : '没通过😢'}{' '}
+              登陆 {isSubmitting ? '验证中' : '验证完毕'} {isValid ? '通过😄' : '没通过😢'}{' '}
             </Button>
             <Button htmlType="button" onClick={resetAll}>
               重置

@@ -22,9 +22,8 @@ const __dirname = dirname(import.meta)
  * @param {*} str
  */
 const varCase = (str: string) =>
-  str.replace(/-[a-z]/g, (m) => m[1].toUpperCase()).replace(/^.{1}/, (m) => m.toUpperCase())
-const lowCase = (str: string) =>
-  str.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`).replace(/^-/, '')
+  str.replace(/-[a-z]/g, m => m[1].toUpperCase()).replace(/^.{1}/, m => m.toUpperCase())
+const lowCase = (str: string) => str.replace(/[A-Z]/g, m => `-${m.toLowerCase()}`).replace(/^-/, '')
 
 async function create() {
   const component = process.argv[2]
@@ -42,16 +41,14 @@ async function create() {
 
   const tplFiles = glob.sync(path.join(__dirname, 'template/*.hbs'))
 
-  tplFiles.forEach(async (filePath) => {
+  tplFiles.forEach(async filePath => {
     const content = await fs.readFile(filePath, 'utf-8')
     const template = handlebars.compile(content)
     const result = template({
       dirName,
-      componentName
+      componentName,
     })
 
-   
-    
     const newPath = filePath
       .replace('scripts/template', dir)
       .replace('C', componentName)
@@ -59,8 +56,8 @@ async function create() {
       // .replace('Component', componentName)
       .replace('.hbs', '')
 
-     console.log(newPath)
-    
+    console.log(newPath)
+
     await fs.writeFile(newPath, result)
 
     console.log(chalk.green(`write ${newPath} success`))

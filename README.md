@@ -22,7 +22,6 @@
   
 </div>
 
-
 ## Description
 
 val-design is a simple component library, built with [React.js](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/), mainly for learning, or you can optimize or encapsulate it for production use. If you have any issues, or better suggestions, welcome to put them in the [issues](https://github.com/valcosmos/val-design/issues) or [discussion](https://github.com/valcosmos/val-design/discussions), and I will be very grateful.
@@ -49,21 +48,19 @@ val-design is a simple component library, built with [React.js](https://reactjs.
 
 ## Getting started
 
-* To check out the [guide](https://valcosmos.github.io/val-design), visit [https://valcosmos.github.io/val-design](https://valcosmos.github.io/val-design). 📚
+- To check out the [guide](https://valcosmos.github.io/val-design), visit [https://valcosmos.github.io/val-design](https://valcosmos.github.io/val-design). 📚
 
-* To check out the [example](https://stackblitz.com/edit/vitejs-vite-jvn7fm), visit [https://stackblitz.com/edit/vitejs-vite-jvn7fm](https://stackblitz.com/edit/vitejs-vite-jvn7fm). 📚
+- To check out the [example](https://stackblitz.com/edit/vitejs-vite-jvn7fm), visit [https://stackblitz.com/edit/vitejs-vite-jvn7fm](https://stackblitz.com/edit/vitejs-vite-jvn7fm). 📚
 
 <!-- Example:
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/vitejs-vite-jvn7fm) -->
-
 
 ## Install
 
 ```bash
 npm i val-design
 ```
-
 
 ```bash
 yarn add val-design
@@ -93,7 +90,7 @@ const App = () => (
 
 ## Project Activity
 
-![Alt](https://repobeats.axiom.co/api/embed/598e41bfc615ece01d4f2e4c881fe52c54e6d8a9.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/598e41bfc615ece01d4f2e4c881fe52c54e6d8a9.svg 'Repobeats analytics image')
 
 ## Development
 
@@ -104,7 +101,6 @@ const App = () => (
 Use StackBlitz
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/valcosmos/val-design)
-
 
 clone locally:
 
@@ -121,7 +117,6 @@ pnpm storybook
 ```
 
 Open your browser and visit http://localhost:6006
-
 
 ## Issues
 

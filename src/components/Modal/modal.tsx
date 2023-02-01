@@ -14,18 +14,18 @@ export const Modal: FC<ModalProps> = ({ open, onCancel, centered, children, titl
     from: {
       // scale: 0,
       transform: 'translate3d(0, -20px, 0)',
-      opacity: 0
+      opacity: 0,
     },
     enter: {
       // scale: 1,
       transform: 'translate3d(0, 0, 0)',
-      opacity: 1
+      opacity: 1,
     },
     leave: {
       // scale: 0,
       transform: 'translate3d(0, -20px, 0)',
-      opacity: 0
-    }
+      opacity: 0,
+    },
     // config: { duration: 500 }
   })
 
@@ -39,7 +39,7 @@ export const Modal: FC<ModalProps> = ({ open, onCancel, centered, children, titl
     height: '100vh',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   }
 
   const onMaskClick = () => {

@@ -7,10 +7,10 @@ import Icon from '../Icon/icon'
 
 export default {
   title: 'Data Entry/Upload 上传',
-  component: Upload
+  component: Upload,
 } as ComponentMeta<typeof Upload>
 
-const Template: ComponentStory<typeof Upload> = (props) => (
+const Template: ComponentStory<typeof Upload> = props => (
   <Upload {...props}>
     <Icon icon="plus" size="3x" theme="secondary" />
     <br />
@@ -31,26 +31,26 @@ SimpleUpload.args = {
       uid: 'aaaa',
       name: 'image.png',
       status: 'success',
-      size: 1024
+      size: 1024,
     },
     {
       uid: 'bbbb',
       name: 'image1.png',
       status: 'ready',
-      size: 1024
+      size: 1024,
     },
     {
       uid: 'cccc',
       name: 'image2.png',
       status: 'uploading',
       size: 1024,
-      percent: 80
+      percent: 80,
     },
     {
       uid: 'ffff',
       name: 'image3.png',
       status: 'error',
-      size: 1024
-    }
-  ]
+      size: 1024,
+    },
+  ],
 }

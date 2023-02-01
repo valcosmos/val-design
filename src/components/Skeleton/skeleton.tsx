@@ -15,11 +15,11 @@ export const Skeleton: FC<SkeletonProps> = ({ active, row, children }) => {
   const classes = classNames('v-skeleton', {
     'v-skeleton__active': active,
     'v-skeleton__row': rows.length > 0,
-    'v-skeleton__bg': !!children
+    'v-skeleton__bg': !!children,
   })
   return (
     <>
-      {rows.map((r) => (
+      {rows.map(r => (
         <div key={r} className={classes}>
           {children}
         </div>
@@ -29,7 +29,7 @@ export const Skeleton: FC<SkeletonProps> = ({ active, row, children }) => {
 }
 
 Skeleton.defaultProps = {
-  row: 4
+  row: 4,
 }
 
 export default Skeleton

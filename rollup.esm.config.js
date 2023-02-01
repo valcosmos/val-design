@@ -6,10 +6,10 @@ const config = {
   output: [
     {
       file: 'dist/index.es.js',
-      format: 'es'
-    }
+      format: 'es',
+    },
   ],
-  plugins: [...baseConfig.plugins, excludeDependenciesFromBundle()]
+  plugins: [...baseConfig.plugins, excludeDependenciesFromBundle()],
 
   // external: ['react', 'react-dom', 'axios']
 }

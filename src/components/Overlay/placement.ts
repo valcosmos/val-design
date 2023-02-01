@@ -27,24 +27,23 @@ const placementMap = {
   rightBottom: ['bl', 'br'],
   bottomLeft: ['tl', 'bl'],
   bottom: ['tc', 'bc'],
-  bottomRight: ['tr', 'br']
+  bottomRight: ['tr', 'br'],
 }
 
 console.log(placementMap)
 
-
 export function getPlacement({ target, overlay }: { target: HTMLElement; overlay?: any }) {
-  console.log("🚀 ~ file: placement.ts:37 ~ getPlacement ~ overlay", overlay)
+  console.log('🚀 ~ file: placement.ts:37 ~ getPlacement ~ overlay', overlay)
   const { width, height, left, top } = target.getBoundingClientRect()
-  console.log("🚀 ~ file: placement.ts:38 ~ getPlacement ~ width", width)
+  console.log('🚀 ~ file: placement.ts:38 ~ getPlacement ~ width', width)
 
   const { left: cleft, top: ctop } = document.body.getBoundingClientRect()
-  console.log("🚀 ~ file: placement.ts:41 ~ getPlacement ~ cleft", cleft)
+  console.log('🚀 ~ file: placement.ts:41 ~ getPlacement ~ cleft', cleft)
   const { scrollTop: cScrollTop, scrollLeft: cScrollLeft } = document.body
-  console.log("🚀 ~ file: placement.ts:43 ~ getPlacement ~ cScrollLeft", cScrollLeft)
+  console.log('🚀 ~ file: placement.ts:43 ~ getPlacement ~ cScrollLeft', cScrollLeft)
   return {
     position: 'absolute',
     top: top + height - ctop + cScrollTop,
-    let: left
+    let: left,
   }
 }
