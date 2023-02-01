@@ -6,14 +6,12 @@ import Radio from './radio'
 
 const RadioMeta: ComponentMeta<typeof RadioGroup> = {
   title: 'Data Entry/RadioGroup 单选框组',
-  component: RadioGroup
+  component: RadioGroup,
 }
 
 export default RadioMeta
 
-const Template: ComponentStory<typeof RadioGroup> = (args) => (
-  <RadioGroup {...args} />
-)
+const Template: ComponentStory<typeof RadioGroup> = args => <RadioGroup {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
@@ -26,8 +24,8 @@ Primary.args = {
     </Radio>,
     <Radio value="3" key="3">
       选项3
-    </Radio>
-  ]
+    </Radio>,
+  ],
 }
 
 export const UnderControl = () => {

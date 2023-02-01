@@ -6,7 +6,7 @@ import Message from './message'
 
 export default {
   title: 'Feedback/Message 全局提示',
-  component: Message
+  component: Message,
 } as ComponentMeta<typeof Message>
 
 export const AllMessage: ComponentStory<typeof Message> = () => (

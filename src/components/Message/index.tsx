@@ -29,11 +29,11 @@ export const MessageContainer = () => {
 
   const remove = (notice: Notice) => {
     const { key } = notice
-    setNotices((prevNotices) => prevNotices.filter((item) => key !== item.key))
+    setNotices(prevNotices => prevNotices.filter(item => key !== item.key))
   }
 
   add = (notice: Notice) => {
-    setNotices((prevNotices) => [...prevNotices, notice])
+    setNotices(prevNotices => [...prevNotices, notice])
     setTimeout(() => {
       remove(notice)
     }, timeout)
@@ -72,34 +72,34 @@ if (!el) {
 createRoot(el).render(<MessageContainer />)
 
 export const message: MessageApi = {
-  info: (text) => {
+  info: text => {
     add({
       text,
       key: getUUID(),
-      type: 'info'
+      type: 'info',
     })
   },
-  success: (text) => {
+  success: text => {
     add({
       text,
       key: getUUID(),
-      type: 'success'
+      type: 'success',
     })
   },
-  warning: (text) => {
+  warning: text => {
     add({
       text,
       key: getUUID(),
-      type: 'warning'
+      type: 'warning',
     })
   },
-  error: (text) => {
+  error: text => {
     add({
       text,
       key: getUUID(),
-      type: 'danger'
+      type: 'danger',
     })
-  }
+  },
 }
 
 export default message

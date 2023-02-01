@@ -3,8 +3,7 @@ import React, { FC, ReactNode, useContext, useEffect } from 'react'
 import { FormContext } from './form'
 import { CustomRule } from './useStore'
 
-export type SomeRequired<T, K extends keyof T> = Required<Pick<T, K>> &
-  Omit<T, K>
+export type SomeRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>
 
 export interface FormItemProps {
   name: string
@@ -19,7 +18,7 @@ export interface FormItemProps {
   validateTrigger?: string
 }
 
-export const FormItem: FC<FormItemProps> = (props) => {
+export const FormItem: FC<FormItemProps> = props => {
   const {
     label,
     children,
@@ -28,13 +27,12 @@ export const FormItem: FC<FormItemProps> = (props) => {
     trigger,
     getValueFromEvent,
     rules,
-    validateTrigger
+    validateTrigger,
   } = props as SomeRequired<
     FormItemProps,
     'getValueFromEvent' | 'trigger' | 'valuePropName' | 'validateTrigger'
   >
-  const { dispatch, fields, initialValues, validateField } =
-    useContext(FormContext)
+  const { dispatch, fields, initialValues, validateField } = useContext(FormContext)
   const rowClass = classNames('v-row', { 'v-row-no-label': !label })
 
   useEffect(() => {
@@ -48,8 +46,8 @@ export const FormItem: FC<FormItemProps> = (props) => {
         value,
         rules: rules || [],
         errors: [],
-        isValid: true
-      }
+        isValid: true,
+      },
     })
   }, [])
 
@@ -57,15 +55,13 @@ export const FormItem: FC<FormItemProps> = (props) => {
   const fieldState = fields[name]
   const value = fieldState && fieldState.value
   const errors = fieldState && fieldState.errors
-  const isRequired = rules?.some(
-    (rule) => typeof rule !== 'function' && rule.required
-  )
+  const isRequired = rules?.some(rule => typeof rule !== 'function' && rule.required)
   const hasError = errors && errors.length > 0
 
   const labelClass = classNames({ 'v-form-item-required': isRequired })
 
   const itemClass = classNames('v-form-item-control', {
-    'v-form-item-has-error': hasError
+    'v-form-item-has-error': hasError,
   })
 
   const onValueUpdate = (e: any) => {
@@ -89,15 +85,11 @@ export const FormItem: FC<FormItemProps> = (props) => {
   // todo 判断children类型 显示警告
   // 没有子组件
   if (childList.length === 0) {
-    console.error(
-      'No child element found in Form.Item, please provide one form component'
-    )
+    console.error('No child element found in Form.Item, please provide one form component')
   }
   // 子组件大于一个
   if (childList.length > 1) {
-    console.warn(
-      'Only support one child element in Form.Item, others will be omitted'
-    )
+    console.warn('Only support one child element in Form.Item, others will be omitted')
   }
   // 不是 React Element的子组件
   if (!React.isValidElement(childList[0])) {
@@ -107,7 +99,7 @@ export const FormItem: FC<FormItemProps> = (props) => {
   // clone Element 混合child 以及手动的属性列表
   const returnChildNode = React.cloneElement(child, {
     ...child.props,
-    ...controlProps
+    ...controlProps,
   })
 
   return (
@@ -135,6 +127,6 @@ FormItem.defaultProps = {
   valuePropName: 'value',
   trigger: 'onChange',
   validateTrigger: 'onBlur',
-  getValueFromEvent: (e) => e.target.value
+  getValueFromEvent: e => e.target.value,
 }
 export default FormItem

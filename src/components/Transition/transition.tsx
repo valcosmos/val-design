@@ -32,13 +32,10 @@ type TransitionProps = CSSTransitionProps & {
   children?: ReactNode | string
 }
 
-export const Transition: React.FC<TransitionProps> = (props) => {
+export const Transition: React.FC<TransitionProps> = props => {
   const { children, classNames, animation, wrapper, ...restProps } = props
   return (
-    <CSSTransition
-      classNames={classNames || animation}
-      {...restProps}
-    >
+    <CSSTransition classNames={classNames || animation} {...restProps}>
       {wrapper ? <div>{children}</div> : children}
     </CSSTransition>
   )
@@ -46,7 +43,7 @@ export const Transition: React.FC<TransitionProps> = (props) => {
 
 Transition.defaultProps = {
   unmountOnExit: true,
-  appear: true
+  appear: true,
 }
 
 export default Transition

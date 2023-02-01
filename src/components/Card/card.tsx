@@ -13,12 +13,7 @@ interface CardProps {
   children: ReactNode
 }
 
-export const Card: FC<CardProps> = ({
-  header,
-  bodyStyle,
-  shadow,
-  children
-}) => {
+export const Card: FC<CardProps> = ({ header, bodyStyle, shadow, children }) => {
   const classes = classNames('v-card', `v-card-${shadow}-shadow`)
 
   return (
@@ -33,7 +28,7 @@ export const Card: FC<CardProps> = ({
 }
 
 Card.defaultProps = {
-  shadow: 'never'
+  shadow: 'never',
 }
 
 export default Card

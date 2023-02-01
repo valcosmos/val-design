@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  FormEvent,
-  ReactNode,
-  forwardRef,
-  useImperativeHandle
-} from 'react'
+import React, { createContext, FormEvent, ReactNode, forwardRef, useImperativeHandle } from 'react'
 
 import useStore, { FormState } from './useStore'
 import { ValidateError } from 'async-validator'
@@ -16,10 +10,7 @@ export interface FormProps {
   initialValues?: Record<string, any>
   children?: ReactNode | RenderProps
   onFinish?: (value: Record<string, any>) => void
-  onFinishFailed: (
-    value: Record<string, any>,
-    errors: Record<string, ValidateError[]>
-  ) => void
+  onFinishFailed: (value: Record<string, any>, errors: Record<string, ValidateError[]>) => void
 }
 
 export type IFromContext = Pick<
@@ -30,10 +21,7 @@ export type IFromContext = Pick<
 
 export const FormContext = createContext<IFromContext>({} as IFromContext)
 
-export type IFormRef = Omit<
-  ReturnType<typeof useStore>,
-  'fields' | 'dispatch' | 'form'
->
+export type IFormRef = Omit<ReturnType<typeof useStore>, 'fields' | 'dispatch' | 'form'>
 
 export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
   const { name, children, initialValues, onFinish, onFinishFailed } = props
@@ -48,7 +36,7 @@ export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
     dispatch,
     fields,
     initialValues,
-    validateField
+    validateField,
   }
 
   const submitForm = async (e: FormEvent<HTMLFormElement>) => {
@@ -72,9 +60,7 @@ export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
   return (
     <>
       <form name={name} className="v-form" onSubmit={submitForm}>
-        <FormContext.Provider value={passedContext}>
-          {childrenNode}
-        </FormContext.Provider>
+        <FormContext.Provider value={passedContext}>{childrenNode}</FormContext.Provider>
       </form>
       {/* for test */}
       {/* <div>
@@ -87,7 +73,7 @@ export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
 
 Form.displayName = 'v_form'
 Form.defaultProps = {
-  name: 'v_form'
+  name: 'v_form',
 }
 
 export default Form

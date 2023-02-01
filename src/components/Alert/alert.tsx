@@ -38,14 +38,14 @@ export interface AlertProps {
  *
  * ```
  */
-export const Alert: FC<AlertProps> = (props) => {
+export const Alert: FC<AlertProps> = props => {
   const [hide, setHide] = useState(false)
   const { title, description, type, onClose, closable } = props
   const classes = classNames('v-alert', {
-    [`v-alert-${type}`]: type
+    [`v-alert-${type}`]: type,
   })
   const titleClass = classNames('v-alert-title', {
-    'bold-title': description
+    'bold-title': description,
   })
   const handleClose = (e: React.MouseEvent) => {
     console.log(e)
@@ -72,6 +72,6 @@ export const Alert: FC<AlertProps> = (props) => {
 
 Alert.defaultProps = {
   type: 'default',
-  closable: true
+  closable: true,
 }
 export default Alert

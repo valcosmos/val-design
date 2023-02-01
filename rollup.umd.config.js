@@ -29,20 +29,20 @@ const config = {
       globals: {
         react: 'React',
         'react-dom': 'ReactDOM',
-        axios: 'Axios'
+        axios: 'Axios',
       },
-      plugins: [terser()]
-    }
+      plugins: [terser()],
+    },
   ],
   plugins: [
     replace({
       preventAssignment: true,
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
-    ...baseConfig.plugins
+    ...baseConfig.plugins,
   ],
 
-  external: ['react', 'react-dom', 'axios']
+  external: ['react', 'react-dom', 'axios'],
 }
 
 export default config

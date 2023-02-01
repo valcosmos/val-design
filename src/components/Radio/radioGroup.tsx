@@ -7,7 +7,7 @@ import React, {
   FormEvent,
   HTMLAttributes,
   ReactNode,
-  useState
+  useState,
 } from 'react'
 import Radio from './radio'
 
@@ -21,12 +21,12 @@ export interface RadioGroupProps extends HTMLAttributes<HTMLInputElement> {
   style?: CSSProperties
 }
 
-export const RadioGroup: FC<RadioGroupProps> = (props) => {
+export const RadioGroup: FC<RadioGroupProps> = props => {
   const { disabled, children } = props
 
   const [value, setValue] = useState(props.defaultValue || props.value)
   const cls = classNames({
-    'v-radio-group': true
+    'v-radio-group': true,
   })
 
   const handleClick = (e: any) => {
@@ -39,7 +39,7 @@ export const RadioGroup: FC<RadioGroupProps> = (props) => {
     return cloneElement(child, {
       checked: child.props.value === value,
       disabled: disabled,
-      onChange: handleClick
+      onChange: handleClick,
     })
   })
 

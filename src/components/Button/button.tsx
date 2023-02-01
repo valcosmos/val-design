@@ -16,13 +16,7 @@ import classNames from 'classnames'
 // const ButtonHTMLTypes = tuple('submit', 'button', 'reset')
 // export type ButtonHTMLType = typeof ButtonHTMLTypes[number]
 
-export type ButtonTypes =
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'danger'
-  | 'warning'
-  | 'link'
+export type ButtonTypes = 'default' | 'primary' | 'success' | 'danger' | 'warning' | 'link'
 
 interface BaseButtonProps {
   /**
@@ -65,8 +59,7 @@ type NativeButtonProps = Record<string, unknown> &
   Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type'>
 
 // 链接原生属性类型
-type AnchorButtonProps = BaseButtonProps &
-  React.AnchorHTMLAttributes<HTMLElement>
+type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
 
 // 将所有属性设置为可选，因为button有些链接a不具备 反之亦然
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
@@ -82,14 +75,13 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
  *
  * ```
  */
-export const Button: React.FC<ButtonProps> = (props) => {
-  const { type, disabled, size, children, href, className, ...restProps } =
-    props
+export const Button: React.FC<ButtonProps> = props => {
+  const { type, disabled, size, children, href, className, ...restProps } = props
   // 默认添加btn类
   const classes = classNames('btn', className, {
     [`btn-${type}`]: type,
     [`btn-${size}`]: size,
-    disabled: type === 'link' && disabled
+    disabled: type === 'link' && disabled,
   })
   if (type === 'link' && href) {
     return (
@@ -108,7 +100,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   disabled: false,
-  type: 'default'
+  type: 'default',
 }
 
 export default Button

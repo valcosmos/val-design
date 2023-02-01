@@ -7,7 +7,7 @@ import React, {
   ReactNode,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react'
 
 export interface RadioProps extends HTMLAttributes<HTMLInputElement> {
@@ -21,14 +21,14 @@ export interface RadioProps extends HTMLAttributes<HTMLInputElement> {
   style?: CSSProperties
 }
 
-export const Radio: FC<RadioProps> = (props) => {
+export const Radio: FC<RadioProps> = props => {
   const {
     disabled,
 
     children,
 
     onChange,
-    value
+    value,
   } = props
 
   const [checked, setChecked] = useState<boolean>(false)
@@ -38,12 +38,12 @@ export const Radio: FC<RadioProps> = (props) => {
   const cls = classNames({
     'v-radio': true,
     'v-radio-checked': checked,
-    'v-radio-disabled': disabled
+    'v-radio-disabled': disabled,
   })
 
   const wrapperCls = classNames({
     'v-radio-wrapper': true,
-    'v-radio-wrapper-disabled': disabled
+    'v-radio-wrapper-disabled': disabled,
   })
 
   useEffect(() => {

@@ -14,7 +14,7 @@ addons.setConfig({
   theme: create({
     base: 'light',
     brandTitle: '✨ val-design',
-    brandUrl: 'https://github.com/valcosmos/val-design'
+    brandUrl: 'https://github.com/valcosmos/val-design',
     // brandImage: 'https://valzt.cn/media/avatar_me.png'
-  })
+  }),
 })

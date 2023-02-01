@@ -23,18 +23,12 @@ export interface ProgressProps {
   theme?: ThemeProps
 }
 
-export const Progress: FC<ProgressProps> = (props) => {
+export const Progress: FC<ProgressProps> = props => {
   const { percent, strokeHeight, showText, styles, theme } = props
   return (
     <div className="v-progress-bar" style={styles}>
-      <div
-        className="v-progress-bar-outer"
-        style={{ height: `${strokeHeight}px` }}
-      >
-        <div
-          className={`v-progress-bar-inner color-${theme}`}
-          style={{ width: `${percent}%` }}
-        >
+      <div className="v-progress-bar-outer" style={{ height: `${strokeHeight}px` }}>
+        <div className={`v-progress-bar-inner color-${theme}`} style={{ width: `${percent}%` }}>
           {showText && <span className="inner-text">{`${percent}%`}</span>}
         </div>
       </div>
@@ -45,7 +39,7 @@ export const Progress: FC<ProgressProps> = (props) => {
 Progress.defaultProps = {
   strokeHeight: 15,
   showText: true,
-  theme: 'primary'
+  theme: 'primary',
 }
 
 export default Progress

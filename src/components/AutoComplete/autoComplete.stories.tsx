@@ -8,22 +8,18 @@ const handleFetch = (query: string) => {
   // return arr.filter((item) => parseInt(item) > parseInt(query))
   return axios
     .get(`https://api.github.com/search/users?q=${query}`)
-    .then((res) => res)
+    .then(res => res)
     .then(({ data }) => {
-      return data.items
-        .slice(0, 10)
-        .map((item: any) => ({ value: item.login, ...item }))
+      return data.items.slice(0, 10).map((item: any) => ({ value: item.login, ...item }))
     })
 }
 
 export default {
   title: 'Data Entry/Auto Complete 自动完成',
-  component: AutoComplete
+  component: AutoComplete,
 } as ComponentMeta<typeof AutoComplete>
 
-const Template: ComponentStory<typeof AutoComplete> = (props) => (
-  <AutoComplete {...props} />
-)
+const Template: ComponentStory<typeof AutoComplete> = props => <AutoComplete {...props} />
 
 export const DefaultAutoComplete = Template.bind({})
 
@@ -45,6 +41,6 @@ export const DefaultAutoComplete = Template.bind({})
 
 DefaultAutoComplete.args = {
   fetchSuggestions: handleFetch,
-  onSelect: action('selected')
+  onSelect: action('selected'),
   // renderOptions: renderOption
 }

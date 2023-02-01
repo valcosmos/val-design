@@ -7,12 +7,12 @@ interface UploadListProps {
   onRemove: (_file: UploadFile) => void
 }
 
-export const UploadList: FC<UploadListProps> = (props) => {
+export const UploadList: FC<UploadListProps> = props => {
   const { fileList, onRemove } = props
 
   return (
     <ul className="v-upload-list">
-      {fileList.map((item) => {
+      {fileList.map(item => {
         return (
           <li className="v-upload-list-item" key={item.uid}>
             <span className={`file-name file-name-${item.status}`}>
@@ -23,12 +23,8 @@ export const UploadList: FC<UploadListProps> = (props) => {
               {(item.status === 'uploading' || item.status === 'ready') && (
                 <Icon icon="spinner" spin theme="primary" />
               )}
-              {item.status === 'success' && (
-                <Icon icon="check-circle" theme="success" />
-              )}
-              {item.status === 'error' && (
-                <Icon icon="times-circle" theme="danger" />
-              )}
+              {item.status === 'success' && <Icon icon="check-circle" theme="success" />}
+              {item.status === 'error' && <Icon icon="times-circle" theme="danger" />}
             </span>
             <span className="file-actions">
               <Icon
@@ -38,9 +34,7 @@ export const UploadList: FC<UploadListProps> = (props) => {
                 }}
               />
             </span>
-            {item.status === 'uploading' && (
-              <Progress percent={item.percent || 0} />
-            )}
+            {item.status === 'uploading' && <Progress percent={item.percent || 0} />}
           </li>
         )
       })}

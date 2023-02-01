@@ -9,16 +9,14 @@ export default {
    * to learn how to generate automatic titles
    */
   title: 'Feedback/Progress 进度条',
-  component: Progress
+  component: Progress,
 } as ComponentMeta<typeof Progress>
 
-const Template: ComponentStory<typeof Progress> = (args) => (
-  <Progress {...args} />
-)
+const Template: ComponentStory<typeof Progress> = args => <Progress {...args} />
 
 export const DefaultProgress = Template.bind({})
 
 DefaultProgress.args = {
   percent: 80,
-  theme: 'primary'
+  theme: 'primary',
 }

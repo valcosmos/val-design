@@ -4,28 +4,28 @@ import Tag from './tag'
 
 const Meta: ComponentMeta<typeof Tag> = {
   title: 'Data Display/Tag',
-  component: Tag
+  component: Tag,
 }
 
 export default Meta
 
-const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />
+const Template: ComponentStory<typeof Tag> = args => <Tag {...args} />
 
 export const BasicTag = Template.bind({})
 
 BasicTag.args = {
-  children: 'Basic tag'
+  children: 'Basic tag',
 }
 
 export const TagSize = Template.bind({})
 
 TagSize.args = {
   children: 'Tag size',
-  size: 'large'
+  size: 'large',
 }
 export const TagTheme = Template.bind({})
 
 TagTheme.args = {
   children: 'Theme size',
-  theme: 'plain'
+  theme: 'plain',
 }

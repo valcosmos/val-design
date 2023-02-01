@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
   KeyboardEvent,
-  useRef
+  useRef,
 } from 'react'
 
 import Icon from '../Icon'
@@ -37,9 +37,7 @@ export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
   /**
    *
    */
-  fetchSuggestions: (
-    str: string
-  ) => DataSourceType[] | Promise<DataSourceType[]>
+  fetchSuggestions: (str: string) => DataSourceType[] | Promise<DataSourceType[]>
   /**
    * 点击选择项的回调
    */
@@ -61,9 +59,8 @@ export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
  *
  * ```
  */
-export const AutoComplete: FC<AutoCompleteProps> = (props) => {
-  const { fetchSuggestions, onSelect, value, renderOptions, ...restProps } =
-    props
+export const AutoComplete: FC<AutoCompleteProps> = props => {
+  const { fetchSuggestions, onSelect, value, renderOptions, ...restProps } = props
   // 输入的搜索关键字
   const [inputValue, setInputValue] = useState((value as string) || '')
   // 过滤之后的数据
@@ -91,7 +88,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
       const results = fetchSuggestions(debouncedValue)
       if (results instanceof Promise) {
         setLoading(true)
-        results.then((data) => {
+        results.then(data => {
           setSuggestions(data)
           setLoading(false)
           if (data.length > 0) {
@@ -169,7 +166,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
       >
         <ul
           className={classNames({
-            'v-suggestion-list': suggestions.length > 0 || loading
+            'v-suggestion-list': suggestions.length > 0 || loading,
           })}
         >
           {loading && (
@@ -179,14 +176,10 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
           )}
           {suggestions.map((item, index) => {
             const cnames = classNames('suggestion-item', {
-              'is-active': index === highlightIndex
+              'is-active': index === highlightIndex,
             })
             return (
-              <li
-                key={index}
-                className={cnames}
-                onClick={() => handleSelect(item)}
-              >
+              <li key={index} className={cnames} onClick={() => handleSelect(item)}>
                 {renderTemplate(item)}
               </li>
             )

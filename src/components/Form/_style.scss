@@ -1,5 +1,5 @@
 .v-form {
-  .v-row { 
+  .v-row {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
@@ -10,20 +10,20 @@
       flex-basis: 30%;
       text-align: right;
       padding-right: 20px;
-      >label {
+      > label {
         margin-bottom: 0;
       }
-      >label.v-form-item-required:before {
+      > label.v-form-item-required:before {
         display: inline-block;
         margin-right: 4px;
         color: $danger;
         font-size: 14px;
-        font-family: SimSun,sans-serif;
+        font-family: SimSun, sans-serif;
         line-height: 1;
-        content: "*";
+        content: '*';
       }
     }
-    .v-form-item { 
+    .v-form-item {
       flex-basis: 70%;
       position: relative;
       .v-input-wrapper {
@@ -35,7 +35,7 @@
           &:focus {
             box-shadow: $input-focus-box-shadow-error;
           }
-        }  
+        }
       }
       .v-form-item-explain {
         position: absolute;
@@ -47,10 +47,9 @@
       }
     }
   }
-  .v-form-submit-area { 
+  .v-form-submit-area {
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
   }
-
 }

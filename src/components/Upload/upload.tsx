@@ -81,7 +81,7 @@ export interface UploadProps {
   children?: ReactNode | string
 }
 
-export const Upload: FC<UploadProps> = (props) => {
+export const Upload: FC<UploadProps> = props => {
   const {
     action,
     defaultFileList,
@@ -98,16 +98,13 @@ export const Upload: FC<UploadProps> = (props) => {
     accept,
     multiple,
     children,
-    drag
+    drag,
   } = props
   const fileInput = useRef<HTMLInputElement>(null)
   const [fileList, setFileList] = useState<UploadFile[]>(defaultFileList || [])
-  const updateFileList = (
-    updateFile: UploadFile,
-    updateObj: Partial<UploadFile>
-  ) => {
-    setFileList((prevList) => {
-      return prevList.map((file) => {
+  const updateFileList = (updateFile: UploadFile, updateObj: Partial<UploadFile>) => {
+    setFileList(prevList => {
+      return prevList.map(file => {
         if (file.uid === updateFile.uid) {
           return { ...file, ...updateObj }
         } else {
@@ -132,8 +129,8 @@ export const Upload: FC<UploadProps> = (props) => {
     }
   }
   const handleRemove = (file: UploadFile) => {
-    setFileList((prevList) => {
-      return prevList.filter((item) => item.uid !== file.uid)
+    setFileList(prevList => {
+      return prevList.filter(item => item.uid !== file.uid)
     })
     if (onRemove) {
       onRemove(file)
@@ -141,13 +138,13 @@ export const Upload: FC<UploadProps> = (props) => {
   }
   const uploadFiles = (files: FileList) => {
     const postFiles = Array.from(files)
-    postFiles.forEach((file) => {
+    postFiles.forEach(file => {
       if (!beforeUpload) {
         post(file)
       } else {
         const result = beforeUpload(file)
         if (result && result instanceof Promise) {
-          result.then((processedFile) => {
+          result.then(processedFile => {
             post(processedFile)
           })
         } else if (result !== false) {
@@ -163,16 +160,16 @@ export const Upload: FC<UploadProps> = (props) => {
       name: file.name,
       size: file.size,
       percent: 0,
-      raw: file
+      raw: file,
     }
     // setFileList([_file, ...fileList])
-    setFileList((prevList) => {
+    setFileList(prevList => {
       return [_file, ...prevList]
     })
     const formData = new FormData()
     formData.append(name || 'file', file)
     if (data) {
-      Object.keys(data).forEach((key) => {
+      Object.keys(data).forEach(key => {
         formData.append(key, data[key])
       })
     }
@@ -180,7 +177,7 @@ export const Upload: FC<UploadProps> = (props) => {
       .post(action, formData, {
         headers: {
           ...headers,
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': 'multipart/form-data',
         },
         withCredentials,
         onUploadProgress: (e: any) => {
@@ -191,9 +188,9 @@ export const Upload: FC<UploadProps> = (props) => {
               onProgress(percentage, file)
             }
           }
-        }
+        },
       })
-      .then((resp) => {
+      .then(resp => {
         updateFileList(_file, { status: 'success', response: resp.data })
         if (onSuccess) {
           onSuccess(resp.data, file)
@@ -202,7 +199,7 @@ export const Upload: FC<UploadProps> = (props) => {
           onChange(file)
         }
       })
-      .catch((err) => {
+      .catch(err => {
         updateFileList(_file, { status: 'error', error: err })
         if (onError) {
           onError(err, file)
@@ -215,14 +212,10 @@ export const Upload: FC<UploadProps> = (props) => {
 
   return (
     <div className="v-upload-component">
-      <div
-        className="v-upload-input"
-        style={{ display: 'inline-block' }}
-        onClick={handleClick}
-      >
+      <div className="v-upload-input" style={{ display: 'inline-block' }} onClick={handleClick}>
         {drag ? (
           <Dragger
-            onFile={(files) => {
+            onFile={files => {
               uploadFiles(files)
             }}
           >
@@ -248,6 +241,6 @@ export const Upload: FC<UploadProps> = (props) => {
 }
 
 Upload.defaultProps = {
-  name: 'file'
+  name: 'file',
 }
 export default Upload

@@ -31,14 +31,10 @@ export interface TabsProps {
  *
  * ```
  */
-export const Tabs: FC<TabsProps> = (props) => {
+export const Tabs: FC<TabsProps> = props => {
   const { defaultIndex, className, onSelect, children, type } = props
   const [activeIndex, setActiveIndex] = useState(defaultIndex)
-  const handleClick = (
-    e: React.MouseEvent,
-    index: number,
-    disabled: boolean | undefined
-  ) => {
+  const handleClick = (e: React.MouseEvent, index: number, disabled: boolean | undefined) => {
     if (!disabled) {
       setActiveIndex(index)
       if (onSelect) {
@@ -48,7 +44,7 @@ export const Tabs: FC<TabsProps> = (props) => {
   }
   const navClass = classNames('v-tabs-nav', {
     'nav-line': type === 'line',
-    'nav-card': type === 'card'
+    'nav-card': type === 'card',
   })
   const renderNavLinks = () => {
     return React.Children.map(children, (child, index) => {
@@ -56,13 +52,13 @@ export const Tabs: FC<TabsProps> = (props) => {
       const { label, disabled } = childElement.props
       const classes = classNames('v-tabs-nav-item', {
         'is-active': activeIndex === index,
-        disabled
+        disabled,
       })
       return (
         <li
           className={classes}
           key={`nav-item-${index}`}
-          onClick={(e) => {
+          onClick={e => {
             handleClick(e, index, disabled)
           }}
         >
@@ -88,6 +84,6 @@ export const Tabs: FC<TabsProps> = (props) => {
 
 Tabs.defaultProps = {
   defaultIndex: 0,
-  type: 'line'
+  type: 'line',
 }
 export default Tabs

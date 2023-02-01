@@ -8,10 +8,10 @@ import Icon from '../Icon'
 
 export default {
   title: 'Data Display/Tabs 标签页',
-  component: Tabs
+  component: Tabs,
 } as ComponentMeta<typeof Tabs>
 
-const Template: ComponentStory<typeof Tabs> = (props) => (
+const Template: ComponentStory<typeof Tabs> = props => (
   <Tabs {...props} onSelect={action('selected')}>
     <TabItem label="选项卡一">this is content one</TabItem>
     <TabItem label="选项卡二">this is content two</TabItem>
@@ -33,5 +33,5 @@ const Template: ComponentStory<typeof Tabs> = (props) => (
 export const DefaultTab = Template.bind({})
 export const CardTab = Template.bind({})
 CardTab.args = {
-  type: 'card'
+  type: 'card',
 }

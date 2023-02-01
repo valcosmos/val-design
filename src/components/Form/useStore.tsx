@@ -3,7 +3,7 @@ import Schema, { RuleItem, ValidateError } from 'async-validator'
 import { mapValues, each } from 'lodash-es'
 
 export type CustomRuleFunc = ({
-  getFieldValue
+  getFieldValue,
 }: {
   getFieldValue: (key: string) => string
 }) => RuleItem
@@ -44,14 +44,14 @@ function fieldsReducer(state: FieldsState, action: FieldsAction): FieldsState {
     case 'updateValue':
       return {
         ...state,
-        [action.name]: { ...state[action.name], value: action.value }
+        [action.name]: { ...state[action.name], value: action.value },
       }
     case 'updateValidateResult':
       // eslint-disable-next-line no-case-declarations
       const { isValid, errors } = action.value
       return {
         ...state,
-        [action.name]: { ...state[action.name], isValid, errors }
+        [action.name]: { ...state[action.name], isValid, errors },
       }
     default:
       return state
@@ -63,14 +63,14 @@ function useStore(initialValues?: Record<string, any>) {
   const [form, setForm] = useState<FormState>({
     isValid: true,
     isSubmitting: false,
-    errors: {}
+    errors: {},
   })
 
   const [fields, dispatch] = useReducer(fieldsReducer, {})
 
   const getFieldValue = (key: string) => fields[key] && fields[key].value
 
-  const getFieldsValue = () => mapValues(fields, (item) => item.value)
+  const getFieldsValue = () => mapValues(fields, item => item.value)
 
   const setFieldValue = (name: string, value: any) =>
     fields[name] && dispatch({ type: 'updateValue', name, value })
@@ -84,7 +84,7 @@ function useStore(initialValues?: Record<string, any>) {
     })
 
   const transformRules = (rules: CustomRule[]) =>
-    rules.map((rule) => {
+    rules.map(rule => {
       if (typeof rule === 'function') return rule({ getFieldValue })
       return rule
     })
@@ -93,10 +93,10 @@ function useStore(initialValues?: Record<string, any>) {
     const { value, rules } = fields[name]
     const afterRules = transformRules(rules)
     const descriptor = {
-      [name]: afterRules
+      [name]: afterRules,
     }
     const valueMap = {
-      [name]: value
+      [name]: value,
     }
     const validator = new Schema(descriptor)
     let isValid = true
@@ -116,7 +116,7 @@ function useStore(initialValues?: Record<string, any>) {
       dispatch({
         type: 'updateValidateResult',
         name,
-        value: { isValid, errors }
+        value: { isValid, errors },
       })
     }
   }
@@ -124,8 +124,8 @@ function useStore(initialValues?: Record<string, any>) {
   const validateAllFields = async () => {
     let isValid = true
     let errors: Record<string, ValidateError[]> = {}
-    const valueMap = mapValues(fields, (item) => item.value)
-    const descriptor = mapValues(fields, (item) => transformRules(item.rules))
+    const valueMap = mapValues(fields, item => item.value)
+    const descriptor = mapValues(fields, item => transformRules(item.rules))
     const validator = new Schema(descriptor)
     setForm({ ...form, isSubmitting: true })
     try {
@@ -141,7 +141,7 @@ function useStore(initialValues?: Record<string, any>) {
           dispatch({
             type: 'updateValidateResult',
             name,
-            value: { isValid: false, errors: itemErrors }
+            value: { isValid: false, errors: itemErrors },
           })
         } else if (value.rules.length > 0 && !errors[name]) {
           // 有对应的rules 并且没有errors
@@ -149,7 +149,7 @@ function useStore(initialValues?: Record<string, any>) {
           dispatch({
             type: 'updateValidateResult',
             name,
-            value: { isValid: true, errors: [] }
+            value: { isValid: true, errors: [] },
           })
         }
       })
@@ -169,7 +169,7 @@ function useStore(initialValues?: Record<string, any>) {
     validateAllFields,
     getFieldsValue,
     setFieldValue,
-    resetFields
+    resetFields,
   }
 }
 

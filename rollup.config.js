@@ -6,9 +6,9 @@ import sass from 'rollup-plugin-sass'
 
 const overrides = {
   compilerOptions: {
-    declaration: true
+    declaration: true,
   },
-  exclude: ['src/**/*.test.tsx', 'src/**/*.stories.tsx', 'src/**/*.stories.mdx']
+  exclude: ['src/**/*.test.tsx', 'src/**/*.stories.tsx', 'src/**/*.stories.mdx'],
 }
 
 const config = {
@@ -16,8 +16,8 @@ const config = {
   output: [
     {
       file: 'dist/index.es.js',
-      format: 'es'
-    }
+      format: 'es',
+    },
   ],
   plugins: [
     // 处理第三方文件
@@ -26,12 +26,12 @@ const config = {
     json(),
 
     typescript({
-      tsconfigOverride: overrides
+      tsconfigOverride: overrides,
     }),
     sass({
-      output: 'dist/index.css'
-    })
-  ]
+      output: 'dist/index.css',
+    }),
+  ],
 
   // external: ['react', 'react-dom', 'axios']
 }

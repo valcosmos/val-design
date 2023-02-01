@@ -8,7 +8,7 @@ import React, {
   useCallback,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react'
 import { createPortal } from 'react-dom'
 import { getPlacement } from './placement'
@@ -24,7 +24,7 @@ export interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
   target?: HTMLElement
 }
 
-export const Overlay: FC<OverlayProps> = (props) => {
+export const Overlay: FC<OverlayProps> = props => {
   const { children, target, visible: prevVisible, hasMask, onVisibleChange } = props
 
   const [visible, setVisible] = useState(prevVisible || false)
@@ -79,7 +79,7 @@ export const Overlay: FC<OverlayProps> = (props) => {
   //   }
   // }, [visible && overlayRef.current])
 
-  const handleMouseDown: EventListener = (e) => {
+  const handleMouseDown: EventListener = e => {
     const safeNodeList: any[] = []
     // 弹窗默认为安全节点
     if (overlayRef.current) {
@@ -97,7 +97,7 @@ export const Overlay: FC<OverlayProps> = (props) => {
 
     onVisibleChange?.(false)
   }
-  const handleKeyDown: EventListener = (e) => {
+  const handleKeyDown: EventListener = e => {
     if (!visible || !overlayRef.current) return
 
     if ((e as KeyboardEvent).key === 'Escape') {
@@ -120,7 +120,7 @@ export const Overlay: FC<OverlayProps> = (props) => {
   const child: ReactElement | undefined = React.Children.only(children)
 
   const newChildren = cloneElement(child as ReactElement, {
-    ref: overlayRefCallback
+    ref: overlayRefCallback,
   })
 
   const content = createPortal(newChildren, document.body)
