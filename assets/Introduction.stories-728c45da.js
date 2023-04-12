@@ -1,4 +1,4 @@
-import{M as i,a}from"./index-7dde4d5f.js";import{j as t}from"./jsx-runtime-ccada58e.js";import{u as r}from"./index-4fb8b842.js";import"./iframe-0da1e5b9.js";import"../sb-preview/runtime.mjs";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-d475d2ea.js";import"./index-96c5f47c.js";import"./index-d37d4223.js";import"./inheritsLoose-9eefaa95.js";import"./assertThisInitialized-081f9914.js";import"./index-b1040d2b.js";import"./index-356e4a49.js";const c=`<div align="center">
+import{M as i,a}from"./index-770f19c6.js";import{j as t}from"./jsx-runtime-ccada58e.js";import{u as r}from"./index-4fb8b842.js";import"./iframe-32d7bc01.js";import"../sb-preview/runtime.mjs";import"./index-f1f749bf.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-d475d2ea.js";import"./index-96c5f47c.js";import"./index-d37d4223.js";import"./inheritsLoose-9eefaa95.js";import"./assertThisInitialized-081f9914.js";import"./index-b1040d2b.js";import"./index-356e4a49.js";const c=`<div align="center">
     <img width="80px" src="https://raw.githubusercontent.com/valcosmos/val-design/main/logo.png" />
 </div>  
  
@@ -127,4 +127,4 @@ You can write down any issues you have under this [link](https://github.com/valc
 val-design is [MIT licensed](LICENSE).
 `;function l(e={}){const{wrapper:s}=Object.assign({},r(),e.components);return s?t.jsx(s,{...e,children:t.jsx(o,{})}):o();function o(){return t.jsxs(t.Fragment,{children:[t.jsx(i,{title:"Introduction 介绍"}),`
 `,t.jsx(a,{children:c})]})}}const p=()=>{throw new Error("Docs-only story")};p.parameters={docsOnly:!0};const n={title:"Introduction 介绍",tags:["stories-mdx"],includeStories:["__page"]};n.parameters=n.parameters||{};n.parameters.docs={...n.parameters.docs||{},page:l};const C=["__page"];export{C as __namedExportsOrder,p as __page,n as default};
-//# sourceMappingURL=Introduction.stories-41308ac8.js.map
+//# sourceMappingURL=Introduction.stories-728c45da.js.map
