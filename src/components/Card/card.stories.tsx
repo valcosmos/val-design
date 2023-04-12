@@ -1,9 +1,9 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
 import Card from './card'
 
-const Meta: ComponentMeta<typeof Card> = {
+const meta = {
   title: 'Data Display/Card 组件',
   id: 'card',
   component: Card,
@@ -14,11 +14,11 @@ const Meta: ComponentMeta<typeof Card> = {
       </div>
     ),
   ],
-}
+} satisfies Meta<typeof Card>
 
-export default Meta
+export default meta
 
-const Template: ComponentStory<typeof Card> = args => <Card {...args} />
+const Template: StoryFn<typeof Card> = args => <Card {...args} />
 
 export const BasicCard = Template.bind({})
 BasicCard.args = {

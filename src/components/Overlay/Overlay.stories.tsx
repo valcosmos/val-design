@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import Overlay from './Overlay'
 import Button from '../Button'
 
-const OverlayMeta: ComponentMeta<typeof Overlay> = {
+const OverlayMeta: Meta<typeof Overlay> = {
   title: 'Overlay',
   component: Overlay,
 }
 
 export default OverlayMeta
 
-const Template: ComponentStory<typeof Overlay> = args => <Overlay {...args} />
+const Template: StoryFn<typeof Overlay> = args => <Overlay {...args} />
 
 export const Primary = Template.bind({})
 

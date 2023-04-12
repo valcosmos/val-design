@@ -1,17 +1,18 @@
 import React, { useRef, useState } from 'react'
 
-import { ComponentMeta } from '@storybook/react'
-import Form, { FormProps, IFormRef } from './form'
+import { Meta } from '@storybook/react'
+import Form from '.'
+import type { FormProps, IFormRef } from './form'
 import Item from './formItem'
 import Input from '../Input'
 import Button from '../Button'
 import { CustomRule } from './useStore'
 
-const Meta: ComponentMeta<typeof Form> = {
+const meta = {
   title: 'Data Entry/Form 组件',
   id: 'Form',
   component: Form,
-  subcomponents: { Item: Item },
+  // subcomponents: { Item },
   decorators: [
     Story => (
       <div style={{ width: '550px' }}>
@@ -26,8 +27,9 @@ const Meta: ComponentMeta<typeof Form> = {
       },
     },
   },
-}
-export default Meta
+} satisfies Meta<typeof Form>
+
+export default meta
 
 const confirmRules: CustomRule[] = [
   { type: 'string', required: true, min: 3, max: 8 },

@@ -1,15 +1,16 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 import { TransitionProps } from 'react-transition-group/Transition'
 import Button from '../Button'
 
 import { Transition } from './transition'
+
 export default {
   title: 'Others/Transition 过渡',
   component: Transition,
-} as ComponentMeta<typeof Transition>
+} as Meta<typeof Transition>
 
-const Template: ComponentStory<typeof Transition> = ({ animation }: TransitionProps) => {
+const Template: StoryFn<typeof Transition> = ({ animation }: TransitionProps) => {
   const [show, setShow] = useState<boolean>(false)
 
   return (

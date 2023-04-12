@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Upload } from './upload'
 
@@ -8,9 +8,9 @@ import Icon from '../Icon/icon'
 export default {
   title: 'Data Entry/Upload 上传',
   component: Upload,
-} as ComponentMeta<typeof Upload>
+} as Meta<typeof Upload>
 
-const Template: ComponentStory<typeof Upload> = props => (
+const Template: StoryFn<typeof Upload> = props => (
   <Upload {...props}>
     <Icon icon="plus" size="3x" theme="secondary" />
     <br />

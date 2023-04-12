@@ -1,15 +1,17 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { message } from './index'
 import Button from '../Button'
 import Message from './message'
 
-export default {
+const meta = {
   title: 'Feedback/Message 全局提示',
   component: Message,
-} as ComponentMeta<typeof Message>
+} satisfies Meta<typeof Message>
 
-export const AllMessage: ComponentStory<typeof Message> = () => (
+export default meta
+
+export const AllMessage: StoryFn<typeof Message> = () => (
   <code>
     <Button
       type="default"

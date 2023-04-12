@@ -1,15 +1,15 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import Tag from './tag'
 
-const Meta: ComponentMeta<typeof Tag> = {
+const meta: Meta<typeof Tag> = {
   title: 'Data Display/Tag',
   component: Tag,
 }
 
-export default Meta
+export default meta
 
-const Template: ComponentStory<typeof Tag> = args => <Tag {...args} />
+const Template: StoryFn<typeof Tag> = args => <Tag {...args} />
 
 export const BasicTag = Template.bind({})
 
