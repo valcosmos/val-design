@@ -1,15 +1,15 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import Radio from './radio'
 
-const RadioMeta: ComponentMeta<typeof Radio> = {
+const RadioMeta: Meta<typeof Radio> = {
   title: 'Data Entry/Radio 单选框',
   component: Radio,
 }
 
 export default RadioMeta
 
-const Template: ComponentStory<typeof Radio> = args => <Radio {...args} />
+const Template: StoryFn<typeof Radio> = args => <Radio {...args} />
 
 export const Basic = Template.bind({})
 Basic.args = {

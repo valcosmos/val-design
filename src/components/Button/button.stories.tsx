@@ -1,27 +1,33 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Button } from './button'
 
 import mdx from './button.mdx'
 
 // 👇 This default export determines where your story goes in the story list
-export default {
+const meta = {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
   title: 'General/Button 按钮',
   component: Button,
+  tags: ['autodocs'],
   parameters: {
     docs: {
       page: mdx,
     },
   },
-} as ComponentMeta<typeof Button>
+} satisfies Meta<typeof Button>
+
+export default meta
 
 // 👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof Button> = args => (
+
+type Story = StoryFn<typeof Button>
+
+const Template: Story = args => (
   <Button type="primary" onClick={action('clicked')} {...args}></Button>
 )
 

@@ -1,15 +1,19 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 import Alert from './alert'
 
-export default {
+const meta = {
   title: 'Feedback/Alert 警告提示',
   component: Alert,
-} as ComponentMeta<typeof Alert>
+} satisfies Meta<typeof Alert>
 
-const Template: ComponentStory<typeof Alert> = props => <Alert {...props} />
+export default meta
+
+type Story = StoryFn<typeof Alert>
+
+const Template: Story = props => <Alert {...props} />
 
 export const DefaultAlert = Template.bind({})
 DefaultAlert.args = {

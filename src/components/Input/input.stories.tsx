@@ -1,14 +1,16 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Input } from './input'
 
-export default {
+const meta = {
   title: 'Data Entry/Input 输入框',
   component: Input,
-} as ComponentMeta<typeof Input>
+} satisfies Meta<typeof Input>
 
-const Template: ComponentStory<typeof Input> = args => <Input {...args}></Input>
+export default meta
+
+const Template: StoryFn<typeof Input> = args => <Input {...args}></Input>
 
 export const DefaultInput = Template.bind({})
 const style: React.CSSProperties = {

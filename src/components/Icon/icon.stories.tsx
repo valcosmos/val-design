@@ -1,13 +1,15 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import Icon from './icon'
 
-export default {
+const meta = {
   title: 'General/Icon 图标',
   component: Icon,
-} as ComponentMeta<typeof Icon>
+} satisfies Meta<typeof Icon>
 
-const Template: ComponentStory<typeof Icon> = props => <Icon {...props} size="3x" />
+export default meta
+
+const Template: StoryFn<typeof Icon> = props => <Icon {...props} size="3x" />
 
 export const CheckIcon = Template.bind({})
 CheckIcon.args = {

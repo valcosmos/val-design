@@ -1,15 +1,15 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import Skeleton from './skeleton'
 
-const Meta: ComponentMeta<typeof Skeleton> = {
+const meta: Meta<typeof Skeleton> = {
   title: 'Feedback/Skeleton 骨架屏',
   component: Skeleton,
 }
 
-export default Meta
+export default meta
 
-const Template: ComponentStory<typeof Skeleton> = args => <Skeleton {...args} />
+const Template: StoryFn<typeof Skeleton> = args => <Skeleton {...args} />
 
 export const BasicSkeleton = Template.bind({})
 
