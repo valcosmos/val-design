@@ -45,6 +45,7 @@ jobs:
         run: |
           pnpm install --shamefully-hoist
           pnpm build-storybook
+          touch storybook-static/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
