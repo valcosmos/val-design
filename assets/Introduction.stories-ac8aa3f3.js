@@ -1,4 +1,4 @@
-import{M as i,a}from"./index-6bc159d7.js";import{j as t}from"./jsx-runtime-94f6e698.js";import{u as r}from"./index-1d576ef5.js";import"./iframe-fb498159.js";import"../sb-preview/runtime.js";import"./index-8db94870.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-d475d2ea.js";import"./index-8ce4a492.js";import"./index-d37d4223.js";import"./inheritsLoose-9eefaa95.js";import"./assertThisInitialized-081f9914.js";import"./index-5b180282.js";import"./index-356e4a49.js";const c=`<div align="center">
+import{M as i,a}from"./index-5b1a10cc.js";import{j as t}from"./jsx-runtime-94f6e698.js";import{u as r}from"./index-1d576ef5.js";import"./iframe-aa38a0d0.js";import"../sb-preview/runtime.js";import"./index-8db94870.js";import"./_commonjsHelpers-042e6b4d.js";import"./index-d475d2ea.js";import"./index-8ce4a492.js";import"./index-d37d4223.js";import"./inheritsLoose-9eefaa95.js";import"./assertThisInitialized-081f9914.js";import"./index-5b180282.js";import"./index-356e4a49.js";const c=`<div align="center">
     <img width="80px" src="https://raw.githubusercontent.com/valcosmos/val-design/main/logo.png" />
 </div>  
  
@@ -125,6 +125,6 @@ You can write down any issues you have under this [link](https://github.com/valc
 ## License
 
 val-design is [MIT licensed](LICENSE).
-`;function l(e={}){const{wrapper:s}=Object.assign({},r(),e.components);return s?t.jsx(s,{...e,children:t.jsx(o,{})}):o();function o(){return t.jsxs(t.Fragment,{children:[t.jsx(i,{title:"Introduction 介绍"}),`
-`,t.jsx(a,{children:c})]})}}const p=()=>{throw new Error("Docs-only story")};p.parameters={docsOnly:!0};const n={title:"Introduction 介绍",tags:["stories-mdx"],includeStories:["__page"]};n.parameters=n.parameters||{};n.parameters.docs={...n.parameters.docs||{},page:l};const C=["__page"];export{C as __namedExportsOrder,p as __page,n as default};
-//# sourceMappingURL=Introduction.stories-62b92d23.js.map
+`;function o(n){return t.jsxs(t.Fragment,{children:[t.jsx(i,{title:"Introduction 介绍"}),`
+`,t.jsx(a,{children:c})]})}function l(n={}){const{wrapper:s}=Object.assign({},r(),n.components);return s?t.jsx(s,{...n,children:t.jsx(o,{...n})}):o()}const p=()=>{throw new Error("Docs-only story")};p.parameters={docsOnly:!0};const e={title:"Introduction 介绍",tags:["stories-mdx"],includeStories:["__page"]};e.parameters=e.parameters||{};e.parameters.docs={...e.parameters.docs||{},page:l};const C=["__page"];export{C as __namedExportsOrder,p as __page,e as default};
+//# sourceMappingURL=Introduction.stories-ac8aa3f3.js.map
