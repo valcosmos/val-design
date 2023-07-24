@@ -24,7 +24,7 @@ test('Link button should work', () => {
   const { getByText } = render(
     <Button type={'link'} href="https://www.myurl.com/">
       link
-    </Button>
+    </Button>,
   )
   const link = getByText('link') as HTMLLinkElement
   expect(link).toBeInTheDocument()
@@ -44,7 +44,7 @@ test('Disabled button should work', () => {
   const { getByRole } = render(
     <Button disabled={true} onClick={onButtonClick}>
       disabled
-    </Button>
+    </Button>,
   )
   const button = getByRole('button') as HTMLButtonElement
   expect(button.disabled).toBe(true)

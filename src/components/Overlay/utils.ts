@@ -4,7 +4,7 @@ export function useListener(
   node: (Window & typeof globalThis) | HTMLElement,
   eventName: string,
   callback: EventListenerOrEventListenerObject,
-  condition: boolean
+  condition: boolean,
 ) {
   useEffect(() => {
     if (condition) {
