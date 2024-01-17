@@ -25,7 +25,7 @@ library.add(fas)
 <Icon icon="faCoffee" size="3x" />
 
 
-\`\`\``,displayName:"Icon",props:{theme:{defaultValue:null,description:"支持框架主题 根据主题显示不同的颜色",name:"theme",required:!1,type:{name:"enum",value:[{value:'"primary"'},{value:'"success"'},{value:'"danger"'},{value:'"warning"'},{value:'"info"'},{value:'"dark"'},{value:'"light"'},{value:'"secondary"'}]}}}}}catch{}try{icon.displayName="icon",icon.__docgenInfo={description:`> 本组件 基于 react-fontawesome 进行二次封装。可以在这里查看所有图标: https://fontawesome.com/v6/icons?m=free&s=solid
+\`\`\``,displayName:"Icon",props:{theme:{defaultValue:null,description:"支持框架主题 根据主题显示不同的颜色",name:"theme",required:!1,type:{name:"enum",value:[{value:'"primary"'},{value:'"success"'},{value:'"danger"'},{value:'"warning"'},{value:'"info"'},{value:'"secondary"'},{value:'"light"'},{value:'"dark"'}]}}}}}catch{}try{icon.displayName="icon",icon.__docgenInfo={description:`> 本组件 基于 react-fontawesome 进行二次封装。可以在这里查看所有图标: https://fontawesome.com/v6/icons?m=free&s=solid
 > 如若需要使用，可选择**全局引入**或者**按需导入**
 
 ### 引用方法
@@ -51,4 +51,4 @@ library.add(fas)
 <Icon icon="faCoffee" size="3x" />
 
 
-\`\`\``,displayName:"icon",props:{theme:{defaultValue:null,description:"支持框架主题 根据主题显示不同的颜色",name:"theme",required:!1,type:{name:"enum",value:[{value:'"primary"'},{value:'"success"'},{value:'"danger"'},{value:'"warning"'},{value:'"info"'},{value:'"dark"'},{value:'"light"'},{value:'"secondary"'}]}}}}}catch{}export{k as I};
+\`\`\``,displayName:"icon",props:{theme:{defaultValue:null,description:"支持框架主题 根据主题显示不同的颜色",name:"theme",required:!1,type:{name:"enum",value:[{value:'"primary"'},{value:'"success"'},{value:'"danger"'},{value:'"warning"'},{value:'"info"'},{value:'"secondary"'},{value:'"light"'},{value:'"dark"'}]}}}}}catch{}export{k as I};

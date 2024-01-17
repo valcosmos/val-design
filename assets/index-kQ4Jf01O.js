@@ -1,4 +1,4 @@
-import{I as u}from"./input-b-XfYzok.js";try{u.displayName="Input",u.__docgenInfo={description:`> 一个基础的Input组件封装，可添加图标，前缀或者后缀组合。
+import{I as u}from"./input-0vbjW8cs.js";try{u.displayName="Input",u.__docgenInfo={description:`> 一个基础的Input组件封装，可添加图标，前缀或者后缀组合。
 
 ### 引用方法
 
