@@ -1,4 +1,4 @@
-import{M as i,g as a}from"./index-7KG349hc.js";import{j as t}from"./jsx-runtime-CKrituN3.js";import{useMDXComponents as r}from"./index-DI5IigMn.js";import"./iframe-Bez21qGu.js";import"../sb-preview/runtime.js";import"./index-CBqU2yxZ.js";import"./_commonjsHelpers-BosuxZz1.js";import"./index-BtM5VmRH.js";import"./index-Bw8VTzHM.js";import"./inheritsLoose-CtFfH6wX.js";import"./assertThisInitialized-B9jnkVVz.js";import"./index-DaAf0yPn.js";import"./index-DrFu-skq.js";const c=`<div align="center">
+import{M as i,g as a}from"./index-Ch4Hf3vV.js";import{j as t}from"./jsx-runtime-CKrituN3.js";import{useMDXComponents as r}from"./index-DI5IigMn.js";import"./iframe-Df_Y_Q-8.js";import"../sb-preview/runtime.js";import"./index-CBqU2yxZ.js";import"./_commonjsHelpers-BosuxZz1.js";import"./index-BtM5VmRH.js";import"./index-Bw8VTzHM.js";import"./inheritsLoose-CtFfH6wX.js";import"./assertThisInitialized-B9jnkVVz.js";import"./index-DaAf0yPn.js";import"./index-DrFu-skq.js";const c=`<div align="center">
     <img width="80px" src="https://raw.githubusercontent.com/valcosmos/val-design/main/logo.png" />
 </div>  
  
