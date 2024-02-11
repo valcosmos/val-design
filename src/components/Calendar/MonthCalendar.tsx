@@ -1,5 +1,5 @@
-import { Dayjs } from 'dayjs'
-import { CalendarProps } from '.'
+import type { Dayjs } from 'dayjs'
+import { CalendarProps } from './Calendar'
 import LocaleContext from './LocaleContext'
 import { useContext } from 'react'
 import allLocales from './locale'
