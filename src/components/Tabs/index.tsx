@@ -1,6 +1,8 @@
-import Tab, { TabsProps } from './tabs'
-import TabItem, { TabItemProps } from './tabItem'
-import { FC } from 'react'
+import type { FC } from 'react'
+import type { TabsProps } from './tabs'
+import Tab from './tabs'
+import type { TabItemProps } from './tabItem'
+import TabItem from './tabItem'
 
 export type ITabComponent = FC<TabsProps> & {
   Item: FC<TabItemProps>

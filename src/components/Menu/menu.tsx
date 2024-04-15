@@ -1,6 +1,7 @@
-import React, { FC, useState, createContext, CSSProperties, ReactNode } from 'react'
+import type { CSSProperties, FC, ReactNode } from 'react'
+import React, { createContext, useState } from 'react'
 import classNames from 'classnames'
-import { MenuItemProps } from './menuItem'
+import type { MenuItemProps } from './menuItem'
 
 type MenuMode = 'horizontal' | 'vertical'
 export interface MenuProps {
@@ -50,7 +51,7 @@ export const MenuContext = createContext<IMenuContext>({ index: '0' })
  *
  * ```
  */
-export const Menu: FC<MenuProps> = props => {
+export const Menu: FC<MenuProps> = (props) => {
   const { className, mode, style, children, defaultIndex, onSelect, defaultOpenSubMenus } = props
   const [currentActive, setActive] = useState(defaultIndex)
   const classes = classNames('v-menu', className, {
@@ -59,9 +60,8 @@ export const Menu: FC<MenuProps> = props => {
   })
   const handleClick = (index: string) => {
     setActive(index)
-    if (onSelect) {
+    if (onSelect)
       onSelect(index)
-    }
   }
   const passedContext: IMenuContext = {
     index: currentActive || '0',
@@ -77,7 +77,8 @@ export const Menu: FC<MenuProps> = props => {
         return React.cloneElement(childElement, {
           index: index.toString(),
         })
-      } else {
+      }
+      else {
         console.error('Warning: Menu has a child which is not a MenuItem component')
       }
     })

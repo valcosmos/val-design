@@ -1,10 +1,10 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { AutoComplete } from './autoComplete'
 import axios from 'axios'
+import { AutoComplete } from './autoComplete'
 
-const handleFetch = (query: string) => {
+function handleFetch(query: string) {
   // return arr.filter((item) => parseInt(item) > parseInt(query))
   return axios
     .get(`https://api.github.com/search/users?q=${query}`)

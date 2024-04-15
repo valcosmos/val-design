@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Meta, StoryFn } from '@storybook/react'
-import Menu from './index'
+import type { Meta, StoryFn } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import Menu from './index'
 
 const meta = {
   title: 'Data Entry/Menu 导航菜单',
@@ -12,7 +12,7 @@ const meta = {
 export default meta
 
 export const HorizontalMenu: StoryFn<typeof Menu> = args => (
-  <Menu {...args} defaultIndex={'0'} onSelect={index => action(`clicked ${index} item`)}>
+  <Menu {...args} defaultIndex="0" onSelect={index => action(`clicked ${index} item`)}>
     <Menu.Item>menu 1</Menu.Item>
     <Menu.Item disabled>disabled</Menu.Item>
     <Menu.SubMenu title="sub menu">
@@ -26,7 +26,7 @@ export const HorizontalMenu: StoryFn<typeof Menu> = args => (
 export const VerticalMenu: StoryFn<typeof Menu> = args => (
   <Menu
     {...args}
-    defaultIndex={'0'}
+    defaultIndex="0"
     mode="vertical"
     onSelect={index => action(`clicked ${index} item`)}
   >

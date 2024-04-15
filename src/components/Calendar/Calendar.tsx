@@ -1,9 +1,11 @@
-import dayjs, { Dayjs } from 'dayjs'
-import MonthCalendar from './MonthCalendar'
+import type { Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 import './index.scss'
-import Header from './Header'
-import { CSSProperties, ReactNode, useState } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
+import { useState } from 'react'
 import cs from 'classnames'
+import MonthCalendar from './MonthCalendar'
+import Header from './Header'
 import LocaleContext from './LocaleContext'
 
 export interface CalendarProps {

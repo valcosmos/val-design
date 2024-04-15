@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
-import Modal from './index'
 import Button from '../Button'
+import Modal from './index'
 
 const meta = {
   title: 'Feedback/Modal 对话框',
@@ -11,7 +11,7 @@ const meta = {
 
 export default meta
 
-const Template: StoryFn<typeof Modal> = args => {
+const Template: StoryFn<typeof Modal> = (args) => {
   const [open, setOpen] = useState<boolean>(false)
   const onButtonClick = () => {
     setOpen(true)

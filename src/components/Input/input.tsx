@@ -1,6 +1,7 @@
-import React, { FC, ReactElement, InputHTMLAttributes, ChangeEvent } from 'react'
+import type { ChangeEvent, FC, InputHTMLAttributes, ReactElement } from 'react'
+import React from 'react'
 import classNames from 'classnames'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import type { IconProp } from '@fortawesome/fontawesome-svg-core'
 import Icon from '../Icon/icon'
 
 type InputSize = 'lg' | 'sm'
@@ -39,7 +40,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
  *
  * ```
  */
-export const Input: FC<InputProps> = props => {
+export const Input: FC<InputProps> = (props) => {
   const { disabled, size, icon, prepend, append, style, ...restProps } = props
   const cnames = classNames('v-input-wrapper', {
     [`input-size-${size}`]: size,

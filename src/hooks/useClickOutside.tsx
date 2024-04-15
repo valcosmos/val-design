@@ -1,13 +1,14 @@
 // 点击其它区域，关闭下拉菜单
 
-import { RefObject, useEffect } from 'react'
+import type { RefObject } from 'react'
+import { useEffect } from 'react'
 
-export const useClickOutside = (ref: RefObject<HTMLElement>, handler: (event: Event) => void) => {
+export function useClickOutside(ref: RefObject<HTMLElement>, handler: (event: Event) => void) {
   useEffect(() => {
     const listener = (event: MouseEvent) => {
-      if (!ref.current || ref.current.contains(event.target as HTMLElement)) {
+      if (!ref.current || ref.current.contains(event.target as HTMLElement))
         return
-      }
+
       handler(event)
     }
     document.addEventListener('click', listener)

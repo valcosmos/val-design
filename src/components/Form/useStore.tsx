@@ -1,6 +1,7 @@
 import { useReducer, useState } from 'react'
-import Schema, { RuleItem, ValidateError } from 'async-validator'
-import { mapValues, each } from 'lodash-es'
+import type { RuleItem, ValidateError } from 'async-validator'
+import Schema from 'async-validator'
+import { each, mapValues } from 'lodash-es'
 
 export type CustomRuleFunc = ({
   getFieldValue,
@@ -76,16 +77,16 @@ function useStore(initialValues?: Record<string, any>) {
     fields[name] && dispatch({ type: 'updateValue', name, value })
 
   const resetFields = () =>
-    initialValues &&
-    each(initialValues, (value, name) => {
-      if (fields[name]) {
+    initialValues
+    && each(initialValues, (value, name) => {
+      if (fields[name])
         dispatch({ type: 'updateValue', name, value })
-      }
     })
 
   const transformRules = (rules: CustomRule[]) =>
-    rules.map(rule => {
-      if (typeof rule === 'function') return rule({ getFieldValue })
+    rules.map((rule) => {
+      if (typeof rule === 'function')
+        return rule({ getFieldValue })
       return rule
     })
 
@@ -104,15 +105,14 @@ function useStore(initialValues?: Record<string, any>) {
 
     try {
       await validator.validate(valueMap)
-    } catch (e) {
+    }
+    catch (e) {
       isValid = false
       const err = e as any
 
-      console.log('e', err.errors)
-      console.log('fields', err.fields)
       errors = err.errors
-    } finally {
-      console.log('errors', isValid)
+    }
+    finally {
       dispatch({
         type: 'updateValidateResult',
         name,
@@ -130,7 +130,8 @@ function useStore(initialValues?: Record<string, any>) {
     setForm({ ...form, isSubmitting: true })
     try {
       await validator.validate(valueMap)
-    } catch (e) {
+    }
+    catch (e) {
       isValid = false
       const err = e as ValidateErrorType
       errors = err.fields
@@ -143,7 +144,8 @@ function useStore(initialValues?: Record<string, any>) {
             name,
             value: { isValid: false, errors: itemErrors },
           })
-        } else if (value.rules.length > 0 && !errors[name]) {
+        }
+        else if (value.rules.length > 0 && !errors[name]) {
           // 有对应的rules 并且没有errors
 
           dispatch({
@@ -153,7 +155,8 @@ function useStore(initialValues?: Record<string, any>) {
           })
         }
       })
-    } finally {
+    }
+    finally {
       setForm({ ...form, isSubmitting: false, isValid, errors })
       // eslint-disable-next-line no-unsafe-finally
       return { isValid, errors, values: valueMap }

@@ -1,4 +1,5 @@
-import React, { CSSProperties, FC, ReactNode } from 'react'
+import type { CSSProperties, FC, ReactNode } from 'react'
+import React from 'react'
 import { animated, useTransition } from '@react-spring/web'
 
 interface ModalProps {
@@ -55,7 +56,8 @@ export const Modal: FC<ModalProps> = ({ open, onCancel, centered, children, titl
               style={{ opacity: style.opacity }}
               className="v-modal-mask"
               onClick={onMaskClick}
-            ></animated.div>
+            >
+            </animated.div>
           )}
           {open && (
             <animated.div style={{ ...style, position: 'relative', zIndex: 1000 }}>

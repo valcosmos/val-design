@@ -1,5 +1,5 @@
 import React from 'react'
-import { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import Radio from './radio'
 
 const RadioMeta: Meta<typeof Radio> = {
@@ -26,5 +26,5 @@ Disabled.args = {
 export const ChangeEvent = Template.bind({})
 ChangeEvent.args = {
   children: 'Change Event',
-  onChange: (e: any) => console.log(e.target.checked),
+  // onChange: (e: any) => console.log(e.target.checked),
 }

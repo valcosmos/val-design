@@ -4,9 +4,9 @@
 // import json from '@rollup/plugin-json'
 // import sass from 'rollup-plugin-sass'
 // // import excludeDependenciesFromBundle from 'rollup-plugin-exclude-dependencies-from-bundle'
-import baseConfig from './rollup.config'
 import replace from '@rollup/plugin-replace'
-import terser  from '@rollup/plugin-terser'
+import terser from '@rollup/plugin-terser'
+import baseConfig from './rollup.config'
 
 // const overrides = {
 //   compilerOptions: {
@@ -27,16 +27,16 @@ const config = {
       exports: 'named',
       // 设置排除的包在cdn引入时的全局变量名
       globals: {
-        react: 'React',
+        'react': 'React',
         'react-dom': 'ReactDOM',
-        axios: 'Axios',
+        'axios': 'Axios',
       },
       plugins: [terser()],
     },
   ],
   plugins: [
     replace({
-      preventAssignment: true,
+      'preventAssignment': true,
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     ...baseConfig.plugins,

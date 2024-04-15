@@ -1,6 +1,6 @@
 import zhCN from './zh-CN'
 import enUS from './en-US'
-import { CalendarType } from './interface'
+import type { CalendarType } from './interface'
 
 const allLocales: Record<string, CalendarType> = {
   'zh-CN': zhCN,

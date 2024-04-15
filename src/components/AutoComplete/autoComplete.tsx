@@ -1,24 +1,22 @@
-import React, {
+import type {
   ChangeEvent,
   FC,
-  ReactElement,
-  useEffect,
-  useState,
   KeyboardEvent,
-  useRef,
+  ReactElement,
 } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
+import classNames from 'classnames'
 import Icon from '../Icon'
 
 import Transition from '../Transition'
 
-import Input, { InputProps } from '../Input'
+import type { InputProps } from '../Input'
+import Input from '../Input'
 
 import { useDebounce } from '../../hooks/useDebounce'
 
 import { useClickOutside } from '../../hooks/useClickOutside'
-
-import classNames from 'classnames'
 
 /**
  * 用于处理复杂数据结构 eg:{value:'11', key:'22'}
@@ -59,7 +57,7 @@ export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
  *
  * ```
  */
-export const AutoComplete: FC<AutoCompleteProps> = props => {
+export const AutoComplete: FC<AutoCompleteProps> = (props) => {
   const { fetchSuggestions, onSelect, value, renderOptions, ...restProps } = props
   // 输入的搜索关键字
   const [inputValue, setInputValue] = useState((value as string) || '')
@@ -88,18 +86,19 @@ export const AutoComplete: FC<AutoCompleteProps> = props => {
       const results = fetchSuggestions(debouncedValue)
       if (results instanceof Promise) {
         setLoading(true)
-        results.then(data => {
+        results.then((data) => {
           setSuggestions(data)
           setLoading(false)
-          if (data.length > 0) {
+          if (data.length > 0)
             setShowDropdown(true)
-          }
         })
-      } else {
+      }
+      else {
         setSuggestions(results)
         setShowDropdown(true)
       }
-    } else {
+    }
+    else {
       setSuggestions([])
       setShowDropdown(false)
     }
@@ -117,16 +116,17 @@ export const AutoComplete: FC<AutoCompleteProps> = props => {
   const handleSelect = (item: DataSourceType) => {
     setInputValue(item.value)
     setSuggestions([])
-    if (onSelect) {
+    if (onSelect)
       onSelect(item)
-    }
+
     triggerSearch.current = false
   }
   const highlight = (index: number) => {
-    if (index < 0) index = 0
-    if (index >= suggestions.length) {
+    if (index < 0)
+      index = 0
+    if (index >= suggestions.length)
       index = suggestions.length - 1
-    }
+
     setHighlightIndex(index)
   }
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -196,7 +196,8 @@ export const AutoComplete: FC<AutoCompleteProps> = props => {
         value={inputValue}
         onKeyDown={handleKeyDown}
         onChange={handleChange}
-      ></Input>
+      >
+      </Input>
       {/* {loading && (
         <ul>
           <Icon icon={'spinner'} spin></Icon>

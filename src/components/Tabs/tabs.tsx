@@ -1,6 +1,8 @@
-import React, { FC, useState, FunctionComponentElement, ReactNode } from 'react'
+import type { FC, FunctionComponentElement, ReactNode } from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
-import { TabItemProps } from './tabItem'
+import type { TabItemProps } from './tabItem'
+
 export interface TabsProps {
   /**
    * 当前激活 tab 面板的 index，默认为0
@@ -31,15 +33,14 @@ export interface TabsProps {
  *
  * ```
  */
-export const Tabs: FC<TabsProps> = props => {
+export const Tabs: FC<TabsProps> = (props) => {
   const { defaultIndex, className, onSelect, children, type } = props
   const [activeIndex, setActiveIndex] = useState(defaultIndex)
   const handleClick = (e: React.MouseEvent, index: number, disabled: boolean | undefined) => {
     if (!disabled) {
       setActiveIndex(index)
-      if (onSelect) {
+      if (onSelect)
         onSelect(index)
-      }
     }
   }
   const navClass = classNames('v-tabs-nav', {
@@ -58,7 +59,7 @@ export const Tabs: FC<TabsProps> = props => {
         <li
           className={classes}
           key={`nav-item-${index}`}
-          onClick={e => {
+          onClick={(e) => {
             handleClick(e, index, disabled)
           }}
         >
@@ -69,9 +70,8 @@ export const Tabs: FC<TabsProps> = props => {
   }
   const renderContent = () => {
     return React.Children.map(children, (child, index) => {
-      if (index === activeIndex) {
+      if (index === activeIndex)
         return child
-      }
     })
   }
   return (

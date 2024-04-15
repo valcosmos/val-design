@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import Button from './index'
 
-test('Button component should work', () => {
+it('button component should work', () => {
   const onButtonClick = vi.fn()
   const { getByText } = render(<Button onClick={onButtonClick}>button</Button>)
   const element = getByText('button')
@@ -13,16 +13,16 @@ test('Button component should work', () => {
   expect(onButtonClick).toHaveBeenCalled()
 })
 
-test('Button type and custom class should work', () => {
+it('button type and custom class should work', () => {
   const { getByRole } = render(<Button type="primary" className="my-button"></Button>)
   const button = getByRole('button')
   expect(button).toBeInTheDocument()
   expect(button).toHaveClass('btn-primary my-button')
 })
 
-test('Link button should work', () => {
+it('link button should work', () => {
   const { getByText } = render(
-    <Button type={'link'} href="https://www.myurl.com/">
+    <Button type="link" href="https://www.myurl.com/">
       link
     </Button>,
   )
@@ -33,13 +33,13 @@ test('Link button should work', () => {
   expect(link.href).toEqual('https://www.myurl.com/')
 })
 
-test('Button size should work', () => {
+it('button size should work', () => {
   const { getByRole } = render(<Button size="sm" />)
   const button = getByRole('button')
   expect(button.className.includes('btn-sm')).toBe(true)
 })
 
-test('Disabled button should work', () => {
+it('disabled button should work', () => {
   const onButtonClick = vi.fn()
   const { getByRole } = render(
     <Button disabled={true} onClick={onButtonClick}>

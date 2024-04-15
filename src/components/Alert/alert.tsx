@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react'
+import type { FC } from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
 import Icon from '../Icon'
 import Transition from '../Transition'
@@ -38,7 +39,7 @@ export interface AlertProps {
  *
  * ```
  */
-export const Alert: FC<AlertProps> = props => {
+export const Alert: FC<AlertProps> = (props) => {
   const [hide, setHide] = useState(false)
   const { title, description, type, onClose, closable } = props
   const classes = classNames('v-alert', {
@@ -47,12 +48,10 @@ export const Alert: FC<AlertProps> = props => {
   const titleClass = classNames('v-alert-title', {
     'bold-title': description,
   })
-  const handleClose = (e: React.MouseEvent) => {
-    console.log(e)
-
-    if (onClose) {
+  const handleClose = () => {
+    if (onClose)
       onClose()
-    }
+
     setHide(true)
   }
   return (

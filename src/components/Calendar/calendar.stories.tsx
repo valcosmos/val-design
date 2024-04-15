@@ -1,8 +1,8 @@
 import React from 'react'
-import { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
-import Calendar from '.'
 import dayjs from 'dayjs'
+import Calendar from '.'
 
 const meta = {
   title: 'Data Display/Calendar 组件',

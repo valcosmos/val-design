@@ -1,5 +1,6 @@
 import classNames from 'classnames'
-import React, { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
+import React from 'react'
 
 interface SkeletonProps {
   active?: boolean
@@ -9,9 +10,9 @@ interface SkeletonProps {
 
 export const Skeleton: FC<SkeletonProps> = ({ active, row, children }) => {
   let rows = [0]
-  if (!children) {
+  if (!children)
     rows = Array.from({ length: row as number }, () => 1).map((item, index) => index)
-  }
+
   const classes = classNames('v-skeleton', {
     'v-skeleton__active': active,
     'v-skeleton__row': rows.length > 0,

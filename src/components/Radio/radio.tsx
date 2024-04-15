@@ -1,14 +1,12 @@
 import classNames from 'classnames'
-import React, {
+import type {
   CSSProperties,
   FC,
   FormEvent,
   HTMLAttributes,
   ReactNode,
-  useEffect,
-  useRef,
-  useState,
 } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export interface RadioProps extends HTMLAttributes<HTMLInputElement> {
   value?: string
@@ -21,7 +19,7 @@ export interface RadioProps extends HTMLAttributes<HTMLInputElement> {
   style?: CSSProperties
 }
 
-export const Radio: FC<RadioProps> = props => {
+export const Radio: FC<RadioProps> = (props) => {
   const {
     disabled,
 
@@ -47,18 +45,19 @@ export const Radio: FC<RadioProps> = props => {
   })
 
   useEffect(() => {
-    if ('checked' in props && props.checked !== checked) setChecked(props.checked as boolean)
+    if ('checked' in props && props.checked !== checked)
+      setChecked(props.checked as boolean)
   }, [props.checked])
 
   const handleClick = (event: any) => {
-    if (disabled || checked) return
+    if (disabled || checked)
+      return
 
-    if (!('checked' in props)) {
+    if (!('checked' in props))
       setChecked(true)
-    }
 
     if (typeof onChange === 'function') {
-      console.log(inputEl.current)
+      // console.log(inputEl.current)
 
       event.target = inputEl.current
       onChange(event)

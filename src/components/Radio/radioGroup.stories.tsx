@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import RadioGroup from './radioGroup'
 import Radio from './radio'
@@ -28,7 +28,7 @@ Primary.args = {
   ],
 }
 
-export const UnderControl = () => {
+export function UnderControl() {
   return (
     <RadioGroup value="3">
       <Radio value="1" key="1">

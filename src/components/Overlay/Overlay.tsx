@@ -1,17 +1,13 @@
-import React, {
-  cloneElement,
+import type {
   CSSProperties,
   FC,
   HTMLAttributes,
   ReactElement,
   ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
 } from 'react'
+import React, { cloneElement, useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { getPlacement } from './placement'
+// import { getPlacement } from './placement'
 import { useListener } from './utils'
 
 export interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
@@ -24,7 +20,7 @@ export interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
   target?: HTMLElement
 }
 
-export const Overlay: FC<OverlayProps> = props => {
+export const Overlay: FC<OverlayProps> = (props) => {
   const { children, target, visible: prevVisible, hasMask, onVisibleChange } = props
 
   const [visible, setVisible] = useState(prevVisible || false)
@@ -32,9 +28,8 @@ export const Overlay: FC<OverlayProps> = props => {
   const overlayRef = useRef<ReactNode | null>(null)
 
   useEffect(() => {
-    if ('visible' in props) {
+    if ('visible' in props)
       setVisible(prevVisible as boolean)
-    }
   }, [prevVisible])
 
   // useEffect(() => {
@@ -79,30 +74,28 @@ export const Overlay: FC<OverlayProps> = props => {
   //   }
   // }, [visible && overlayRef.current])
 
-  const handleMouseDown: EventListener = e => {
+  const handleMouseDown: EventListener = (e) => {
     const safeNodeList: any[] = []
     // 弹窗默认为安全节点
-    if (overlayRef.current) {
+    if (overlayRef.current)
       safeNodeList.push(overlayRef.current)
-    }
 
     const clickNode = e.target
 
     for (let index = 0; index < safeNodeList.length; index++) {
       const node = safeNodeList[index]
-      if (node && node.contains(clickNode)) {
+      if (node && node.contains(clickNode))
         return
-      }
     }
 
     onVisibleChange?.(false)
   }
-  const handleKeyDown: EventListener = e => {
-    if (!visible || !overlayRef.current) return
+  const handleKeyDown: EventListener = (e) => {
+    if (!visible || !overlayRef.current)
+      return
 
-    if ((e as KeyboardEvent).key === 'Escape') {
+    if ((e as KeyboardEvent).key === 'Escape')
       onVisibleChange?.(false)
-    }
   }
 
   useListener(window, 'mousedown', handleMouseDown, visible)
@@ -112,8 +105,7 @@ export const Overlay: FC<OverlayProps> = props => {
   const overlayRefCallback = useCallback((node: ReactNode) => {
     overlayRef.current = node
     if (node && target) {
-      const positionStyle = getPlacement({ target: target })
-      console.log(positionStyle)
+      // const positionStyle = getPlacement({ target })
     }
   }, [])
 
@@ -125,7 +117,8 @@ export const Overlay: FC<OverlayProps> = props => {
 
   const content = createPortal(newChildren, document.body)
 
-  if (!visible) return null
+  if (!visible)
+    return null
 
   return (
     <div>

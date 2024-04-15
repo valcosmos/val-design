@@ -1,7 +1,7 @@
 <div align="center">
     <img width="80px" src="https://raw.githubusercontent.com/valcosmos/val-design/main/logo.png" />
-</div>  
- 
+</div>
+
 <h3 align="center">Welcome to val-design</h3>
 
 <p align="center">val-design is a simple, lightweight <a href="https://reactjs.org/" target="_blank">React</a> UI component library.</p>
@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/npm-v8.11.0-informational?style=for-the-badge&logo=npm&color=CB3837" />
 
   <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
-  
+
 </div>
 
 ## Description
@@ -79,13 +79,15 @@ And import button：
 ```jsx
 import { Button } from 'val-design'
 
-const App = () => (
-  <>
-    <Button type="primary" size="lg">
-      val design
-    </Button>
-  </>
-)
+function App() {
+  return (
+    <>
+      <Button type="primary" size="lg">
+        val design
+      </Button>
+    </>
+  )
+}
 ```
 
 ## Project Activity
