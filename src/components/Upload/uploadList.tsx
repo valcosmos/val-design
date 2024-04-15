@@ -1,18 +1,20 @@
-import React, { FC } from 'react'
-import { UploadFile } from './upload'
+import type { FC } from 'react'
+import React from 'react'
 import Icon from '../Icon/icon'
 import Progress from '../Progress/progress'
+import type { UploadFile } from './upload'
+
 interface UploadListProps {
   fileList: UploadFile[]
   onRemove: (_file: UploadFile) => void
 }
 
-export const UploadList: FC<UploadListProps> = props => {
+export const UploadList: FC<UploadListProps> = (props) => {
   const { fileList, onRemove } = props
 
   return (
     <ul className="v-upload-list">
-      {fileList.map(item => {
+      {fileList.map((item) => {
         return (
           <li className="v-upload-list-item" key={item.uid}>
             <span className={`file-name file-name-${item.status}`}>

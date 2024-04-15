@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react'
 
-import { Meta } from '@storybook/react'
-import Form from '.'
-import type { FormProps, IFormRef } from './form'
-import Item from './formItem'
+import type { Meta } from '@storybook/react'
 import Input from '../Input'
 import Button from '../Button'
-import { CustomRule } from './useStore'
+import type { FormProps, IFormRef } from './form'
+import Item from './formItem'
+import type { CustomRule } from './useStore'
+import Form from '.'
 
 const meta = {
   title: 'Data Entry/Form 组件',
@@ -35,12 +35,10 @@ const confirmRules: CustomRule[] = [
   { type: 'string', required: true, min: 3, max: 8 },
   ({ getFieldValue }) => ({
     asyncValidator(rule, value) {
-      console.log('the value', getFieldValue('password'))
-      console.log(value)
       return new Promise((resolve, reject) => {
-        if (value !== getFieldValue('password')) {
-          reject('The two passwords that you entered do not match!')
-        }
+        if (value !== getFieldValue('password'))
+          reject(new Error('The two passwords that you entered do not match!'))
+
         setTimeout(() => {
           resolve()
         }, 1000)
@@ -48,7 +46,7 @@ const confirmRules: CustomRule[] = [
     },
   }),
 ]
-export const ABasicForm = (args: FormProps) => {
+export function ABasicForm(args: FormProps) {
   return (
     <Form {...args}>
       <Item label="用户名" name="name" rules={[{ type: 'string', required: true, min: 3 }]}>
@@ -71,7 +69,7 @@ export const ABasicForm = (args: FormProps) => {
 }
 ABasicForm.storyName = 'Basic form'
 
-export const BRegForm = (args: FormProps) => {
+export function BRegForm(args: FormProps) {
   const initialValues = {
     agreement: false,
   }
@@ -98,7 +96,8 @@ export const BRegForm = (args: FormProps) => {
           <input type="checkbox" />
         </Item>
         <span className="agree-text">
-          注册即代表你同意<a href="#">用户协议</a>
+          注册即代表你同意
+          <a href="#">用户协议</a>
         </span>
       </div>
       <div className="v-form-submit-area">
@@ -111,11 +110,9 @@ export const BRegForm = (args: FormProps) => {
 }
 BRegForm.storyName = 'Register form'
 
-export const CFullForm = (args: any) => {
+export function CFullForm(args: any) {
   const ref = useRef<IFormRef>()
   const resetAll = () => {
-    console.log('form ref', ref.current)
-    console.log('get value', ref.current?.getFieldValue('username'))
     ref.current?.resetFields()
   }
   interface InitialProps {
@@ -157,12 +154,18 @@ export const CFullForm = (args: any) => {
               <input type="checkbox" />
             </Item>
             <span className="agree-text">
-              注册即代表你同意<a href="#">用户协议</a>
+              注册即代表你同意
+              <a href="#">用户协议</a>
             </span>
           </div>
           <div className="v-form-submit-area">
             <Button htmlType="submit" btnType="primary">
-              登陆 {isSubmitting ? '验证中' : '验证完毕'} {isValid ? '通过😄' : '没通过😢'}{' '}
+              登陆
+              {' '}
+              {isSubmitting ? '验证中' : '验证完毕'}
+              {' '}
+              {isValid ? '通过😄' : '没通过😢'}
+              {' '}
             </Button>
             <Button htmlType="button" onClick={resetAll}>
               重置

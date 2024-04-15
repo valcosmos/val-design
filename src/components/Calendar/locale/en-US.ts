@@ -1,4 +1,4 @@
-import { CalendarType } from './interface'
+import type { CalendarType } from './interface'
 
 const CalendarLocale: CalendarType = {
   formatYear: 'YYYY',

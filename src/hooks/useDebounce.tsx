@@ -1,8 +1,8 @@
 // 处理防抖
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-export const useDebounce = (value: string, delay = 300) => {
+export function useDebounce(value: string, delay = 300) {
   const [debouncedValue, setDebouncedValue] = useState(value)
   useEffect(() => {
     const handler = window.setTimeout(() => {

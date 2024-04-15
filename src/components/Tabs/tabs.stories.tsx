@@ -1,10 +1,10 @@
 import React from 'react'
-import { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
+import Icon from '../Icon'
 import Tabs from './tabs'
 import TabItem from './tabItem'
-import Icon from '../Icon'
 
 export default {
   title: 'Data Display/Tabs 标签页',
@@ -16,11 +16,13 @@ const Template: StoryFn<typeof Tabs> = props => (
     <TabItem label="选项卡一">this is content one</TabItem>
     <TabItem label="选项卡二">this is content two</TabItem>
     <TabItem
-      label={
+      label={(
         <>
-          <Icon icon="check-circle" /> 自定义图标
+          <Icon icon="check-circle" />
+          {' '}
+          自定义图标
         </>
-      }
+      )}
     >
       this is content two
     </TabItem>

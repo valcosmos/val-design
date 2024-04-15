@@ -1,9 +1,8 @@
 import React from 'react'
-import { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { Upload } from './upload'
-
 import Icon from '../Icon/icon'
+import { Upload } from './upload'
 
 export default {
   title: 'Data Entry/Upload 上传',

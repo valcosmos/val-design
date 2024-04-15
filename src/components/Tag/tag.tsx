@@ -1,5 +1,6 @@
 import classNames from 'classnames'
-import React, { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
+import React from 'react'
 
 type TagType = 'success' | 'warning' | 'danger' | 'info'
 type TagSize = 'large' | 'medium' | 'small' | 'mini'
@@ -22,7 +23,7 @@ export const Tag: FC<TagProps> = ({ type, size, theme, color, hit, children }) =
     hit && 'is-hit',
   ])
   return (
-    <span className={classes} style={{ color: color }}>
+    <span className={classes} style={{ color }}>
       {children}
     </span>
   )

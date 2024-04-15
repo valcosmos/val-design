@@ -1,6 +1,8 @@
-import React, { FC, ReactElement } from 'react'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import type { FC, ReactElement } from 'react'
+import React from 'react'
+import type { IconProp } from '@fortawesome/fontawesome-svg-core'
 import Icon from '../Icon/icon'
+
 export type MessageType = 'info' | 'success' | 'danger' | 'warning'
 
 interface MessageProps {
@@ -31,18 +33,18 @@ const Message: FC<MessageProps> = (props: MessageProps) => {
   const renderIcon = (msgType: MessageType): ReactElement => {
     let msgIcon: IconProp = 'check-circle'
 
-    if (msgType === 'success') {
+    if (msgType === 'success')
       msgIcon = 'check-circle'
-    }
-    if (msgType === 'danger') {
+
+    if (msgType === 'danger')
       msgIcon = 'times-circle'
-    }
-    if (msgType === 'warning') {
+
+    if (msgType === 'warning')
       msgIcon = 'exclamation-circle'
-    }
-    if (msgType === 'info') {
+
+    if (msgType === 'info')
       msgIcon = 'info-circle'
-    }
+
     return <Icon icon={msgIcon} theme={msgType} />
   }
 

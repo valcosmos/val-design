@@ -1,8 +1,8 @@
 import React from 'react'
-import { Meta, StoryFn } from '@storybook/react'
-import { message } from './index'
+import type { Meta, StoryFn } from '@storybook/react'
 import Button from '../Button'
 import Message from './message'
+import { message } from './index'
 
 const meta = {
   title: 'Feedback/Message 全局提示',

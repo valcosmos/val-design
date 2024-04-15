@@ -1,14 +1,12 @@
 import classNames from 'classnames'
-import React, {
-  Children,
-  cloneElement,
+import type {
   CSSProperties,
   FC,
   FormEvent,
   HTMLAttributes,
   ReactNode,
-  useState,
 } from 'react'
+import React, { Children, cloneElement, useState } from 'react'
 import Radio from './radio'
 
 export interface RadioGroupProps extends HTMLAttributes<HTMLInputElement> {
@@ -21,7 +19,7 @@ export interface RadioGroupProps extends HTMLAttributes<HTMLInputElement> {
   style?: CSSProperties
 }
 
-export const RadioGroup: FC<RadioGroupProps> = props => {
+export const RadioGroup: FC<RadioGroupProps> = (props) => {
   const { disabled, children } = props
 
   const [value, setValue] = useState(props.defaultValue || props.value)
@@ -35,10 +33,11 @@ export const RadioGroup: FC<RadioGroupProps> = props => {
   }
 
   const newChildren = Children.map(children, (child: any) => {
-    if (child.type !== Radio) return null
+    if (child.type !== Radio)
+      return null
     return cloneElement(child, {
       checked: child.props.value === value,
-      disabled: disabled,
+      disabled,
       onChange: handleClick,
     })
   })

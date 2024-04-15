@@ -1,6 +1,6 @@
-import { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
-import { TransitionProps } from 'react-transition-group/Transition'
+import type { TransitionProps } from 'react-transition-group/Transition'
 import Button from '../Button'
 
 import { Transition } from './transition'
@@ -39,7 +39,8 @@ const Template: StoryFn<typeof Transition> = ({ animation }: TransitionProps) =>
             borderRadius: '20px',
             backgroundImage: 'linear-gradient(#7028e4, #e5b2ca)',
           }}
-        ></div>
+        >
+        </div>
       </Transition>
     </div>
   )

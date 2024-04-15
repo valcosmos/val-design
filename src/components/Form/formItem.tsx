@@ -1,7 +1,8 @@
 import classNames from 'classnames'
-import React, { FC, ReactNode, useContext, useEffect } from 'react'
+import type { FC, ReactNode } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { FormContext } from './form'
-import { CustomRule } from './useStore'
+import type { CustomRule } from './useStore'
 
 export type SomeRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>
 
@@ -18,7 +19,7 @@ export interface FormItemProps {
   validateTrigger?: string
 }
 
-export const FormItem: FC<FormItemProps> = props => {
+export const FormItem: FC<FormItemProps> = (props) => {
   const {
     label,
     children,
@@ -77,24 +78,24 @@ export const FormItem: FC<FormItemProps> = props => {
   controlProps[valuePropName] = value
   controlProps[trigger] = onValueUpdate
 
-  if (rules) {
+  if (rules)
     controlProps[validateTrigger] = onValueValidate
-  }
+
   // 获取children数组的第一个元素
   const childList = React.Children.toArray(children)
   // todo 判断children类型 显示警告
   // 没有子组件
-  if (childList.length === 0) {
+  if (childList.length === 0)
     console.error('No child element found in Form.Item, please provide one form component')
-  }
+
   // 子组件大于一个
-  if (childList.length > 1) {
+  if (childList.length > 1)
     console.warn('Only support one child element in Form.Item, others will be omitted')
-  }
+
   // 不是 React Element的子组件
-  if (!React.isValidElement(childList[0])) {
+  if (!React.isValidElement(childList[0]))
     console.error('Child component is not a valid React Element')
-  }
+
   const child = childList[0] as React.ReactElement
   // clone Element 混合child 以及手动的属性列表
   const returnChildNode = React.cloneElement(child, {

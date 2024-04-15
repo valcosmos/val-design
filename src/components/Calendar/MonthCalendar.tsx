@@ -1,9 +1,9 @@
 import type { Dayjs } from 'dayjs'
-import { CalendarProps } from './Calendar'
-import LocaleContext from './LocaleContext'
 import { useContext } from 'react'
-import allLocales from './locale'
 import cs from 'classnames'
+import type { CalendarProps } from './Calendar'
+import LocaleContext from './LocaleContext'
+import allLocales from './locale'
 
 interface MonthCalendarProps extends CalendarProps {
   selectHandler?: (date: Dayjs) => void
@@ -14,7 +14,7 @@ function getAllDays(date: Dayjs) {
   const startDate = date.startOf('month')
   const day = startDate.day()
 
-  const daysInfo: Array<{ date: Dayjs; currentMonth: boolean }> = new Array(6 * 7)
+  const daysInfo: Array<{ date: Dayjs, currentMonth: boolean }> = Array.from({ length: 6 * 7 })
 
   for (let i = 0; i < day; i++) {
     daysInfo[i] = {
@@ -46,7 +46,7 @@ function MonthCalendar(props: MonthCalendarProps) {
 
   const allDays = getAllDays(curMonth)
 
-  function renderDays(days: Array<{ date: Dayjs; currentMonth: boolean }>) {
+  function renderDays(days: Array<{ date: Dayjs, currentMonth: boolean }>) {
     const rows = []
     for (let i = 0; i < 6; i++) {
       const row = []
@@ -55,30 +55,32 @@ function MonthCalendar(props: MonthCalendarProps) {
         row[j] = (
           <div
             className={
-              'calendar-month-body-cell ' +
-              (item.currentMonth ? 'calendar-month-body-cell-current' : '')
+              `calendar-month-body-cell ${
+              item.currentMonth ? 'calendar-month-body-cell-current' : ''}`
             }
             onClick={() => selectHandler?.(item.date)}
           >
-            {dateRender ? (
-              dateRender(item.date)
-            ) : (
-              <div className="calendar-month-body-cell-date">
-                <div
-                  className={cs(
-                    'calendar-month-body-cell-date-value',
-                    value.format('YYYY-MM-DD') === item.date.format('YYYY-MM-DD')
-                      ? 'calendar-month-body-cell-date-selected'
-                      : '',
-                  )}
-                >
-                  {item.date.date()}
+            {dateRender
+              ? (
+                  dateRender(item.date)
+                )
+              : (
+                <div className="calendar-month-body-cell-date">
+                  <div
+                    className={cs(
+                      'calendar-month-body-cell-date-value',
+                      value.format('YYYY-MM-DD') === item.date.format('YYYY-MM-DD')
+                        ? 'calendar-month-body-cell-date-selected'
+                        : '',
+                    )}
+                  >
+                    {item.date.date()}
+                  </div>
+                  <div className="calendar-month-cell-body-date-content">
+                    {dateInnerContent?.(item.date)}
+                  </div>
                 </div>
-                <div className="calendar-month-cell-body-date-content">
-                  {dateInnerContent?.(item.date)}
-                </div>
-              </div>
-            )}
+                )}
           </div>
         )
       }

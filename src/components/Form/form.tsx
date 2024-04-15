@@ -1,7 +1,9 @@
-import React, { createContext, FormEvent, ReactNode, forwardRef, useImperativeHandle } from 'react'
+import type { FormEvent, ReactNode } from 'react'
+import React, { createContext, forwardRef, useImperativeHandle } from 'react'
 
-import useStore, { FormState } from './useStore'
-import { ValidateError } from 'async-validator'
+import type { ValidateError } from 'async-validator'
+import type { FormState } from './useStore'
+import useStore from './useStore'
 
 export type RenderProps = (form: FormState) => ReactNode
 
@@ -17,7 +19,7 @@ export type IFromContext = Pick<
   ReturnType<typeof useStore>,
   'dispatch' | 'fields' | 'validateField'
 > &
-  Pick<FormProps, 'initialValues'>
+Pick<FormProps, 'initialValues'>
 
 export const FormContext = createContext<IFromContext>({} as IFromContext)
 
@@ -43,19 +45,17 @@ export const Form = forwardRef<IFormRef, FormProps>((props, ref) => {
     e.preventDefault()
     e.stopPropagation()
     const { isValid, errors, values } = await validateAllFields()
-    if (isValid && onFinish) {
+    if (isValid && onFinish)
       onFinish(values)
-    } else if (!isValid && onFinishFailed) {
+    else if (!isValid && onFinishFailed)
       onFinishFailed(values, errors)
-    }
   }
 
   let childrenNode: ReactNode
-  if (typeof children === 'function') {
+  if (typeof children === 'function')
     childrenNode = children(form)
-  } else {
+  else
     childrenNode = children
-  }
 
   return (
     <>

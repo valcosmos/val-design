@@ -7,10 +7,11 @@
 // const fetch = require('node-fetch')
 
 import path from 'node:path'
+import { spawn } from 'node:child_process'
+import process from 'node:process'
 import glob from 'glob'
 import fs from 'fs-extra'
 import chalk from 'chalk'
-import { spawn } from 'child_process'
 import handlebars from 'handlebars'
 import { pathExistsSync } from 'path-exists'
 
@@ -21,8 +22,9 @@ const __dirname = dirname(import.meta)
  * abc-xyz => AbcXyz
  * @param {*} str
  */
-const varCase = (str: string) =>
-  str.replace(/-[a-z]/g, m => m[1].toUpperCase()).replace(/^.{1}/, m => m.toUpperCase())
+function varCase(str: string) {
+  return str.replace(/-[a-z]/g, m => m[1].toUpperCase()).replace(/^.{1}/, m => m.toUpperCase())
+}
 const lowCase = (str: string) => str.replace(/[A-Z]/g, m => `-${m.toLowerCase()}`).replace(/^-/, '')
 
 async function create() {
@@ -41,7 +43,7 @@ async function create() {
 
   const tplFiles = glob.sync(path.join(__dirname, 'template/*.hbs'))
 
-  tplFiles.forEach(async filePath => {
+  tplFiles.forEach(async (filePath) => {
     const content = await fs.readFile(filePath, 'utf-8')
     const template = handlebars.compile(content)
     const result = template({

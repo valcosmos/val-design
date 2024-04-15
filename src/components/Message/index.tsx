@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { TransitionGroup } from 'react-transition-group'
-import Transition from '../Transition/transition'
-import Message, { MessageType } from './message'
 import { v4 as uuidV4 } from 'uuid'
+import Transition from '../Transition/transition'
+import type { MessageType } from './message'
+import Message from './message'
 
 export interface MessageApi {
   info: (text: string) => void
@@ -22,7 +23,7 @@ const getUUID = (): string => uuidV4()
 
 let add: (notice: Notice) => void
 
-export const MessageContainer = () => {
+export function MessageContainer() {
   const [notices, setNotices] = useState<Notice[]>([])
   const timeout = 3 * 1000
   const maxCount = 10
@@ -50,7 +51,7 @@ export const MessageContainer = () => {
     <div className="message-container">
       <TransitionGroup>
         {notices.map(({ text, key, type }) => (
-          <Transition timeout={200} in animation={'slide-in-top'} key={key}>
+          <Transition timeout={200} in animation="slide-in-top" key={key}>
             <Message type={type} text={text} />
           </Transition>
         ))}
@@ -72,28 +73,28 @@ if (!el) {
 createRoot(el).render(<MessageContainer />)
 
 export const message: MessageApi = {
-  info: text => {
+  info: (text) => {
     add({
       text,
       key: getUUID(),
       type: 'info',
     })
   },
-  success: text => {
+  success: (text) => {
     add({
       text,
       key: getUUID(),
       type: 'success',
     })
   },
-  warning: text => {
+  warning: (text) => {
     add({
       text,
       key: getUUID(),
       type: 'warning',
     })
   },
-  error: text => {
+  error: (text) => {
     add({
       text,
       key: getUUID(),

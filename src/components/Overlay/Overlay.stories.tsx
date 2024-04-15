@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Meta, StoryFn } from '@storybook/react'
-import Overlay from './Overlay'
+import type { Meta, StoryFn } from '@storybook/react'
 import Button from '../Button'
+import Overlay from './Overlay'
 
 const OverlayMeta: Meta<typeof Overlay> = {
   title: 'Overlay',
@@ -18,18 +18,20 @@ Primary.args = {
   children: <div style={{ border: '1px solid black', width: 300, height: 300 }}>content</div>,
 }
 
-export const Basic = () => (
-  <Overlay>
-    <div style={{ border: '1px solid black', width: 300, height: 300 }}>Overlay</div>
-  </Overlay>
-)
+export function Basic() {
+  return (
+    <Overlay>
+      <div style={{ border: '1px solid black', width: 300, height: 300 }}>Overlay</div>
+    </Overlay>
+  )
+}
 
-export const UnderControl = () => {
+export function UnderControl() {
   const [visible, setVisible] = useState(false)
 
   return (
     <>
-      <Button type={'primary'} onClick={() => setVisible(true)}>
+      <Button type="primary" onClick={() => setVisible(true)}>
         Click
       </Button>
       <button id="position">定位元素</button>
