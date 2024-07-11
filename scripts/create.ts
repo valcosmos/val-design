@@ -23,7 +23,7 @@ const __dirname = dirname(import.meta)
  * @param {*} str
  */
 function varCase(str: string) {
-  return str.replace(/-[a-z]/g, m => m[1].toUpperCase()).replace(/^.{1}/, m => m.toUpperCase())
+  return str.replace(/-[a-z]/g, m => m[1].toUpperCase()).replace(/^./, m => m.toUpperCase())
 }
 const lowCase = (str: string) => str.replace(/[A-Z]/g, m => `-${m.toLowerCase()}`).replace(/^-/, '')
 

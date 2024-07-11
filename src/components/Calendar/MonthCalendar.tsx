@@ -65,21 +65,21 @@ function MonthCalendar(props: MonthCalendarProps) {
                   dateRender(item.date)
                 )
               : (
-                <div className="calendar-month-body-cell-date">
-                  <div
-                    className={cs(
-                      'calendar-month-body-cell-date-value',
-                      value.format('YYYY-MM-DD') === item.date.format('YYYY-MM-DD')
-                        ? 'calendar-month-body-cell-date-selected'
-                        : '',
-                    )}
-                  >
-                    {item.date.date()}
+                  <div className="calendar-month-body-cell-date">
+                    <div
+                      className={cs(
+                        'calendar-month-body-cell-date-value',
+                        value.format('YYYY-MM-DD') === item.date.format('YYYY-MM-DD')
+                          ? 'calendar-month-body-cell-date-selected'
+                          : '',
+                      )}
+                    >
+                      {item.date.date()}
+                    </div>
+                    <div className="calendar-month-cell-body-date-content">
+                      {dateInnerContent?.(item.date)}
+                    </div>
                   </div>
-                  <div className="calendar-month-cell-body-date-content">
-                    {dateInnerContent?.(item.date)}
-                  </div>
-                </div>
                 )}
           </div>
         )

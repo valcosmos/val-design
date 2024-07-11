@@ -212,13 +212,13 @@ export const Upload: FC<UploadProps> = (props) => {
       <div className="v-upload-input" style={{ display: 'inline-block' }} onClick={handleClick}>
         {drag
           ? (
-            <Dragger
-              onFile={(files) => {
-                uploadFiles(files)
-              }}
-            >
-              {children}
-            </Dragger>
+              <Dragger
+                onFile={(files) => {
+                  uploadFiles(files)
+                }}
+              >
+                {children}
+              </Dragger>
             )
           : (
               children

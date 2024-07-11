@@ -132,7 +132,9 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     switch (e.key) {
       case 'Enter':
-        suggestions[highlightIndex] && handleSelect(suggestions[highlightIndex])
+        if (suggestions[highlightIndex]) {
+          handleSelect(suggestions[highlightIndex])
+        }
         break
       case 'ArrowUp':
         highlight(highlightIndex - 1)
