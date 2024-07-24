@@ -41,7 +41,7 @@
     "clean": "rimraf ./dist",
     "build": "yarn clean && yarn lint && yarn build-es && yarn build-umd",
     "prepublishOnly": "yarn build",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "build-es": "rollup --config rollup.esm.config.js --bundleConfigAsCjs",
