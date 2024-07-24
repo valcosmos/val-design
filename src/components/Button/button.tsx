@@ -75,8 +75,8 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
  *
  * ```
  */
-export const Button: React.FC<ButtonProps> = (props) => {
-  const { type, disabled, size, children, href, className, ...restProps } = props
+export function Button(props: ButtonProps) {
+  const { type = 'default', disabled = false, size, children, href, className, ...restProps } = props
   // 默认添加btn类
   const classes = classNames('btn', className, {
     [`btn-${type}`]: type,
@@ -99,9 +99,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
   }
 }
 
-Button.defaultProps = {
-  disabled: false,
-  type: 'default',
-}
+// Button.defaultProps = {
+//   disabled: false,
+//   type: 'default',
+// }
 
 export default Button

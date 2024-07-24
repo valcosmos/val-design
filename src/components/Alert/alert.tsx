@@ -41,7 +41,7 @@ export interface AlertProps {
  */
 export const Alert: FC<AlertProps> = (props) => {
   const [hide, setHide] = useState(false)
-  const { title, description, type, onClose, closable } = props
+  const { title, description, type = 'default', onClose, closable = true } = props
   const classes = classNames('v-alert', {
     [`v-alert-${type}`]: type,
   })
@@ -69,8 +69,8 @@ export const Alert: FC<AlertProps> = (props) => {
   )
 }
 
-Alert.defaultProps = {
-  type: 'default',
-  closable: true,
-}
+// Alert.defaultProps = {
+//   type: 'default',
+//   closable: true,
+// }
 export default Alert
