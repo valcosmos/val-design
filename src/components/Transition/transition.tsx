@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import React from 'react'
+import React, { useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import type { CSSTransitionProps } from 'react-transition-group/CSSTransition'
 
@@ -34,17 +34,25 @@ type TransitionProps = CSSTransitionProps & {
 }
 
 export const Transition: React.FC<TransitionProps> = (props) => {
-  const { children, classNames, animation, wrapper, ...restProps } = props
+  const { children, classNames, animation, wrapper, unmountOnExit = true, appear = true, ...restProps } = props
+  const nodeRef = useRef(null)
+
   return (
-    <CSSTransition classNames={classNames || animation} {...restProps}>
-      {wrapper ? <div>{children}</div> : children}
+    <CSSTransition
+      nodeRef={nodeRef}
+      classNames={classNames || animation}
+      unmountOnExit={unmountOnExit}
+      appear={appear}
+      {...restProps}
+    >
+      {wrapper ? <div ref={nodeRef}>{children}</div> : children}
     </CSSTransition>
   )
 }
 
-Transition.defaultProps = {
-  unmountOnExit: true,
-  appear: true,
-}
+// Transition.defaultProps = {
+//   unmountOnExit: true,
+//   appear: true,
+// }
 
 export default Transition
